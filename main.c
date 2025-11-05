@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/05 21:01:00 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/05 22:20:07 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int main(void)
 	printf("'' -> %zu\n", ft_strlen(""));
 	printf("'a' -> %zu\n", ft_strlen("a"));
 	printf("'abcdefghijklmnopqrstuvwxyz' -> %zu\n", ft_strlen("abcdefghijklmnopqrstuvwxyz"));
+
+	
 
 	return 0;
 }

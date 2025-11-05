@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/05 22:20:07 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/05 20:30:04 by flinguen          #+#    #+#             */
+/*   Updated: 2025/11/05 23:27:35 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-int	ft_isprint(int c);
-
-size_t	ft_strlen(const char *s);
-
-void	*ft_memset(void *s, int c, size_t n);
-
-#endif
+int	ft_isdigit(int c)
+{
+	return ((c >= '0' && c <= '9'));
+}
