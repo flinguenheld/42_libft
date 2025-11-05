@@ -40,7 +40,15 @@ int main(void)
 	printf("'a' -> %zu\n", ft_strlen("a"));
 	printf("'abcdefghijklmnopqrstuvwxyz' -> %zu\n", ft_strlen("abcdefghijklmnopqrstuvwxyz"));
 
+	const int len = 5;
+	int tab[len] = {10, 11, 12, 14, 15};
+	for (int i=0; i < len; i++)
+		printf("%d ", tab[i]);
 	
+	printf("\n");
+	int *set = ft_memset((void *)tab, 100, 3 * sizeof(int));
+	for (int i=0; i < len; i++)
+		printf("%d ", set[i]);
 
 	return 0;
 }
