@@ -26,15 +26,15 @@ int main(void)
 {
 	for (int i=0; i<255; i++)
 	{
-		if (ft_isalpha(i))
-			printf("%c is alpha\n", i);
-	}
-	for (int i=0; i<255; i++)
-	{
-		if (ft_isdigit(i))
-			printf("%c is digit\n", i);
+		// if (ft_isalpha(i))
+		// 	printf("%c is alpha\n", i);
+		// if (ft_isdigit(i))
+		// 	printf("%c is digit\n", i);
+		// if (ft_isalnum(i))
+		// 	printf("%c is alnum\n", i);
+		if (ft_isascii(i))
+			printf("%c is ascii\n", i);
 	}
 
 	return 0;
 }
-

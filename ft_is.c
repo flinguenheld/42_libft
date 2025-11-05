@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_is.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 19:04:36 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/05 19:04:36 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/05 20:30:04 by flinguen          #+#    #+#             */
+/*   Updated: 2025/11/05 20:30:04 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
+
+int	ft_isalpha(int c)
+{
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}
 
 int	ft_isdigit(int c)
 {
 	return ((c >= '0' && c <= '9'));
+}
+
+int	ft_isalnum(int c)
+{
+	return (ft_isalpha(c) || ft_isdigit(c));
+}
+
+int	ft_isascii(int c)
+{
+	return (c >= 0 && c <= 127);
+}
+
+int	ft_isprint(int c)
+{
+	return (c >= ' ' && c <= '~');
 }
