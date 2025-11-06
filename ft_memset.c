@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 21:08:09 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/05 22:20:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/06 00:00:43 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	// CHAR OR ANOTHER TYPE ???
-	char	*to_set;
+	unsigned char	*to_set;
 
-	to_set = (char *)s;
+	to_set = (unsigned char *)s;
 	while (n)
 	{
-		*to_set = (char)c;
+		*to_set = (unsigned char)c;
 		to_set++;
 		n--;
 	}

@@ -6,13 +6,14 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/05 22:20:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/06 00:00:43 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 char *print_bool(int val)
 {
@@ -24,6 +25,7 @@ char *print_bool(int val)
 
 int main(void)
 {
+	printf("\n################################################## IS_    ###\n");
 	for (int i=0; i<255; i++)
 	{
 		// if (ft_isalpha(i))
@@ -36,19 +38,41 @@ int main(void)
 		// 	printf("%c is ascii\n", i);
 	}
 
+	printf("\n################################################## STRLEN ###\n");
 	printf("'' -> %zu\n", ft_strlen(""));
 	printf("'a' -> %zu\n", ft_strlen("a"));
 	printf("'abcdefghijklmnopqrstuvwxyz' -> %zu\n", ft_strlen("abcdefghijklmnopqrstuvwxyz"));
 
-	const int len = 5;
-	int tab[len] = {10, 11, 12, 14, 15};
-	for (int i=0; i < len; i++)
+	printf("\n################################################## MEMSET ###\n");
+	// The real funct doesn't check nb_to_set
+	// Nor the tab, it can be empty
+
+	#define TAB_LEN_MEMSET 5
+	const int value_to_set = 0;
+	const size_t nb_to_set = 3;
+
+	int tab[TAB_LEN_MEMSET] = {10, 11, 12, 14, 15};
+	int tab_real[TAB_LEN_MEMSET] = {10, 11, 12, 14, 15};
+	// int tab[len] = {};
+	// int tab_real[len] = {};
+
+	for (int i=0; i < TAB_LEN_MEMSET; i++)
 		printf("%d ", tab[i]);
 	
-	printf("\n");
-	int *set = ft_memset((void *)tab, 100, 3 * sizeof(int));
-	for (int i=0; i < len; i++)
+	printf("\n-> \n");
+	int *set = ft_memset((void *)tab, value_to_set, nb_to_set * sizeof(int));
+	for (int i=0; i < TAB_LEN_MEMSET; i++)
 		printf("%d ", set[i]);
 
+	printf("\n\n##################### MEMSET REAL ONE ###\n");
+	for (int i=0; i < TAB_LEN_MEMSET; i++)
+		printf("%d ", tab_real[i]);
+	
+	printf("\n-> \n");
+	int *set_real = memset((void *)tab_real, value_to_set, nb_to_set * sizeof(int));
+	for (int i=0; i < TAB_LEN_MEMSET; i++)
+		printf("%d ", set_real[i]);
+
+	printf("\n################################################## MEMSET ###\n");
 	return 0;
 }
