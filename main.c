@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/06 13:10:08 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/06 15:13:50 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int main(void)
 	for (int i=0; i < TAB_LEN_MEMSET; i++)
 		printf("%d ", set[i]);
 
-	printf("\n\n##################### MEMSET REAL ONE ###\n");
+	printf("\n##################### MEMSET REAL ONE ###\n");
 	for (int i=0; i < TAB_LEN_MEMSET; i++)
 		printf("%d ", tab_memset_real[i]);
 	
@@ -75,7 +75,7 @@ int main(void)
 
 	printf("\n################################################## BZERO ####\n");
 	#define TAB_LEN_BZERO 5
-	const size_t nb_to_set_bzero = -1;
+	const size_t nb_to_set_bzero = 3;
 
 	int tab_bzero[TAB_LEN_BZERO] = {10, 11, 12, 14, 15};
 	int tab_bzero_real[TAB_LEN_BZERO] = {10, 11, 12, 14, 15};
@@ -90,7 +90,7 @@ int main(void)
 	for (int i=0; i < TAB_LEN_BZERO; i++)
 		printf("%d ", tab_bzero[i]);
 
-	printf("\n\n##################### BZERO REAL ONE ###\n");
+	printf("\n###################### BZERO REAL ONE ###\n");
 	for (int i=0; i < TAB_LEN_BZERO; i++)
 		printf("%d ", tab_bzero_real[i]);
 
@@ -99,5 +99,30 @@ int main(void)
 	for (int i=0; i < TAB_LEN_BZERO; i++)
 		printf("%d ", tab_bzero_real[i]);
 
+	printf("\n################################################## MEMCPY ###\n");
+	#define TAB_LEN_MEMCPY 5
+	const size_t nb_to_memcpy = 1;
+
+	int tab_memcpy_src[TAB_LEN_MEMCPY] = {10, 11, 12, 14, 15};
+	int tab_memcpy_dst[TAB_LEN_MEMCPY] = {0, 0, 0, 0, 0};
+	int tab_memcpy_dst_real[TAB_LEN_MEMCPY] = {0, 0, 0, 0, 0};
+
+	printf("src: ");
+	for (int i=0; i < TAB_LEN_MEMCPY; i++)
+		printf("%d ", tab_memcpy_src[i]);
+	printf("\ndst: ");
+	for (int i=0; i < TAB_LEN_MEMCPY; i++)
+		printf("%d ", tab_memcpy_dst[i]);
+
+	printf("\n ->  ");
+	ft_memcpy((void *)tab_memcpy_dst, (void *)tab_memcpy_src, nb_to_memcpy * sizeof(int));
+	for (int i=0; i < TAB_LEN_MEMCPY; i++)
+		printf("%d ", tab_memcpy_dst[i]);
+
+	printf("\n###################### MEMCPY REAL ONE ###\n");
+	printf(" ->  ");
+	memcpy((void *)tab_memcpy_dst_real, (void *)tab_memcpy_src, nb_to_memcpy * sizeof(int));
+	for (int i=0; i < TAB_LEN_MEMCPY; i++)
+		printf("%d ", tab_memcpy_dst_real[i]);
 	return 0;
 }
