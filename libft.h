@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/06 15:13:51 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/06 19:26:27 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+// # include <unistd.h>
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -25,6 +26,7 @@ size_t		ft_strlen(const char *s);
 
 void		*ft_memset(void *s, int c, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
+void		*ft_memmove(void *dest, const void *src, size_t n);
 
 void		ft_bzero(void *s, size_t n);
 

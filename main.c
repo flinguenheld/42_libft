@@ -6,12 +6,11 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/06 15:13:50 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/06 13:36:16 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -64,7 +63,7 @@ int main(void)
 	for (int i=0; i < TAB_LEN_MEMSET; i++)
 		printf("%d ", set[i]);
 
-	printf("\n##################### MEMSET REAL ONE ###\n");
+	printf("\n##################### MEMSET REAL ###\n");
 	for (int i=0; i < TAB_LEN_MEMSET; i++)
 		printf("%d ", tab_memset_real[i]);
 	
@@ -90,7 +89,7 @@ int main(void)
 	for (int i=0; i < TAB_LEN_BZERO; i++)
 		printf("%d ", tab_bzero[i]);
 
-	printf("\n###################### BZERO REAL ONE ###\n");
+	printf("\n###################### BZERO REAL ###\n");
 	for (int i=0; i < TAB_LEN_BZERO; i++)
 		printf("%d ", tab_bzero_real[i]);
 
@@ -119,10 +118,66 @@ int main(void)
 	for (int i=0; i < TAB_LEN_MEMCPY; i++)
 		printf("%d ", tab_memcpy_dst[i]);
 
-	printf("\n###################### MEMCPY REAL ONE ###\n");
+	printf("\n###################### MEMCPY REAL ###\n");
 	printf(" ->  ");
 	memcpy((void *)tab_memcpy_dst_real, (void *)tab_memcpy_src, nb_to_memcpy * sizeof(int));
 	for (int i=0; i < TAB_LEN_MEMCPY; i++)
 		printf("%d ", tab_memcpy_dst_real[i]);
+
+	printf("\n###################################### MEMMOVE DEST < SRC ###\n");
+	#define TAB_LEN_MEMMOVE 15
+	const size_t nb_to_memmove = 5;
+	const int gap_memmove = 2;
+
+	int tab_memmove1[TAB_LEN_MEMMOVE] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+	int tab_memmove2[TAB_LEN_MEMMOVE] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+
+	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
+		printf("%d ", tab_memmove1[i]);
+
+	printf("\n");
+	printf("nb to move: %zu\n", nb_to_memmove);
+	printf("gap from source to dest: %d\n", gap_memmove);
+	printf("\n");
+
+	ft_memmove((void *)(tab_memmove1), (void *)(tab_memmove1 + gap_memmove), nb_to_memmove * sizeof(int));
+
+	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
+		printf("%d ", tab_memmove1[i]);
+
+	printf("\n###################### MEMMOVE REAL ###\n");
+
+	memmove((void *)(tab_memmove2), (void *)(tab_memmove2 + gap_memmove), nb_to_memmove * sizeof(int));
+
+	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
+		printf("%d ", tab_memmove2[i]);
+
+	printf("\n###################################### MEMMOVE DEST > SRC ###\n");
+	#define TAB_LEN_MEMMOVE 15
+	const size_t nb_to_memmove_rev = 5;
+	const int gap_memmove_rev = 2;
+
+	int tab_memmove_rev_1[TAB_LEN_MEMMOVE] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+	int tab_memmove_rev_2[TAB_LEN_MEMMOVE] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+
+	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
+		printf("%d ", tab_memmove_rev_1[i]);
+
+	printf("\n");
+	printf("nb to move: %zu\n", nb_to_memmove_rev);
+	printf("gap from source to dest: %d\n", gap_memmove_rev);
+	printf("\n");
+
+	ft_memmove((void *)(tab_memmove_rev_1 + gap_memmove_rev), (void *)(tab_memmove_rev_1), nb_to_memmove_rev * sizeof(int));
+
+	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
+		printf("%d ", tab_memmove_rev_1[i]);
+
+	printf("\n###################### MEMMOVE REAL ###\n");
+	memmove((void *)(tab_memmove_rev_2 + gap_memmove_rev), (void *)(tab_memmove_rev_2), nb_to_memmove_rev * sizeof(int));
+
+	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
+		printf("%d ", tab_memmove_rev_2[i]);
+
 	return 0;
 }
