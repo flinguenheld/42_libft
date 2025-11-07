@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/07 21:19:33 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/07 21:54:03 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,15 +229,24 @@ int main(void)
 	printf("2 -> %c\n", ft_tolower('2'));
 
 	printf("\n################################################## STRCHR ###\n");
-	char *str_strchr = "hello world";
+	char *str_strchr = "wind hello world";
 
-	printf("value returned: %s\n", ft_strchr(str_strchr, 'w'));
 	printf("\n##### MINE #################### REAL #############\n");
 	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, 'w'), strchr(str_strchr, 'w'));
-	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, '0'), strchr(str_strchr, '0'));
+	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, 'o'), strchr(str_strchr, 'o'));
 	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, 'U'), strchr(str_strchr, 'U'));
 	printf("     '%s'                     '%s'\n", ft_strchr("", '\0'), strchr("", '\0'));
 	printf("     '%s'                     '%s'\n", ft_strchr("aaaa", '\0'), strchr("aaaa", '\0'));
+
+	printf("\n################################################# STRRCHR ###\n");
+	char *str_strrchr = "wind hello world";
+
+	printf("\n##### MINE #################### REAL #############\n");
+	printf("     '%s'                     '%s'\n", ft_strrchr(str_strrchr, 'w'), strrchr(str_strrchr, 'w'));
+	printf("     '%s'                     '%s'\n", ft_strrchr(str_strrchr, 'o'), strrchr(str_strrchr, 'o'));
+	printf("     '%s'                     '%s'\n", ft_strrchr(str_strrchr, 'U'), strrchr(str_strrchr, 'U'));
+	printf("     '%s'                     '%s'\n", ft_strrchr("", '\0'), strrchr("", '\0'));
+	printf("     '%s'                     '%s'\n", ft_strrchr("aaaa", '\0'), strrchr("aaaa", '\0'));
 
 	return 0;
 }

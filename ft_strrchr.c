@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 20:55:44 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/07 21:55:14 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/07 21:20:48 by flinguen          #+#    #+#             */
+/*   Updated: 2025/11/07 21:55:15 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
+#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	while (*s)
+	int	index;
+
+	index = (int)ft_strlen(s) + 1;
+	while (index > -1)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (s[index] == c)
+			return ((char *)(s + index));
+		index--;
 	}
-	if (c == '\0')
-		return ((char *)s);
 	return (NULL);
 }
