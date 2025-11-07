@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/07 20:48:37 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/07 20:54:02 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,7 +221,12 @@ int main(void)
 	printf("X -> %c\n", ft_toupper('X'));
 	printf("2 -> %c\n", ft_toupper('2'));
 
+	printf("\n################################################# TOLOWER ###\n");
+	printf("a -> %c\n", ft_tolower('a'));
+	printf("x -> %c\n", ft_tolower('x'));
+	printf("A -> %c\n", ft_tolower('A'));
+	printf("X -> %c\n", ft_tolower('X'));
+	printf("2 -> %c\n", ft_tolower('2'));
 
-	
 	return 0;
 }
