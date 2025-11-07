@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/07 20:54:02 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/07 21:19:33 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,6 +227,17 @@ int main(void)
 	printf("A -> %c\n", ft_tolower('A'));
 	printf("X -> %c\n", ft_tolower('X'));
 	printf("2 -> %c\n", ft_tolower('2'));
+
+	printf("\n################################################## STRCHR ###\n");
+	char *str_strchr = "hello world";
+
+	printf("value returned: %s\n", ft_strchr(str_strchr, 'w'));
+	printf("\n##### MINE #################### REAL #############\n");
+	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, 'w'), strchr(str_strchr, 'w'));
+	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, '0'), strchr(str_strchr, '0'));
+	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, 'U'), strchr(str_strchr, 'U'));
+	printf("     '%s'                     '%s'\n", ft_strchr("", '\0'), strchr("", '\0'));
+	printf("     '%s'                     '%s'\n", ft_strchr("aaaa", '\0'), strchr("aaaa", '\0'));
 
 	return 0;
 }
