@@ -6,13 +6,14 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/06 13:36:16 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/07 15:48:20 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 #include <stdio.h>
-#include <string.h>
+#include <bsd/string.h>
 
 char *print_bool(int val)
 {
@@ -178,6 +179,24 @@ int main(void)
 
 	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
 		printf("%d ", tab_memmove_rev_2[i]);
+
+	printf("\n################################################# STRLCPY ###\n");
+	// TO_COPY_STRLCPY cannot be higher than the buffer size !
+	// Otherwise, it destroys the next chars
+	#define BUFFER_SIZE_STRLCPY 5
+	#define TO_COPY_STRLCPY 5
+	char *src_strlcpy = "abcdefghij";
+
+	char dst_strlcpy[BUFFER_SIZE_STRLCPY];
+	char dst_strlcpy_real[BUFFER_SIZE_STRLCPY];
+
+	size_t amount_strlcpy = ft_strlcpy(dst_strlcpy, src_strlcpy, TO_COPY_STRLCPY);
+	printf("-> %zu -> '%s'", amount_strlcpy, dst_strlcpy);
+
+	printf("\n###################### STRLCPY REAL ###\n");
+
+	size_t amount_strlcpy_real = strlcpy(dst_strlcpy_real, src_strlcpy, TO_COPY_STRLCPY);
+	printf("-> %zu -> '%s'", amount_strlcpy_real, dst_strlcpy_real);
 
 	return 0;
 }
