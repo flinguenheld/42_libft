@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
+/*   Created: 2025/11/07 16:07:01 by flinguen          #+#    #+#             */
 /*   Updated: 2025/11/07 20:37:10 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-// # include <unistd.h>
+size_t ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	len_dst;
+	size_t	index;
 
-int			ft_isalpha(int c);
-int			ft_isdigit(int c);
-int			ft_isalnum(int c);
-int			ft_isascii(int c);
-int			ft_isprint(int c);
-
-size_t		ft_strlen(const char *s);
-
-void		*ft_memset(void *s, int c, size_t n);
-void		*ft_memcpy(void *dest, const void *src, size_t n);
-void		*ft_memmove(void *dest, const void *src, size_t n);
-void		ft_bzero(void *s, size_t n);
-
-size_t		ft_strlcpy(char *dst, const char *src, size_t size);
-size_t		ft_strlcat(char *dst, const char *src, size_t size);
-
-#endif
+	len_dst = ft_strlen(dst);
+	index = 0;
+	if (size <= len_dst)
+		return (size + ft_strlen(src));
+	while ((len_dst + index) < (size - 1) && src[index])
+	{
+		dst[len_dst + index] = src[index];
+		index++;
+	}
+	dst[len_dst + index] = '\0';
+	return (len_dst + ft_strlen(src));
+}

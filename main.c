@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/07 15:48:20 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/07 20:37:10 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,6 +197,22 @@ int main(void)
 
 	size_t amount_strlcpy_real = strlcpy(dst_strlcpy_real, src_strlcpy, TO_COPY_STRLCPY);
 	printf("-> %zu -> '%s'", amount_strlcpy_real, dst_strlcpy_real);
+
+	printf("\n################################################# STRLCAT ###\n");
+	#define BUFFER_SIZE_STRLCAT 100
+	#define TO_COPY_STRLCAT 10
+	char *src_strlcat = "abcdefgh";
+
+	char dst_strlcat[BUFFER_SIZE_STRLCAT] = "start";
+	char dst_strlcat_real[BUFFER_SIZE_STRLCAT] = "start";
+
+	size_t amount_strlcat = ft_strlcat(dst_strlcat, src_strlcat, TO_COPY_STRLCAT);
+	printf("-> %zu -> '%s'", amount_strlcat, dst_strlcat);
+
+	printf("\n###################### STRLCAT REAL ###\n");
+
+	size_t amount_strlcat_real = strlcat(dst_strlcat_real, src_strlcat, TO_COPY_STRLCAT);
+	printf("-> %zu -> '%s'", amount_strlcat_real, dst_strlcat_real);
 
 	return 0;
 }
