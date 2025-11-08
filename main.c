@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 21:19:17 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 21:40:38 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -372,10 +372,17 @@ int main(void)
 	size_t len_substr = 1;
 
 	char *sub_substr = ft_substr(to_copy_substr, start_substr, len_substr);
-
 	printf("-> '%s'", sub_substr);
-
 	free(sub_substr);
+
+	printf("\n################################################# STRJOIN ###\n");
+	char *src1_strjoin = "hello ";
+	char *src2_strjoin = "world";
+
+	char *dst_strjoin = ft_strjoin(src1_strjoin, src2_strjoin);
+	printf("-> '%s'", dst_strjoin);
+	free(dst_strjoin);
+
 
 	return 0;
 }

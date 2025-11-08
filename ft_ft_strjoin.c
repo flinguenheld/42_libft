@@ -1,11 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_ft_strjoin.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 13:33:19 by flinguen          #+#    #+#             */
+/*   Created: 2025/11/08 21:23:22 by flinguen          #+#    #+#             */
 /*   Updated: 2025/11/08 21:44:40 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,24 +14,23 @@
 
 /*
 DESCRIPTION
-The  memcpy() function copies n bytes from memory area src to memory area dest.
-The memory areas must not overlap. Use memmove if the memory areas do overlap.
-RETURN VALUE
-       The memcpy() function returns a pointer to dest.\n
+Allocates memory (using malloc(3)) and returns a new string.
+Which is the result of concatenating ’s1’ and ’s2.
 */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*d;
-	char	*s;
+	char	*new;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	d = (char *)dest;
-	s = (char *)src;
-	while (n)
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	new = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (new != NULL)
 	{
-		*d = *s;
-		d++;
-		s++;
-		n--;
+		ft_memcpy(new, s1, s1_len);
+		ft_memcpy(new + s1_len, s2, s2_len);
+		*(new + s1_len + s2_len) = '\0';
 	}
-	return (dest);
+	return (new);
 }
