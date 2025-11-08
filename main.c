@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/07 21:54:03 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 11:28:05 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -247,6 +247,19 @@ int main(void)
 	printf("     '%s'                     '%s'\n", ft_strrchr(str_strrchr, 'U'), strrchr(str_strrchr, 'U'));
 	printf("     '%s'                     '%s'\n", ft_strrchr("", '\0'), strrchr("", '\0'));
 	printf("     '%s'                     '%s'\n", ft_strrchr("aaaa", '\0'), strrchr("aaaa", '\0'));
+
+	printf("\n################################################# STRNCMP ###\n");
+	size_t n_strncmp = 1;
+
+	printf("\n### MINE ###### REAL #############\n");
+	printf("   '%d'           '%d'\n", ft_strncmp("hello", "hello", n_strncmp), strncmp("hello", "hello", n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("hello", "hello\n", n_strncmp), strncmp("hello", "hello\n", n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("hello", "helloa", n_strncmp), strncmp("hello", "helloa", n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("aab", "aaa",     n_strncmp), strncmp("aab", "aaa",     n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("aab", "",        n_strncmp), strncmp("aab", "",        n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("", "bbb",        n_strncmp), strncmp("", "bbb",        n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
 
 	return 0;
 }
