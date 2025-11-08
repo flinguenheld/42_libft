@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 14:50:13 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 16:25:46 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -291,6 +291,19 @@ int main(void)
 	printf("   '%d'           '%d'\n", ft_memcmp("", "bbb",        n_memcmp), memcmp("", "bbb",        n_memcmp));
 	printf("   '%d'           '%d'\n", ft_memcmp("", "",           n_memcmp), memcmp("", "",           n_memcmp));
 	printf("   '%d'           '%d'\n", ft_memcmp("", "",           n_memcmp), memcmp("", "",           n_memcmp));
+
+	printf("\n################################################# MEMCMP ###\n");
+	size_t len_strnstr = 10;
+
+	printf("\n### MINE ###### REAL #############\n");
+	printf("   '%s'           '%s'\n", ft_strnstr("hello", "hello", len_strnstr), strnstr("hello", "hello", len_strnstr));
+	printf("   '%s'           '%s'\n", ft_strnstr("hello", "lo", len_strnstr), strnstr("hello", "lo", len_strnstr));
+	printf("   '%s'           '%s'\n", ft_strnstr("hello", "helloa", len_strnstr), strnstr("hello", "helloa", len_strnstr));
+	printf("   '%s'           '%s'\n", ft_strnstr("hellohello", "hello", len_strnstr), strnstr("hellohello", "hello", len_strnstr));
+	printf("   '%s'           '%s'\n", ft_strnstr("hellohello", "lo", len_strnstr), strnstr("hellohello", "lo", len_strnstr));
+	printf("   '%s'           '%s'\n", ft_strnstr("hellohello", "", len_strnstr), strnstr("hellohello", "", len_strnstr));
+	printf("   '%s'           '%s'\n", ft_strnstr("", "", len_strnstr), strnstr("", "", len_strnstr));
+	printf("   '%s'           '%s'\n", ft_strnstr("", "aa", len_strnstr), strnstr("", "aa", len_strnstr));
 
 	return 0;
 }
