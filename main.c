@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 13:12:31 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 14:50:13 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,7 +250,7 @@ int main(void)
 	printf("     '%s'                     '%s'\n", ft_strrchr("aaaa", '\0'), strrchr("aaaa", '\0'));
 
 	printf("\n################################################# STRNCMP ###\n");
-	size_t n_strncmp = 1;
+	size_t n_strncmp = 200;
 
 	printf("\n### MINE ###### REAL #############\n");
 	printf("   '%d'           '%d'\n", ft_strncmp("hello", "hello", n_strncmp), strncmp("hello", "hello", n_strncmp));
@@ -262,9 +262,7 @@ int main(void)
 	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
 	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
 
-
 	printf("\n################################################## MEMCHR ###\n");
-
 	char *tab_memchr = "abcdefghijkl";
 	int tab2_memchr[] = {0, 1, 2, 3, 0};
 
@@ -280,6 +278,19 @@ int main(void)
 
 	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab2_memchr, 'a', -1), (char *)memchr((void *)tab2_memchr, 'a', -1));
 	// printf("'%d'             '%d' \n", (int)ft_memchr((void *)tab2_memchr, 3, 100), (int)memchr((void *)tab2_memchr, 3, 100));
+
+	printf("\n################################################# MEMCMP ###\n");
+	size_t n_memcmp = 200;
+
+	printf("\n### MINE ###### REAL #############\n");
+	printf("   '%d'           '%d'\n", ft_memcmp("hello", "hello", n_memcmp), memcmp("hello", "hello", n_memcmp));
+	printf("   '%d'           '%d'\n", ft_memcmp("hello", "hello\n", n_memcmp), memcmp("hello", "hello\n", n_memcmp));
+	printf("   '%d'           '%d'\n", ft_memcmp("hello", "helloa", n_memcmp), memcmp("hello", "helloa", n_memcmp));
+	printf("   '%d'           '%d'\n", ft_memcmp("aab", "aaa",     n_memcmp), memcmp("aab", "aaa",     n_memcmp));
+	printf("   '%d'           '%d'\n", ft_memcmp("aab", "",        n_memcmp), memcmp("aab", "",        n_memcmp));
+	printf("   '%d'           '%d'\n", ft_memcmp("", "bbb",        n_memcmp), memcmp("", "bbb",        n_memcmp));
+	printf("   '%d'           '%d'\n", ft_memcmp("", "",           n_memcmp), memcmp("", "",           n_memcmp));
+	printf("   '%d'           '%d'\n", ft_memcmp("", "",           n_memcmp), memcmp("", "",           n_memcmp));
 
 	return 0;
 }
