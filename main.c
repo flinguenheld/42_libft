@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 20:56:24 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 21:19:17 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -365,6 +365,17 @@ int main(void)
 
 	free(res_strdup);
 	free(res_strdup_real);
+
+	printf("\n################################################## SUBSTR ###\n");
+	char *to_copy_substr = "abcde";
+	unsigned int start_substr = 0;
+	size_t len_substr = 1;
+
+	char *sub_substr = ft_substr(to_copy_substr, start_substr, len_substr);
+
+	printf("-> '%s'", sub_substr);
+
+	free(sub_substr);
 
 	return 0;
 }

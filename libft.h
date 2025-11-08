@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 20:56:24 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 21:19:16 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,7 @@ char		*ft_strnstr(const char *big, const char *little, size_t len);
 
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strdup(const char *s);
+
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+
 #endif
