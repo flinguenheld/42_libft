@@ -6,13 +6,13 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:14:30 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 14:50:13 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 16:31:23 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	if (n <= 0)
 		return (0);
