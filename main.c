@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 11:28:05 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 13:12:31 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <bsd/string.h>
+#include <string.h>
 
 char *print_bool(int val)
 {
@@ -260,6 +261,25 @@ int main(void)
 	printf("   '%d'           '%d'\n", ft_strncmp("", "bbb",        n_strncmp), strncmp("", "bbb",        n_strncmp));
 	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
 	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
+
+
+	printf("\n################################################## MEMCHR ###\n");
+
+	char *tab_memchr = "abcdefghijkl";
+	int tab2_memchr[] = {0, 1, 2, 3, 0};
+
+	printf("\n####################### MEMCHR REAL ###\n");
+
+	printf("\n### MINE ###### REAL #############\n");
+	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr, 'e', 5), (char *)memchr((void *)tab_memchr, 'e', 5));
+	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr, 'k', 5), (char *)memchr((void *)tab_memchr, 'k', 5));
+	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr, 'k', 100), (char *)memchr((void *)tab_memchr, 'k', 100));
+	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr, '_', 100), (char *)memchr((void *)tab_memchr, '_', 100));
+	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr, 'a', 0), (char *)memchr((void *)tab_memchr, 'a', 0));
+	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)"", 'a', 0), (char *)memchr((void *)"", 'a', 0));
+
+	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab2_memchr, 'a', -1), (char *)memchr((void *)tab2_memchr, 'a', -1));
+	// printf("'%d'             '%d' \n", (int)ft_memchr((void *)tab2_memchr, 3, 100), (int)memchr((void *)tab2_memchr, 3, 100));
 
 	return 0;
 }
