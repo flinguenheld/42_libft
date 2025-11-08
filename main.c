@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 17:01:05 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 19:38:02 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,7 +305,6 @@ int main(void)
 	printf("   '%s'           '%s'\n", ft_strnstr("", "", len_strnstr), strnstr("", "", len_strnstr));
 	printf("   '%s'           '%s'\n", ft_strnstr("", "aa", len_strnstr), strnstr("", "aa", len_strnstr));
 
-
 	printf("\n################################################# MEMCMP ###\n");
 	printf("\n### MINE ###### REAL #############\n");
 	printf("   '%d'           '%d'\n", ft_atoi("hello"), atoi("hello"));
@@ -326,5 +325,33 @@ int main(void)
 	printf("   '%d'           '%d'\n", ft_atoi("-2147483648"), atoi("-2147483648"));
 	printf("   '%d'           '%d'\n", ft_atoi("-2147483649"), atoi("-2147483649"));
 
+	printf("\n################################################## CALLOC ###\n");
+	size_t len_calloc = 1;
+	size_t nb_elem_calloc = 3;
+
+	int *ptr_calloc = ft_calloc(nb_elem_calloc, len_calloc);
+	if (ptr_calloc)
+	{
+		printf("first: '%c'\n", *ptr_calloc);
+		for (size_t i = 0; i < 10; i++)
+			printf("'%c' ", (char)ptr_calloc[i]);
+	}
+	else
+		printf("ptr null");
+	// printf("\n");
+	free(ptr_calloc);
+
+	printf("\n###################### STRLCAT REAL ###\n");
+	int *ptr_calloc_real = calloc(nb_elem_calloc, len_calloc);
+	if (ptr_calloc_real)
+	{
+
+		printf("first: '%c'\n", *ptr_calloc_real);
+		for (size_t i = 0; i < 10; i++)
+			printf("'%c' ", (char)ptr_calloc_real[i]);
+	}
+	else
+		printf("ptr null");
+	free(ptr_calloc_real);
 	return 0;
 }
