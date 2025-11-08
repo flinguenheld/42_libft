@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 16:25:46 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:01:06 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size);
 
 int			ft_toupper(int c);
 int			ft_tolower(int c);
+int			ft_atoi(const char *nptr);
 
 size_t		ft_strlen(const char *s);
 char		*ft_strchr(const char *s, int c);

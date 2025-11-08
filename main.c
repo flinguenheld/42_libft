@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 16:31:23 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 17:01:05 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -304,6 +304,27 @@ int main(void)
 	printf("   '%s'           '%s'\n", ft_strnstr("hellohello", "", len_strnstr), strnstr("hellohello", "", len_strnstr));
 	printf("   '%s'           '%s'\n", ft_strnstr("", "", len_strnstr), strnstr("", "", len_strnstr));
 	printf("   '%s'           '%s'\n", ft_strnstr("", "aa", len_strnstr), strnstr("", "aa", len_strnstr));
+
+
+	printf("\n################################################# MEMCMP ###\n");
+	printf("\n### MINE ###### REAL #############\n");
+	printf("   '%d'           '%d'\n", ft_atoi("hello"), atoi("hello"));
+	printf("   '%d'           '%d'\n", ft_atoi("0"), atoi("0"));
+	printf("   '%d'           '%d'\n", ft_atoi("1"), atoi("1"));
+	printf("   '%d'           '%d'\n", ft_atoi("-1"), atoi("-1"));
+	printf("   '%d'           '%d'\n", ft_atoi("--1"), atoi("--1"));
+	printf("   '%d'           '%d'\n", ft_atoi("+1"), atoi("+1"));
+	printf("   '%d'           '%d'\n", ft_atoi("123"), atoi("123"));
+	printf("   '%d'           '%d'\n", ft_atoi("-123"), atoi("-123"));
+	printf("   '%d'           '%d'\n", ft_atoi("-123a33aaa"), atoi("-123a33aaa"));
+	printf("   '%d'           '%d'\n", ft_atoi("a-123"), atoi("a-123"));
+	printf("   '%d'           '%d'\n", ft_atoi("    -123"), atoi("    -123"));
+	printf("   '%d'           '%d'\n", ft_atoi("  \t\n  -123"), atoi("  \t\n  -123"));
+	printf("   '%d'           '%d'\n", ft_atoi("  \t\n  - 123"), atoi("  \t\n  - 123"));
+	printf("   '%d'           '%d'\n", ft_atoi("2147483647"), atoi("2147483647"));
+	printf("   '%d'           '%d'\n", ft_atoi("214748364800000"), atoi("214748364800000"));
+	printf("   '%d'           '%d'\n", ft_atoi("-2147483648"), atoi("-2147483648"));
+	printf("   '%d'           '%d'\n", ft_atoi("-2147483649"), atoi("-2147483649"));
 
 	return 0;
 }
