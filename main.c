@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 19:38:02 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 20:56:24 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -353,5 +353,18 @@ int main(void)
 	else
 		printf("ptr null");
 	free(ptr_calloc_real);
+
+	printf("\n################################################## STRDUP ###\n");
+	char *to_copy_strdup = "abcde fgh";
+	// char *to_copy_strdup = "";
+	char *res_strdup = ft_strdup(to_copy_strdup);
+	char *res_strdup_real = strdup(to_copy_strdup);;
+
+	printf("\n### MINE ###### REAL #############\n");
+	printf("   '%s'           '%s'\n", res_strdup, res_strdup_real);
+
+	free(res_strdup);
+	free(res_strdup_real);
+
 	return 0;
 }
