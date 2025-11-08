@@ -6,9 +6,11 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 20:41:00 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/07 20:48:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 22:56:07 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

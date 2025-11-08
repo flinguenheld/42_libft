@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 21:40:38 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/08 22:56:07 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -313,6 +313,7 @@ int main(void)
 	printf("   '%d'           '%d'\n", ft_atoi("-1"), atoi("-1"));
 	printf("   '%d'           '%d'\n", ft_atoi("--1"), atoi("--1"));
 	printf("   '%d'           '%d'\n", ft_atoi("+1"), atoi("+1"));
+	printf("   '%d'           '%d'\n", ft_atoi("+-1"), atoi("+-1"));
 	printf("   '%d'           '%d'\n", ft_atoi("123"), atoi("123"));
 	printf("   '%d'           '%d'\n", ft_atoi("-123"), atoi("-123"));
 	printf("   '%d'           '%d'\n", ft_atoi("-123a33aaa"), atoi("-123a33aaa"));
