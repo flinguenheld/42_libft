@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 11:58:13 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/09 17:37:31 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/09 19:52:30 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,10 @@ DESCRIPTION
 Allocates memory (using malloc(3)) and returns an array of strings obtained by
 splitting ’s’ using the character ’c’ as a delimiter.
 The array must end with a NULL pointer.
+
+RETURN VALUE
+The array of new strings resulting from the split.
+NULL if the allocation fails.
 */
 char	**ft_split(char const *s, char c)
 {
