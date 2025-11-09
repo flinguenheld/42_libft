@@ -6,11 +6,12 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 11:03:51 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 22:57:38 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:50:17 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /*
 DESCRIPTION
@@ -40,5 +41,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		n--;
 	}
-	return (*s1 - *s2);
+	return ((unsigned char)(*s1) - (unsigned char)(*s2));
 }

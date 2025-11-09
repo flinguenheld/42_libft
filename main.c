@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/09 21:24:45 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:50:17 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -263,6 +263,7 @@ int main(void)
 	printf("   '%d'           '%d'\n", ft_strncmp("", "bbb",        n_strncmp), strncmp("", "bbb",        n_strncmp));
 	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
 	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("\200", "\0",      n_strncmp), strncmp("\200", "\0",           n_strncmp));
 
 	printf("\n################################################## MEMCHR ###\n");
 	char *tab_memchr = "abcdefghijkl";
@@ -413,6 +414,7 @@ int main(void)
 
 	free(start_split);
 
+	printf("end\n");
 
 	return 0;
 }
