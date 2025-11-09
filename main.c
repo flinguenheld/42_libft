@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 22:56:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/09 11:57:28 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -384,6 +384,16 @@ int main(void)
 	printf("-> '%s'", dst_strjoin);
 	free(dst_strjoin);
 
+	printf("\n################################################# STRTRIM ###\n");
+	// char *src_strtrim = "";
+	// char *src_strtrim = "abchelloabc";
+	char *src_strtrim = "abcabcccc-caaabbbb";
+	// char *src_strtrim = "abc-hel-abc-lo-abc";
+	char *set_strtrim = "abc";
+	char *dst_strtrim = ft_strtrim(src_strtrim, set_strtrim);
+
+	printf("'%s'  ->  '%s'", src_strtrim, dst_strtrim);
+	free(dst_strtrim);
 
 	return 0;
 }
