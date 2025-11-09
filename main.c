@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/09 21:50:17 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/09 22:06:10 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,8 +201,9 @@ int main(void)
 
 	printf("\n################################################# STRLCAT ###\n");
 	#define BUFFER_SIZE_STRLCAT 100
-	#define TO_COPY_STRLCAT 10
+	#define TO_COPY_STRLCAT 4
 	char *src_strlcat = "abcdefgh";
+	// Test with NULL !
 
 	char dst_strlcat[BUFFER_SIZE_STRLCAT] = "start";
 	char dst_strlcat_real[BUFFER_SIZE_STRLCAT] = "start";
@@ -255,15 +256,15 @@ int main(void)
 	size_t n_strncmp = 200;
 
 	printf("\n### MINE ###### REAL #############\n");
-	printf("   '%d'           '%d'\n", ft_strncmp("hello", "hello", n_strncmp), strncmp("hello", "hello", n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("hello", "hello",   n_strncmp), strncmp("hello", "hello",   n_strncmp));
 	printf("   '%d'           '%d'\n", ft_strncmp("hello", "hello\n", n_strncmp), strncmp("hello", "hello\n", n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("hello", "helloa", n_strncmp), strncmp("hello", "helloa", n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("aab", "aaa",     n_strncmp), strncmp("aab", "aaa",     n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("aab", "",        n_strncmp), strncmp("aab", "",        n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("", "bbb",        n_strncmp), strncmp("", "bbb",        n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("", "",           n_strncmp), strncmp("", "",           n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("\200", "\0",      n_strncmp), strncmp("\200", "\0",           n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("hello", "helloa",  n_strncmp), strncmp("hello", "helloa",  n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("aab", "aaa",       n_strncmp), strncmp("aab", "aaa",       n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("aab", "",          n_strncmp), strncmp("aab", "",          n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("", "bbb",          n_strncmp), strncmp("", "bbb",          n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("", "",             n_strncmp), strncmp("", "",             n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("", "",             n_strncmp), strncmp("", "",             n_strncmp));
+	printf("   '%d'           '%d'\n", ft_strncmp("\200", "\0",       n_strncmp), strncmp("\200", "\0",       n_strncmp));
 
 	printf("\n################################################## MEMCHR ###\n");
 	char *tab_memchr = "abcdefghijkl";
@@ -345,7 +346,7 @@ int main(void)
 	// printf("\n");
 	free(ptr_calloc);
 
-	printf("\n###################### STRLCAT REAL ###\n");
+	printf("\n####################### CALLOC REAL ###\n");
 	int *ptr_calloc_real = calloc(nb_elem_calloc, len_calloc);
 	if (ptr_calloc_real)
 	{
