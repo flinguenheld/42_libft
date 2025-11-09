@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/09 11:57:28 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:37:31 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -394,6 +394,23 @@ int main(void)
 
 	printf("'%s'  ->  '%s'", src_strtrim, dst_strtrim);
 	free(dst_strtrim);
+
+	printf("\n################################################### SPLIT ###\n");
+	char *src_split = "Hello to you";
+	char c_split = ' ';
+	// char c_split = '\0';
+	char **dst_split = ft_split(src_split, c_split);
+
+	char **start_split = dst_split;
+	while (*dst_split != NULL)
+	{
+		printf("'%s'\n", *dst_split);
+		free(*dst_split);
+		dst_split++;
+	}
+
+	free(start_split);
+
 
 	return 0;
 }
