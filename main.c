@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/09 21:11:27 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/09 21:24:45 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,7 +240,8 @@ int main(void)
 	printf("     '%s'                     '%s'\n", ft_strchr("aaaa", '\0'), strchr("aaaa", '\0'));
 
 	printf("\n################################################# STRRCHR ###\n");
-	char *str_strrchr = "wind hello world";
+	// char *str_strrchr = "wind hello world";
+	char *str_strrchr = "0123456789";
 
 	printf("\n##### MINE #################### REAL #############\n");
 	printf("     '%s'                     '%s'\n", ft_strrchr(str_strrchr, 'w'), strrchr(str_strrchr, 'w'));
@@ -248,6 +249,7 @@ int main(void)
 	printf("     '%s'                     '%s'\n", ft_strrchr(str_strrchr, 'U'), strrchr(str_strrchr, 'U'));
 	printf("     '%s'                     '%s'\n", ft_strrchr("", '\0'), strrchr("", '\0'));
 	printf("     '%s'                     '%s'\n", ft_strrchr("aaaa", '\0'), strrchr("aaaa", '\0'));
+	printf("     '%s'                     '%s'\n", ft_strrchr("a", '\0'), strrchr("a", '\0'));
 
 	printf("\n################################################# STRNCMP ###\n");
 	size_t n_strncmp = 200;
