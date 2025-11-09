@@ -1,5 +1,5 @@
-CC = cc
-CCFLAGS = -Wall -Wextra -Werror
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 INC_DIR = .
 ARNAME = ar rcs $(NAME)
@@ -40,6 +40,10 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(ARNAME) $(OBJS)
 	$(RANNAME)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f $(OBJS)
