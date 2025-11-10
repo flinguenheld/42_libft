@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 21:20:48 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/09 21:24:45 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:29:22 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strrchr(const char *s, int c)
 	index = (int)ft_strlen(s);
 	while (index > -1)
 	{
-		if (s[index] == c)
+		if (s[index] == (c % 256))
 			return ((char *)(s + index));
 		index--;
 	}

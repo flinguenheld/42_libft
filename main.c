@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 14:06:45 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:29:21 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,6 +239,7 @@ int main(void)
 	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, 'U'),  strchr(str_strchr, 'U'));
 	printf("     '%s'                     '%s'\n", ft_strchr("",         '\0'), strchr(""        , '\0'));
 	printf("     '%s'                     '%s'\n", ft_strchr("aaaa",     '\0'), strchr("aaaa"    , '\0'));
+	printf("     '%s'                     '%s'\n", ft_strchr("tripouille"    , 't' + 256), strchr("tripouille"    , 't' + 256));
 
 	printf("\n################################################# STRRCHR ###\n");
 	// char *str_strrchr = "wind hello world";

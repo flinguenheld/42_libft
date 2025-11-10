@@ -41,9 +41,9 @@ $(NAME): $(OBJS)
 	$(ARNAME) $(OBJS)
 	$(RANNAME)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+# so:
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+# 	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f $(OBJS)
