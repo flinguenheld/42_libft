@@ -6,12 +6,13 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 17:45:25 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:54:41 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <bsd/string.h>
 #include <string.h>
@@ -204,17 +205,9 @@ int main(void)
 	#define TO_COPY_STRLCAT 0
 	// char *src_strlcat = "abcdefgh";
 	char *src_strlcat = "AAAAAAAAA";
-	// Test with NULL !
 
-	// 	char dest[30]; memset(dest, 0, 30);
-	// char * src = (char *)"AAAAAAAAA";
-
-	char dst_strlcat[BUFFER_SIZE_STRLCAT];
-	memset(dst_strlcat, 0, BUFFER_SIZE_STRLCAT);
-	char dst_strlcat_real[BUFFER_SIZE_STRLCAT];
-	memset(dst_strlcat_real, 0, BUFFER_SIZE_STRLCAT);
-	// char dst_strlcat[BUFFER_SIZE_STRLCAT] = "start";
-	// char dst_strlcat_real[BUFFER_SIZE_STRLCAT] = "start";
+	char dst_strlcat[BUFFER_SIZE_STRLCAT] = "start";
+	char dst_strlcat_real[BUFFER_SIZE_STRLCAT] = "start";
 
 	size_t amount_strlcat = ft_strlcat(dst_strlcat, src_strlcat, TO_COPY_STRLCAT);
 	printf("-> %zu -> '%s'", amount_strlcat, dst_strlcat);
@@ -223,8 +216,6 @@ int main(void)
 
 	size_t amount_strlcat_real = strlcat(dst_strlcat_real, src_strlcat, TO_COPY_STRLCAT);
 	printf("-> %zu -> '%s'", amount_strlcat_real, dst_strlcat_real);
-
-// /* 1 */ check(ft_strlcat(dest, src, 0) == strlen(src) && !strcmp(dest, "B")); showLeaks();
 
 	printf("\n##### MINE #################### REAL #############\n");
 
@@ -273,7 +264,10 @@ int main(void)
 	char strlcat_005_real[50] = "start";
 	size_t strlcat_005_real_value = strlcat(strlcat_005_real, "bbb", 0);
 	printf("005 -> %zu '%s'          %zu '%s'\n", strlcat_005_value, strlcat_005, strlcat_005_real_value, strlcat_005_real);
-	return 0;
+
+	// Has to fail with two NULL
+	// size_t strlcat_006_value = ft_strlcat(NULL, NULL, 3);
+	// size_t strlcat_006_real_value = strlcat(NULL, NULL, 3);
 
 	printf("\n################################################# TOUPPER ###\n");
 	printf("a -> %c\n", ft_toupper('a'));
@@ -397,6 +391,10 @@ int main(void)
 	size_t len_calloc = 1;
 	size_t nb_elem_calloc = 3;
 
+	// Size max has to return a ptn NULL --
+	// size_t len_calloc = SIZE_MAX;
+	// size_t nb_elem_calloc = SIZE_MAX;
+
 	int *ptr_calloc = ft_calloc(nb_elem_calloc, len_calloc);
 	if (ptr_calloc)
 	{
@@ -447,8 +445,6 @@ int main(void)
 	printf("-> '%s'", sub_substr);
 	free(sub_substr);
 
-	return 0;
-
 	printf("\n################################################# STRJOIN ###\n");
 	char *src1_strjoin = "hello ";
 	char *src2_strjoin = "world";
@@ -469,7 +465,12 @@ int main(void)
 	free(dst_strtrim);
 
 	printf("\n################################################### SPLIT ###\n");
-	char *src_split = "Hello to you";
+	// char * * tab = ft_split("  tripouille  42  ", ' ');
+	// /* 1 */ mcheck(tab, sizeof(char *) * 3);
+
+
+	// char *src_split = "Hello   to you";
+	char *src_split = "  tripouille 42 ";
 	char c_split = ' ';
 	// char c_split = '\0';
 	char **dst_split = ft_split(src_split, c_split);
@@ -483,8 +484,6 @@ int main(void)
 	}
 
 	free(start_split);
-
-	printf("end\n");
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 11:58:13 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 15:07:02 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:54:41 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,22 @@ static int	run(const char *s, char c, char **to_fill)
 	int		counter;
 	char	*to;
 
-	if (*s == '\0')
-		return (0);
-	else
+	counter = 0;
+	if (*s != '\0')
 	{
-		counter = 1;
 		to = ft_strchr(s, c);
 		if (to == NULL || c == '\0')
+		{
+			counter++;
 			to_fill = fill(to_fill, s, ft_strlen(s));
+		}
 		else
 		{
-			to_fill = fill(to_fill, s, to - s);
+			if ((to - s) > 0)
+			{
+				counter++;
+				to_fill = fill(to_fill, s, to - s);
+			}
 			counter += (run(to + 1, c, to_fill));
 		}
 	}

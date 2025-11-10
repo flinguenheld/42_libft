@@ -6,11 +6,12 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:58:24 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 22:56:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 19:54:40 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
 
 /*
 DESCRIPTION
@@ -31,6 +32,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 	size_t	full_size;
 
+	if (nmemb == SIZE_MAX || size == SIZE_MAX)
+		return (NULL);
 	ptr = NULL;
 	full_size = nmemb * size;
 	if (full_size == 0)
