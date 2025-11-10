@@ -6,11 +6,12 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 21:03:02 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 22:56:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:06:45 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /*
 DESCRIPTION
@@ -20,16 +21,18 @@ The substring starts at index ’start’ and has a maximum length of ’len’.
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
+	size_t	s_len;
 
-	sub = NULL;
-	if (start < ft_strlen(s))
+	s_len = ft_strlen(s);
+	if (s_len == 0 || start >= s_len)
+		len = 0;
+	else if (len > s_len - start)
+		len = s_len - start;
+	sub = malloc(len + 1);
+	if (sub != NULL)
 	{
-		sub = malloc(len + 1);
-		if (sub != NULL)
-		{
-			ft_memcpy(sub, s + start, len);
-			*(sub + len) = '\0';
-		}
+		ft_memcpy(sub, s + start, len);
+		*(sub + len) = '\0';
 	}
 	return (sub);
 }

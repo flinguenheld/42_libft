@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 11:22:00 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:06:45 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -312,8 +312,6 @@ int main(void)
 	printf("   '%s'           '%s'\n", ft_strnstr("",                   "aa",        len_strnstr), strnstr("",                   "aa",        len_strnstr));
 	printf("   '%s'           '%s'\n", ft_strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", len_strnstr), strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", len_strnstr));
 
-	return 0;
-
 	printf("\n################################################# MEMCMP ###\n");
 	printf("\n### MINE ###### REAL #############\n");
 	printf("   '%d'           '%d'\n", ft_atoi("hello"),           atoi("hello"));
@@ -379,11 +377,17 @@ int main(void)
 	printf("\n################################################## SUBSTR ###\n");
 	char *to_copy_substr = "abcde";
 	unsigned int start_substr = 0;
-	size_t len_substr = 1;
+	size_t len_substr = 5;
+
+	// char *to_copy_substr = "01234";
+	// unsigned int start_substr = 10;
+	// size_t len_substr = 10;
 
 	char *sub_substr = ft_substr(to_copy_substr, start_substr, len_substr);
 	printf("-> '%s'", sub_substr);
 	free(sub_substr);
+
+	return 0;
 
 	printf("\n################################################# STRJOIN ###\n");
 	char *src1_strjoin = "hello ";
