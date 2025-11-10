@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 11:58:13 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 14:08:47 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:07:02 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ char	**ft_split(char const *s, char c)
 	int		count;
 	char	**tab;
 
+	if (s == NULL)
+		return (NULL);
 	count = run(s, c, NULL);
 	tab = ft_calloc(count + 1, sizeof(char *));
 	if (tab != NULL)

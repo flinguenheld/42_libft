@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 21:03:02 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 14:06:45 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:07:01 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	s_len;
 
+	if (s == NULL)
+		return (NULL);
 	s_len = ft_strlen(s);
 	if (s_len == 0 || start >= s_len)
 		len = 0;
