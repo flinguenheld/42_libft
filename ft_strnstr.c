@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:56:18 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 11:22:17 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:08:47 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	little_len;
 
 	little_len = ft_strlen(little);
- 	if (little_len == 0)
+	if (little_len == 0)
 		return ((char *)big);
 	if (len > 0)
 	{

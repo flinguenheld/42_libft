@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 11:58:13 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/09 21:24:45 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:08:47 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Return the next position of to_fill,
 */
 static char	**fill(char **to_fill, const char *s, size_t length)
 {
-	// printf("here we fill with: '%s' and length '%zu' \n", s, length);
 	if (to_fill != NULL && length)
 	{
 		*to_fill = ft_substr(s, 0, length);
@@ -40,7 +39,6 @@ static int	run(const char *s, char c, char **to_fill)
 	int		counter;
 	char	*to;
 
-	// printf("here we deal with: %s\n", s);
 	if (*s == '\0')
 		return (0);
 	else
@@ -74,7 +72,6 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 
 	count = run(s, c, NULL);
-	// printf("counter: %d\n", count);
 	tab = ft_calloc(count + 1, sizeof(char *));
 	if (tab != NULL)
 		run(s, c, tab);
