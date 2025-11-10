@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 15:29:21 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 17:45:25 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,12 +201,20 @@ int main(void)
 
 	printf("\n################################################# STRLCAT ###\n");
 	#define BUFFER_SIZE_STRLCAT 100
-	#define TO_COPY_STRLCAT 4
-	char *src_strlcat = "abcdefgh";
+	#define TO_COPY_STRLCAT 0
+	// char *src_strlcat = "abcdefgh";
+	char *src_strlcat = "AAAAAAAAA";
 	// Test with NULL !
 
-	char dst_strlcat[BUFFER_SIZE_STRLCAT] = "start";
-	char dst_strlcat_real[BUFFER_SIZE_STRLCAT] = "start";
+	// 	char dest[30]; memset(dest, 0, 30);
+	// char * src = (char *)"AAAAAAAAA";
+
+	char dst_strlcat[BUFFER_SIZE_STRLCAT];
+	memset(dst_strlcat, 0, BUFFER_SIZE_STRLCAT);
+	char dst_strlcat_real[BUFFER_SIZE_STRLCAT];
+	memset(dst_strlcat_real, 0, BUFFER_SIZE_STRLCAT);
+	// char dst_strlcat[BUFFER_SIZE_STRLCAT] = "start";
+	// char dst_strlcat_real[BUFFER_SIZE_STRLCAT] = "start";
 
 	size_t amount_strlcat = ft_strlcat(dst_strlcat, src_strlcat, TO_COPY_STRLCAT);
 	printf("-> %zu -> '%s'", amount_strlcat, dst_strlcat);
@@ -215,6 +223,57 @@ int main(void)
 
 	size_t amount_strlcat_real = strlcat(dst_strlcat_real, src_strlcat, TO_COPY_STRLCAT);
 	printf("-> %zu -> '%s'", amount_strlcat_real, dst_strlcat_real);
+
+// /* 1 */ check(ft_strlcat(dest, src, 0) == strlen(src) && !strcmp(dest, "B")); showLeaks();
+
+	printf("\n##### MINE #################### REAL #############\n");
+
+	char * strlcat_000 = NULL;
+	size_t strlcat_000_value = ft_strlcat(strlcat_000, "aaaaa", 0);
+	char * strlcat_000_real = NULL;
+	size_t strlcat_000_real_value = strlcat(strlcat_000_real, "aaaaa", 0);
+	printf("000 -> %zu '%s'          %zu '%s'\n", strlcat_000_value, strlcat_000, strlcat_000_real_value, strlcat_000_real);
+
+	char strlcat_break0_001[100];
+	char strlcat_001[10] = "start";
+	size_t strlcat_001_value = ft_strlcat(strlcat_001, "bbb", 10);
+	char strlcat_break1_001[100];
+	char strlcat_001_real[10] = "start";
+	size_t strlcat_001_real_value = strlcat(strlcat_001_real, "bbb", 10);
+	printf("001 -> %zu '%s'          %zu '%s'\n", strlcat_001_value, strlcat_001, strlcat_001_real_value, strlcat_001_real);
+
+	char strlcat_break0_002[100];
+	char strlcat_002[10] = "start";
+	size_t strlcat_002_value = ft_strlcat(strlcat_002, "", 10);
+	char strlcat_break1_002[100];
+	char strlcat_002_real[10] = "start";
+	size_t strlcat_002_real_value = strlcat(strlcat_002_real, "", 10);
+	printf("002 -> %zu '%s'          %zu '%s'\n", strlcat_002_value, strlcat_002, strlcat_002_real_value, strlcat_002_real);
+
+	char strlcat_break0_003[100];
+	char strlcat_003[10] = "";
+	size_t strlcat_003_value = ft_strlcat(strlcat_003, "bbb", 10);
+	char strlcat_break1_003[100];
+	char strlcat_003_real[10] = "";
+	size_t strlcat_003_real_value = strlcat(strlcat_003_real, "bbb", 10);
+	printf("003 -> %zu '%s'          %zu '%s'\n", strlcat_003_value, strlcat_003, strlcat_003_real_value, strlcat_003_real);
+
+	char strlcat_break0_004[100];
+	char strlcat_004[0];
+	size_t strlcat_004_value = ft_strlcat(strlcat_004, "bbb", 10);
+	char strlcat_break1_004[100];
+	char strlcat_004_real[0];
+	size_t strlcat_004_real_value = strlcat(strlcat_004_real, "bbb", 10);
+	printf("004 -> %zu '%s'          %zu '%s'\n", strlcat_004_value, strlcat_004, strlcat_004_real_value, strlcat_004_real);
+
+	char strlcat_break0_005[100];
+	char strlcat_005[50] = "start";
+	size_t strlcat_005_value = ft_strlcat(strlcat_005, "bbb", 0);
+	char strlcat_break1_005[100];
+	char strlcat_005_real[50] = "start";
+	size_t strlcat_005_real_value = strlcat(strlcat_005_real, "bbb", 0);
+	printf("005 -> %zu '%s'          %zu '%s'\n", strlcat_005_value, strlcat_005, strlcat_005_real_value, strlcat_005_real);
+	return 0;
 
 	printf("\n################################################# TOUPPER ###\n");
 	printf("a -> %c\n", ft_toupper('a'));
