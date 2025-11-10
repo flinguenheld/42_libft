@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:56:18 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 22:56:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 11:22:17 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,20 @@ occurrence of little is returned.
 */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (*little == '\0')
+	size_t	little_len;
+
+	little_len = ft_strlen(little);
+ 	if (little_len == 0)
 		return ((char *)big);
-	while (*big && len > 1)
+	if (len > 0)
 	{
-		if (ft_strncmp(big, little, ft_strlen(little)) == 0)
-			return ((char *)big);
-		big++;
-		len--;
+		while (*big && len >= little_len)
+		{
+			if (ft_strncmp(big, little, little_len) == 0)
+				return ((char *)big);
+			big++;
+			len--;
+		}
 	}
 	return (NULL);
 }
