@@ -32,6 +32,7 @@ SRC = ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
+		ft_itoa.c \
 
 OBJS := $(SRC:%.c=%.o)
 
@@ -41,9 +42,9 @@ $(NAME): $(OBJS)
 	$(ARNAME) $(OBJS)
 	$(RANNAME)
 
-# so:
-# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-# 	gcc -nostartfiles -shared -o libft.so $(OBJS)
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f $(OBJS)

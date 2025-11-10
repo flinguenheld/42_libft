@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 19:54:41 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 22:53:25 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -468,7 +468,6 @@ int main(void)
 	// char * * tab = ft_split("  tripouille  42  ", ' ');
 	// /* 1 */ mcheck(tab, sizeof(char *) * 3);
 
-
 	// char *src_split = "Hello   to you";
 	char *src_split = "  tripouille 42 ";
 	char c_split = ' ';
@@ -484,6 +483,18 @@ int main(void)
 	}
 
 	free(start_split);
+
+	printf("\n#################################################### ITOA ###\n");
+	printf("123 -> '%s'\n", ft_itoa(123));
+	printf("0 -> '%s'\n", ft_itoa(0));
+	printf("-1 -> '%s'\n", ft_itoa(-1));
+	printf("-623 -> '%s'\n", ft_itoa(-623));
+	printf("-5859 -> '%s'\n", ft_itoa(-5859));
+	printf("-565465 -> '%s'\n", ft_itoa(-565465));
+	printf("%d -> '%s'\n", INT32_MAX, ft_itoa(INT32_MAX));
+	printf("%d -> '%s'\n", INT32_MIN, ft_itoa(INT32_MIN));
+
+
 
 	return 0;
 }
