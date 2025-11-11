@@ -35,6 +35,8 @@ SRC = ft_atoi.c \
 		ft_itoa.c \
 		ft_strmapi.c \
 		ft_striteri.c \
+		ft_putchar_fd.c \
+
 
 OBJS := $(SRC:%.c=%.o)
 
@@ -44,9 +46,9 @@ $(NAME): $(OBJS)
 	$(ARNAME) $(OBJS)
 	$(RANNAME)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+# so:
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+# 	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f $(OBJS)

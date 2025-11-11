@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 19:07:25 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:10:11 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -563,6 +563,11 @@ int main(void)
 	char src_iteri005[] = "aaaa";
 	ft_striteri(NULL, &function_striteri);
 	printf("-> '%s'\n", src_iteri005);
+
+	printf("\n########################################### FD_PUTCHAR_FD ###\n");
+
+	for(int i=0; i<10; i++)
+		ft_putchar_fd('a' + i, 1);
 
 	return 0;
 }
