@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 20:31:32 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 20:37:23 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:47:42 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Outputs the string ’s’ to the specified file descriptor.
 */
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	if (s != NULL)
+		while (*s)
+			ft_putchar_fd(*s++, fd);
 }

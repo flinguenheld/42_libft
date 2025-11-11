@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 21:01:52 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:47:41 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -514,7 +514,7 @@ int main(void)
 		else
 			printf("%d -> NOK <--------------------------------------------\n", i);
 	}
-	
+
 	printf("min: %d -> %d\n", INT32_MIN, ft_atoi(ft_itoa(INT32_MIN)));
 	printf("max: %d -> %d\n", INT32_MAX, ft_atoi(ft_itoa(INT32_MAX)));
 
@@ -581,6 +581,11 @@ int main(void)
 	ft_putnbr_fd(-1, 1);
 	ft_putchar_fd('\n', 1);
 	ft_putnbr_fd(-123, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(INT32_MAX, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(INT32_MIN, 1);
+	ft_putchar_fd('\n', 1);
 
 	return 0;
 }

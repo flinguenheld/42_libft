@@ -6,11 +6,18 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 20:48:42 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 21:01:52 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:47:41 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	run(unsigned int n, int fd)
+{
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd('0' + n % 10,  fd);
+}
 
 /*
 DESCRIPTION
@@ -18,12 +25,11 @@ Outputs the integer ’n’ to the specified file descriptor.
 */
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*array;
-
-	array = ft_itoa(n);
-	if (array != NULL)
+	if (n < 0)
 	{
-		ft_putstr_fd(array, fd);
-		free(array);
+		ft_putchar_fd('-',  fd);
+		run((unsigned int)-n, fd);
 	}
+	else
+		run((unsigned int)n, fd);
 }
