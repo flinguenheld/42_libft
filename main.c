@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 22:56:59 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 23:53:51 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -286,6 +286,15 @@ int main(void)
 	char strlcat_005_real[50] = "start";
 	size_t strlcat_005_real_value = strlcat(strlcat_005_real, "bbb", 0);
 	printf("005 -> %zu '%s'          %zu '%s'\n", strlcat_005_value, strlcat_005, strlcat_005_real_value, strlcat_005_real);
+
+	char strlcat_break0_006[100];
+	char strlcat_006[50] = "rrrrrrrrrrrrrrr";
+	size_t strlcat_006_value = ft_strlcat(strlcat_006, "lorem ipsum dolor sit amet", 5);
+	char strlcat_break1_006[100];
+	char strlcat_006_real[50] = "rrrrrrrrrrrrrrr";
+	size_t strlcat_006_real_value = strlcat(strlcat_006_real, "lorem ipsum dolor sit amet", 5);
+	printf("006 -> %zu '%s'          %zu '%s'\n", strlcat_006_value, strlcat_006, strlcat_006_real_value, strlcat_006_real);
+
 
 	// Has to fail with two NULL
 	// size_t strlcat_006_value = ft_strlcat(NULL, NULL, 3);
