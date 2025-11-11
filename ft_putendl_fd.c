@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 20:31:32 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 20:37:23 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/11 20:37:25 by flinguen          #+#    #+#             */
+/*   Updated: 2025/11/11 20:47:11 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 /*
 DESCRIPTION
-Outputs the string ’s’ to the specified file descriptor.
+Outputs the string ’s’ to the specified file descriptor followed by a newline.
 */
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
