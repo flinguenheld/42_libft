@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 22:53:25 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 13:34:35 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int main(void)
 	printf("'' -> %zu\n", ft_strlen(""));
 	printf("'a' -> %zu\n", ft_strlen("a"));
 	printf("'abcdefghijklmnopqrstuvwxyz' -> %zu\n", ft_strlen("abcdefghijklmnopqrstuvwxyz"));
+
+	return 0;
 
 	printf("\n################################################## MEMSET ###\n");
 	// The real funct doesn't check nb_to_set

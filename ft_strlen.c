@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 21:00:42 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/05 22:20:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 13:34:35 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (*s == '\0')
+		return (0);
+	return (ft_strlen(s + 1) + 1);
 }
