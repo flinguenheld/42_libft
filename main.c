@@ -6,11 +6,12 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 13:34:35 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/10 22:53:25 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -44,8 +45,6 @@ int main(void)
 	printf("'' -> %zu\n", ft_strlen(""));
 	printf("'a' -> %zu\n", ft_strlen("a"));
 	printf("'abcdefghijklmnopqrstuvwxyz' -> %zu\n", ft_strlen("abcdefghijklmnopqrstuvwxyz"));
-
-	return 0;
 
 	printf("\n################################################## MEMSET ###\n");
 	// The real funct doesn't check nb_to_set
@@ -483,20 +482,29 @@ int main(void)
 		free(*dst_split);
 		dst_split++;
 	}
-
 	free(start_split);
 
 	printf("\n#################################################### ITOA ###\n");
-	printf("123 -> '%s'\n", ft_itoa(123));
-	printf("0 -> '%s'\n", ft_itoa(0));
-	printf("-1 -> '%s'\n", ft_itoa(-1));
-	printf("-623 -> '%s'\n", ft_itoa(-623));
-	printf("-5859 -> '%s'\n", ft_itoa(-5859));
-	printf("-565465 -> '%s'\n", ft_itoa(-565465));
-	printf("%d -> '%s'\n", INT32_MAX, ft_itoa(INT32_MAX));
-	printf("%d -> '%s'\n", INT32_MIN, ft_itoa(INT32_MIN));
 
+	for (int i = -20000; i < 20000; i += 333)
+	{
+		if (ft_atoi(ft_itoa(i)) == i)
+			printf("%d -> OK\n", i);
+		else
+			printf("%d -> NOK <--------------------------------------------\n", i);
+	}
+	
+	printf("min: %d -> %d\n", INT32_MIN, ft_atoi(ft_itoa(INT32_MIN)));
+	printf("max: %d -> %d\n", INT32_MAX, ft_atoi(ft_itoa(INT32_MAX)));
 
+	printf("\n#################################################### ###\n");
+	int a = -5;
+	unsigned int b = (unsigned int)a;
+	b++;
+	b++;
 
+	printf("a: %d -> %u\n", a, b);
+
+	
 	return 0;
 }

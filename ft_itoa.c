@@ -11,25 +11,21 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 #include <stdio.h>
 
-static int	get_size(int value)
+static size_t	get_size(int value)
 {
 	if (value == 0)
 		return (1);
-	else
-		return (get_size(value / 10) + 1);
+	return (get_size(value / 10) + 1);
 }
 
-static void run(char *ptr, unsigned int value)
+static void	run(char *ptr, unsigned int value)
 {
-	if (value < 10)
-		*ptr = value + '0';
-	else
-	{
+	if (value > 9)
 		run(ptr - 1, value / 10);
-		*ptr = (value % 10) + '0';
-	}
+	*ptr = (value % 10) + '0';
 }
 
 /*
@@ -39,23 +35,21 @@ integer received as an argument. Negative numbers must be handled.
 */
 char	*ft_itoa(int n)
 {
-	int		length;
+	size_t	length;
 	char	*start;
 
 	length = get_size(n / 10);
 	if (n < 0)
 		length++;
-	// printf("value to calloc: %zu\n", length)
-	start = ft_calloc((size_t)(length + 1), sizeof(char *));
+	start = ft_calloc(length + 1, sizeof(char));
 	if (start != NULL)
 	{
 		if (n < 0)
 		{
-			run(start + length - 1, (unsigned int) -n);
+			n = -n;
 			*start = '-';
 		}
-		else
-			run(start + length - 1, (unsigned int) n);
+		run(start + length - 1, (unsigned int) n);
 	}
 	return (start);
 }
