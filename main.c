@@ -26,6 +26,17 @@ char *print_bool(int val)
 		return "false";
 }
 
+
+static char function_strmapi(unsigned int v, char c)
+{
+	if (c >= 'a' && c <= 'z')
+		return ('A' + v);
+	else if (c >= 'A' && c <= 'Z')
+		return ('a' + v);
+	else
+		return ('a' + v);
+}
+
 int main(void)
 {
 	printf("\n################################################## IS_    ###\n");
@@ -497,13 +508,31 @@ int main(void)
 	printf("min: %d -> %d\n", INT32_MIN, ft_atoi(ft_itoa(INT32_MIN)));
 	printf("max: %d -> %d\n", INT32_MAX, ft_atoi(ft_itoa(INT32_MAX)));
 
-	printf("\n#################################################### ###\n");
-	int a = -5;
-	unsigned int b = (unsigned int)a;
-	b++;
-	b++;
+	printf("\n################################################# STRMAPI ###\n");
 
-	printf("a: %d -> %u\n", a, b);
+	char *mapped_001 = ft_strmapi("abcdefghijklmnopqrstuvwxyz", &function_strmapi);
+	printf("-> '%s'\n", mapped_001);
+	free(mapped_001);
+
+	char *mapped_002 = ft_strmapi("aBcDeFgHiJkLmNoPqRsTuVwXyZ", &function_strmapi);
+	printf("-> '%s'\n", mapped_002);
+	free(mapped_002);
+
+	char *mapped_003 = ft_strmapi("ABCDEFGHIJKLMNOPQRSTUVWXYZ", &function_strmapi);
+	printf("-> '%s'\n", mapped_003);
+	free(mapped_003);
+
+	char *mapped_004 = ft_strmapi("", &function_strmapi);
+	printf("-> '%s'\n", mapped_004);
+	free(mapped_004);
+
+	char *mapped_005 = ft_strmapi(NULL, &function_strmapi);
+	printf("-> '%s'\n", mapped_005);
+	free(mapped_005);
+
+	char *mapped_006 = ft_strmapi("0123", &function_strmapi);
+	printf("-> '%s'\n", mapped_006);
+	free(mapped_006);
 
 	
 	return 0;
