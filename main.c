@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 20:10:11 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:35:53 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -565,9 +565,10 @@ int main(void)
 	printf("-> '%s'\n", src_iteri005);
 
 	printf("\n########################################### FD_PUTCHAR_FD ###\n");
-
 	for(int i=0; i<10; i++)
 		ft_putchar_fd('a' + i, 1);
+	printf("\n############################################ FD_PUTSTR_FD ###\n");
+	ft_putstr_fd("hello world\n", 1);
 
 	return 0;
 }

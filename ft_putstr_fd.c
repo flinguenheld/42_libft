@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 20:02:50 by flinguen          #+#    #+#             */
+/*   Created: 2025/11/11 20:31:32 by flinguen          #+#    #+#             */
 /*   Updated: 2025/11/11 20:35:53 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-DESCRIPTION
-Outputs the character ’c’ to the specified file descriptor.
-*/
-void	ft_putchar_fd(char c, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }
