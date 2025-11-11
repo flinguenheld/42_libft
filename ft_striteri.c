@@ -1,11 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 21:34:05 by flinguen          #+#    #+#             */
+/*   Created: 2025/11/11 18:53:41 by flinguen          #+#    #+#             */
 /*   Updated: 2025/11/11 19:07:25 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,26 +14,21 @@
 
 /*
 DESCRIPTION
-The strlcpy() function copies up to size - 1 characters from the NUL-terminated
- string src to dst, NUL-terminating the result.
-
-RETURN VALUES
-The strlcpy() function returns the total length of the
-string they tried to create.
+Applies the function ’f’ to each character of the string passed as argument,
+passing its index as the first argument. Each character is passed by
+address to ’f’ so it can be modified if necessary.
 */
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	len;
+	size_t	index;
 
-	len = ft_strlen(src);
-	if (size > 0)
+	if (s != NULL)
 	{
-		while (*src && (size - 1))
+		index = 0;
+		while (s[index])
 		{
-			*dst++ = *src++;
-			size--;
+			f(index, &s[index]);
+			index++;
 		}
-		*dst = '\0';
 	}
-	return (len);
 }

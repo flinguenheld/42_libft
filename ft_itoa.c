@@ -6,13 +6,11 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:01:36 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 16:03:43 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 19:08:18 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
 
 static size_t	get_size(int value)
 {

@@ -34,6 +34,7 @@ SRC = ft_atoi.c \
 		ft_toupper.c \
 		ft_itoa.c \
 		ft_strmapi.c \
+		ft_striteri.c \
 
 OBJS := $(SRC:%.c=%.o)
 

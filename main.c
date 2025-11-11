@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 22:53:25 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 19:07:25 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <bsd/string.h>
-#include <string.h>
+// #include <string.h>
 
 char *print_bool(int val)
 {
@@ -35,6 +35,16 @@ static char function_strmapi(unsigned int v, char c)
 		return ('a' + v);
 	else
 		return ('a' + v);
+}
+
+static void function_striteri(unsigned int v, char *c)
+{
+	if (*c >= 'a' && *c <= 'z')
+		*c = ('A' + v);
+	else if (*c >= 'A' && *c <= 'Z')
+		*c = ('a' + v);
+	else
+		*c = ('a' + v);
 }
 
 int main(void)
@@ -509,7 +519,6 @@ int main(void)
 	printf("max: %d -> %d\n", INT32_MAX, ft_atoi(ft_itoa(INT32_MAX)));
 
 	printf("\n################################################# STRMAPI ###\n");
-
 	char *mapped_001 = ft_strmapi("abcdefghijklmnopqrstuvwxyz", &function_strmapi);
 	printf("-> '%s'\n", mapped_001);
 	free(mapped_001);
@@ -534,6 +543,26 @@ int main(void)
 	printf("-> '%s'\n", mapped_006);
 	free(mapped_006);
 
+	printf("\n################################################# STRMAPI ###\n");
+	char src_iteri001[] = "abcdefghijklmnopqrstuvwxyz";
+	ft_striteri(src_iteri001, &function_striteri);
+	printf("-> '%s'\n", src_iteri001);
+
+	char src_iteri002[] = "aBcDeFgHiJkLmNoPqRsTuVwXyZ";
+	ft_striteri(src_iteri002, &function_striteri);
+	printf("-> '%s'\n", src_iteri002);
 	
+	char src_iteri003[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	ft_striteri(src_iteri003, &function_striteri);
+	printf("-> '%s'\n", src_iteri003);
+
+	char src_iteri004[] = "";
+	ft_striteri(src_iteri004, &function_striteri);
+	printf("-> '%s'\n", src_iteri004);
+
+	char src_iteri005[] = "aaaa";
+	ft_striteri(NULL, &function_striteri);
+	printf("-> '%s'\n", src_iteri005);
+
 	return 0;
 }
