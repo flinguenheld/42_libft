@@ -1,11 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 20:02:50 by flinguen          #+#    #+#             */
+/*   Created: 2025/11/11 20:48:42 by flinguen          #+#    #+#             */
 /*   Updated: 2025/11/11 21:01:52 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,9 +14,16 @@
 
 /*
 DESCRIPTION
-Outputs the character ’c’ to the specified file descriptor.
+Outputs the integer ’n’ to the specified file descriptor.
 */
-void	ft_putchar_fd(char c, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	write(fd, &c, 1);
+	char	*array;
+
+	array = ft_itoa(n);
+	if (array != NULL)
+	{
+		ft_putstr_fd(array, fd);
+		free(array);
+	}
 }

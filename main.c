@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 20:47:11 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:01:52 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -573,6 +573,14 @@ int main(void)
 	printf("\n########################################### FD_PUTENDL_FD ###\n");
 	ft_putendl_fd("hello world", 1);
 	ft_putendl_fd("hello world", 1);
+	printf("\n############################################ FD_PUTNBR_FD ###\n");
+	ft_putnbr_fd(123, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(0, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-1, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-123, 1);
 
 	return 0;
 }
