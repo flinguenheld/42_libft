@@ -6,11 +6,12 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 20:55:44 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 22:56:59 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/12 19:25:07 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
 
 /*
 DESCRIPTION
@@ -25,13 +26,5 @@ specified as '\0', this function returns a pointer to the terminator.
 */
 char	*ft_strchr(const char *s, int c)
 {
-	c %= 256;
-	while (1)
-	{
-		if (*s == c)
-			return ((char *)s);
-		if (*s == '\0')
-			return (NULL);
-		s++;
-	}
+	return (ft_memchr(s, c, ft_strlen(s) + 1));
 }

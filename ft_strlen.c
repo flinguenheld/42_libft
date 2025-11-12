@@ -6,13 +6,14 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 21:00:42 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/12 13:07:00 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/12 19:25:07 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
 
 size_t	ft_strlen(const char *s)
 {
-	return (ft_strchr(s, '\0') - s);
+	return ((char *)ft_memchr(s, '\0', SIZE_MAX) - s);
 }
