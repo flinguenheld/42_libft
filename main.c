@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 23:53:51 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/12 13:07:00 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,12 @@ int main(void)
 	printf("'' -> %zu\n", ft_strlen(""));
 	printf("'a' -> %zu\n", ft_strlen("a"));
 	printf("'abcdefghijklmnopqrstuvwxyz' -> %zu\n", ft_strlen("abcdefghijklmnopqrstuvwxyz"));
+
+	#define STRLEN_LEN 1000000
+	// #define STRLEN_LEN 10000000 // Segfault with the real and mine
+	char txt_strlen[STRLEN_LEN];
+	ft_memset(txt_strlen, 'a', STRLEN_LEN);
+	printf("%d -> %zu\n", STRLEN_LEN, strlen(txt_strlen));
 
 	printf("\n################################################## MEMSET ###\n");
 	// The real funct doesn't check nb_to_set
