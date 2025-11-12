@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_ft_strjoin.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 21:23:22 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 15:07:02 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/12 18:16:44 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-
 	buffer_size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	// new = malloc(buffer_size);
 	new = ft_calloc(buffer_size, sizeof(char));
 	if (new != NULL)
 	{

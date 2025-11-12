@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 11:58:13 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/10 22:53:24 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/12 19:02:14 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,35 +29,33 @@ static char	**fill(char **to_fill, const char *s, size_t length)
 
 /*
 DESCRIPTION
-recursively get the next substr and add them in to_fill
-return the number of substrs
-to_fill = NULL to do a dry run
-*/
-static int	run(const char *s, char c, char **to_fill)
-{
-	int		counter;
-	char	*to;
+Recursively get the next substr and add them in to_fill.
+Exclude empty str.
+to_fill = NULL to do a dry run.
 
-	counter = 0;
-	if (*s != '\0')
+RETURN VALUE
+return the number of substrs
+*/
+static int	run(const char *str, char delimiter, char **to_fill)
+{
+	char	*next_delimiter;
+
+	if (*str != '\0')
 	{
-		to = ft_strchr(s, c);
-		if (to == NULL || c == '\0')
+		next_delimiter = ft_strchr(str, delimiter);
+		if (next_delimiter == NULL || delimiter == '\0')
 		{
-			counter++;
-			to_fill = fill(to_fill, s, ft_strlen(s));
+			fill(to_fill, str, ft_strlen(str));
+			return (1);
 		}
-		else
+		else if ((next_delimiter - str) > 0)
 		{
-			if ((to - s) > 0)
-			{
-				counter++;
-				to_fill = fill(to_fill, s, to - s);
-			}
-			counter += (run(to + 1, c, to_fill));
+			to_fill = fill(to_fill, str, next_delimiter - str);
+			return (1 + run(next_delimiter + 1, delimiter, to_fill));
 		}
+		return (run(next_delimiter + 1, delimiter, to_fill));
 	}
-	return (counter);
+	return (0);
 }
 
 /*
@@ -75,11 +73,13 @@ char	**ft_split(char const *s, char c)
 	int		count;
 	char	**tab;
 
-	if (s == NULL)
-		return (NULL);
-	count = run(s, c, NULL);
-	tab = ft_calloc(count + 1, sizeof(char *));
-	if (tab != NULL)
-		run(s, c, tab);
+	tab = NULL;
+	if (s != NULL)
+	{
+		count = run(s, c, NULL);
+		tab = ft_calloc(count + 1, sizeof(char *));
+		if (tab != NULL)
+			run(s, c, tab);
+	}
 	return (tab);
 }

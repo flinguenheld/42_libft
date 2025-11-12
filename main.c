@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 23:53:51 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/12 19:02:14 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -500,8 +500,6 @@ int main(void)
 	printf("-> '%s'\n", dst_strjoin004);
 	free(dst_strjoin004);
 
-	return 0;
-
 	printf("\n################################################# STRTRIM ###\n");
 	// char *src_strtrim = "";
 	// char *src_strtrim = "abchelloabc";
@@ -518,19 +516,95 @@ int main(void)
 	// /* 1 */ mcheck(tab, sizeof(char *) * 3);
 
 	// char *src_split = "Hello   to you";
-	char *src_split = "  tripouille 42 ";
-	char c_split = ' ';
+	// char *src_split = "  tripouille 42 ";
+	// char c_split = ' ';
 	// char c_split = '\0';
-	char **dst_split = ft_split(src_split, c_split);
 
-	char **start_split = dst_split;
-	while (*dst_split != NULL)
+	printf("--------- 001 -----\n");
+	char **dst_split001 = ft_split("Hello to you", ' ');
+	char **start_split001 = dst_split001;
+	int nb_split001 = 0;
+	while (*dst_split001 != NULL)
 	{
-		printf("'%s'\n", *dst_split);
-		free(*dst_split);
-		dst_split++;
+		printf("'%s'\n", *dst_split001);
+		free(*dst_split001);
+		dst_split001++;
+		nb_split001++;
 	}
-	free(start_split);
+	printf("-> %d elements\n\n", nb_split001);
+	free(start_split001);
+
+	printf("--------- 002 -----\n");
+	char **dst_split002 = ft_split("---a---b-c--d-e-f-g-", '-');
+	char **start_split002 = dst_split002;
+	int nb_split002 = 0;
+	while (*dst_split002 != NULL)
+	{
+		printf("'%s'\n", *dst_split002);
+		free(*dst_split002);
+		dst_split002++;
+		nb_split002++;
+	}
+	printf("-> %d elements\n\n", nb_split002);
+	free(start_split002);
+
+	printf("--------- 003 -----\n");
+	char **dst_split003 = ft_split("---a---b-c--d-e-f-g-", '\0');
+	char **start_split003 = dst_split003;
+	int nb_split003 = 0;
+	while (*dst_split003 != NULL)
+	{
+		printf("'%s'\n", *dst_split003);
+		free(*dst_split003);
+		dst_split003++;
+		nb_split003++;
+	}
+	printf("-> %d elements\n\n", nb_split003);
+	free(start_split003);
+
+	printf("--------- 004 -----\n");
+	char **dst_split004 = ft_split("", 'a');
+	char **start_split004 = dst_split004;
+	int nb_split004 = 0;
+	while (*dst_split004 != NULL)
+	{
+		printf("'%s'\n", *dst_split004);
+		free(*dst_split004);
+		dst_split004++;
+		nb_split004++;
+	}
+	printf("-> %d elements\n\n", nb_split004);
+	free(start_split004);
+
+	printf("--------- 005 -----\n");
+	char **dst_split005 = ft_split("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 'a');
+	char **start_split005 = dst_split005;
+	int nb_split005 = 0;
+	while (*dst_split005 != NULL)
+	{
+		printf("'%s'\n", *dst_split005);
+		free(*dst_split005);
+		dst_split005++;
+		nb_split005++;
+	}
+	printf("-> %d elements\n\n", nb_split005);
+	free(start_split005);
+	
+	printf("--------- 006 -----\n");
+	char **dst_split006 = ft_split("   BLAH   ", ' ');
+	char **start_split006 = dst_split006;
+	int nb_split006 = 0;
+	while (*dst_split006 != NULL)
+	{
+		printf("'%s'\n", *dst_split006);
+		free(*dst_split006);
+		dst_split006++;
+		nb_split006++;
+	}
+	printf("-> %d elements\n\n", nb_split006);
+	free(start_split006);
+
+	return 0;
 
 	printf("\n#################################################### ITOA ###\n");
 
