@@ -20,19 +20,18 @@ Which is the result of concatenating ’s1’ and ’s2.
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new;
-	size_t	s1_len;
-	size_t	s2_len;
+	size_t	buffer_size;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	new = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+
+	buffer_size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	// new = malloc(buffer_size);
+	new = ft_calloc(buffer_size, sizeof(char));
 	if (new != NULL)
 	{
-		ft_memcpy(new, s1, s1_len);
-		ft_memcpy(new + s1_len, s2, s2_len);
-		*(new + s1_len + s2_len) = '\0';
+		ft_strlcpy(new, s1, buffer_size);
+		ft_strlcat(new, s2, buffer_size);
 	}
 	return (new);
 }

@@ -484,14 +484,21 @@ int main(void)
 	free(sub_substr);
 
 	printf("\n################################################# STRJOIN ###\n");
-	// char *src1_strjoin = "hello ";
-	// char *src2_strjoin = "world";
-	char *src1_strjoin = "Where is my ";
-	char *src2_strjoin = "malloc ???";
+	char *dst_strjoin001 = ft_strjoin("hello ", "world");
+	printf("-> '%s'\n", dst_strjoin001);
+	free(dst_strjoin001);
 
-	char *dst_strjoin = ft_strjoin(src1_strjoin, src2_strjoin);
-	printf("-> '%s'", dst_strjoin);
-	free(dst_strjoin);
+	char *dst_strjoin002 = ft_strjoin("", "world");
+	printf("-> '%s'\n", dst_strjoin002);
+	free(dst_strjoin002);
+
+	char *dst_strjoin003 = ft_strjoin("hello", "");
+	printf("-> '%s'\n", dst_strjoin003);
+	free(dst_strjoin003);
+
+	char *dst_strjoin004 = ft_strjoin("", "");
+	printf("-> '%s'\n", dst_strjoin004);
+	free(dst_strjoin004);
 
 	return 0;
 
