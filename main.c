@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/12 13:07:00 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/11 23:53:51 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -344,9 +344,6 @@ int main(void)
 	printf("     '%s'                     '%s'\n", ft_strrchr("aaaa",      '\0'), strrchr("aaaa",      '\0'));
 	printf("     '%s'                     '%s'\n", ft_strrchr("a",         '\0'), strrchr("a",         '\0'));
 
-
-	return 0;
-
 	printf("\n################################################# STRNCMP ###\n");
 	size_t n_strncmp = 200;
 
@@ -487,12 +484,16 @@ int main(void)
 	free(sub_substr);
 
 	printf("\n################################################# STRJOIN ###\n");
-	char *src1_strjoin = "hello ";
-	char *src2_strjoin = "world";
+	// char *src1_strjoin = "hello ";
+	// char *src2_strjoin = "world";
+	char *src1_strjoin = "Where is my ";
+	char *src2_strjoin = "malloc ???";
 
 	char *dst_strjoin = ft_strjoin(src1_strjoin, src2_strjoin);
 	printf("-> '%s'", dst_strjoin);
 	free(dst_strjoin);
+
+	return 0;
 
 	printf("\n################################################# STRTRIM ###\n");
 	// char *src_strtrim = "";

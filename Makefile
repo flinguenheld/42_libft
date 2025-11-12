@@ -8,7 +8,7 @@ RANNAME = ar rcs $(NAME)
 SRC = ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
-		ft_ft_strjoin.c \
+		ft_strjoin.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -48,9 +48,9 @@ $(NAME): $(OBJS)
 	$(ARNAME) $(OBJS)
 	$(RANNAME)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+# so:
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+# 	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	rm -f $(OBJS)
