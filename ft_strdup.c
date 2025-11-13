@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 19:41:06 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 22:56:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:57:06 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,11 @@ indicate the cause of the error.
 char	*ft_strdup(const char *s)
 {
 	char	*new;
-	char	*fill_me;
+	size_t	full_length;
 
-	new = malloc(ft_strlen(s) + 1);
+	full_length = ft_strlen(s) + 1;
+	new = malloc(full_length);
 	if (new != NULL)
-	{
-		fill_me = new;
-		while (*s)
-			*fill_me++ = *s++;
-		*fill_me = '\0';
-	}
+		ft_strlcpy(new, s, full_length);
 	return (new);
 }
