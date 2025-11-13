@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/13 16:35:52 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:43:28 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -408,7 +408,7 @@ int main(void)
 	printf("\t'%s'\t'%s'\n", ft_strnstr("",                   "aa",        len_strnstr), strnstr("",                   "aa",        len_strnstr));
 	printf("\t'%s'\t'%s'\n", ft_strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", len_strnstr), strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", len_strnstr));
 
-	printf("\n################################################# MEMCMP ###\n");
+	printf("\n#################################################### ATOI ###\n");
 	printf("\n### MINE ###### REAL #############\n");
 	printf("\t'%d'\t'%d'\n", ft_atoi("hello"),           atoi("hello"));
 	printf("\t'%d'\t'%d'\n", ft_atoi("0"),               atoi("0"));
@@ -607,8 +607,6 @@ int main(void)
 	}
 	printf("-> %d elements\n\n", nb_split006);
 	free(start_split006);
-
-	return 0;
 
 	printf("\n#################################################### ITOA ###\n");
 
