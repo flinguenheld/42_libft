@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/12 19:02:14 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:53:30 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -324,39 +324,47 @@ int main(void)
 	char *str_strchr = "wind hello world";
 
 	printf("\n##### MINE #################### REAL #############\n");
-	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, 'w'),  strchr(str_strchr, 'w'));
-	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, 'o'),  strchr(str_strchr, 'o'));
-	printf("     '%s'                     '%s'\n", ft_strchr(str_strchr, 'U'),  strchr(str_strchr, 'U'));
-	printf("     '%s'                     '%s'\n", ft_strchr("",         '\0'), strchr(""        , '\0'));
-	printf("     '%s'                     '%s'\n", ft_strchr("aaaa",     '\0'), strchr("aaaa"    , '\0'));
-	printf("     '%s'                     '%s'\n", ft_strchr("tripouille"    , 't' + 256), strchr("tripouille"    , 't' + 256));
-	printf("     '%s'                     '%s'\n", ft_strchr("teste", 1024), strchr("teste", 1024));
+	printf("  '%s'\t\t\t'%s'\n", ft_strchr(str_strchr, 'w'),  strchr(str_strchr, 'w'));
+	printf("  '%s'\t\t\t'%s'\n", ft_strchr(str_strchr, 'o'),  strchr(str_strchr, 'o'));
+	printf("  '%s'\t\t\t'%s'\n", ft_strchr(str_strchr, 'U'),  strchr(str_strchr, 'U'));
+	printf("  '%s'\t\t\t'%s'\n", ft_strchr("",         '\0'), strchr(""        , '\0'));
+	printf("  '%s'\t\t\t'%s'\n", ft_strchr("aaaa",     '\0'), strchr("aaaa"    , '\0'));
+	printf("  '%s'\t\t\t'%s'\n", ft_strchr("tripouille"    , 't' + 256), strchr("tripouille"    , 't' + 256));
+	printf("  '%s'\t\t\t'%s'\n", ft_strchr("teste", 1024), strchr("teste", 1024));
 
 	printf("\n################################################# STRRCHR ###\n");
 	char *str_strrchr = "wind hello world";
 	// char *str_strrchr = "0123456789";
 
 	printf("\n##### MINE #################### REAL #############\n");
-	printf("     '%s'                     '%s'\n", ft_strrchr(str_strrchr, 'w'),  strrchr(str_strrchr, 'w'));
-	printf("     '%s'                     '%s'\n", ft_strrchr(str_strrchr, 'o'),  strrchr(str_strrchr, 'o'));
-	printf("     '%s'                     '%s'\n", ft_strrchr(str_strrchr, 'U'),  strrchr(str_strrchr, 'U'));
-	printf("     '%s'                     '%s'\n", ft_strrchr("",          '\0'), strrchr("",          '\0'));
-	printf("     '%s'                     '%s'\n", ft_strrchr("aaaa",      '\0'), strrchr("aaaa",      '\0'));
-	printf("     '%s'                     '%s'\n", ft_strrchr("a",         '\0'), strrchr("a",         '\0'));
+	printf("\t'%s'\t\t'%s'\n", ft_strrchr(str_strrchr, 'w'),  strrchr(str_strrchr, 'w'));
+	printf("\t'%s'\t\t'%s'\n", ft_strrchr(str_strrchr, 'o'),  strrchr(str_strrchr, 'o'));
+	printf("\t'%s'\t\t'%s'\n", ft_strrchr(str_strrchr, 'U'),  strrchr(str_strrchr, 'U'));
+	printf("\t'%s'\t\t'%s'\n", ft_strrchr("",          '\0'), strrchr("",          '\0'));
+	printf("\t'%s'\t\t'%s'\n", ft_strrchr("aaaa",      '\0'), strrchr("aaaa",      '\0'));
+	printf("\t'%s'\t\t'%s'\n", ft_strrchr("a",         '\0'), strrchr("a",         '\0'));
+
+	char str_strrchr002[300000];
+	ft_memset(str_strrchr002, 'a', 299999);
+	printf("\t'%s'\t\t'%s'\n", ft_strrchr(str_strrchr002, 'a'), strrchr(str_strrchr002, 'a'));
+	// char *str_strrchr = "0123456789";
+
+	
+	return 0;
 
 	printf("\n################################################# STRNCMP ###\n");
 	size_t n_strncmp = 200;
 
 	printf("\n### MINE ###### REAL #############\n");
-	printf("   '%d'           '%d'\n", ft_strncmp("hello", "hello",   n_strncmp), strncmp("hello", "hello",   n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("hello", "hello\n", n_strncmp), strncmp("hello", "hello\n", n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("hello", "helloa",  n_strncmp), strncmp("hello", "helloa",  n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("aab", "aaa",       n_strncmp), strncmp("aab", "aaa",       n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("aab", "",          n_strncmp), strncmp("aab", "",          n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("", "bbb",          n_strncmp), strncmp("", "bbb",          n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("", "",             n_strncmp), strncmp("", "",             n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("", "",             n_strncmp), strncmp("", "",             n_strncmp));
-	printf("   '%d'           '%d'\n", ft_strncmp("\200", "\0",       n_strncmp), strncmp("\200", "\0",       n_strncmp));
+	printf("\t'%d'\t'%d'\n", ft_strncmp("hello", "hello",   n_strncmp), strncmp("hello", "hello",   n_strncmp));
+	printf("\t'%d'\t'%d'\n", ft_strncmp("hello", "hello\n", n_strncmp), strncmp("hello", "hello\n", n_strncmp));
+	printf("\t'%d'\t'%d'\n", ft_strncmp("hello", "helloa",  n_strncmp), strncmp("hello", "helloa",  n_strncmp));
+	printf("\t'%d'\t'%d'\n", ft_strncmp("aab", "aaa",       n_strncmp), strncmp("aab", "aaa",       n_strncmp));
+	printf("\t'%d'\t'%d'\n", ft_strncmp("aab", "",          n_strncmp), strncmp("aab", "",          n_strncmp));
+	printf("\t'%d'\t'%d'\n", ft_strncmp("", "bbb",          n_strncmp), strncmp("", "bbb",          n_strncmp));
+	printf("\t'%d'\t'%d'\n", ft_strncmp("", "",             n_strncmp), strncmp("", "",             n_strncmp));
+	printf("\t'%d'\t'%d'\n", ft_strncmp("", "",             n_strncmp), strncmp("", "",             n_strncmp));
+	printf("\t'%d'\t'%d'\n", ft_strncmp("\200", "\0",       n_strncmp), strncmp("\200", "\0",       n_strncmp));
 
 	printf("\n################################################## MEMCHR ###\n");
 	char *tab_memchr = "abcdefghijkl";

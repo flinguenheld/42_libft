@@ -6,12 +6,11 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 11:03:51 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/09 21:50:17 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:53:30 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 /*
 DESCRIPTION

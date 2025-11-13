@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 12:47:35 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/09 21:13:46 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:53:29 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,11 @@ or NULL if the character does not occur in the given memory area.
 */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)s;
 	while (n)
 	{
-		if (*ptr == (unsigned char)c)
-			return ((void *)ptr);
-		ptr++;
+		if (*(unsigned char *)s == (unsigned char)c)
+			return ((void *)s);
+		s++;
 		n--;
 	}
 	return (NULL);

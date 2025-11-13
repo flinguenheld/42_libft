@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 21:20:48 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 23:03:59 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:53:30 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ considered part of the string, so that if c is specified as
 */
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*end;
+	char	*found;
 
-	c %= 256;
-	end = ((char *)s) + ft_strlen(s);
+	found = NULL;
 	while (1)
 	{
-		if (*end == c)
-			return (end);
-		if (end == s)
-			return (NULL);
-		end--;
+		if (*s == (unsigned char)c)
+			found = (char *)s;
+		if (*s == '\0')
+			break;
+		s++;
 	}
+	return (found);
 }
