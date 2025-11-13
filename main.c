@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/13 16:15:31 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:35:52 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,8 +227,6 @@ int main(void)
 	size_t amount_strlcpy_real = strlcpy(dst_strlcpy_real, src_strlcpy, TO_COPY_STRLCPY);
 	printf("-> %zu -> '%s'", amount_strlcpy_real, dst_strlcpy_real);
 
-	return 0;
-
 	printf("\n################################################# STRLCAT ###\n");
 	#define BUFFER_SIZE_STRLCAT 100
 	#define TO_COPY_STRLCAT 0
@@ -325,29 +323,29 @@ int main(void)
 	char *str_strchr = "wind hello world";
 
 	printf("\n##### MINE #################### REAL #############\n");
-	printf("  '%s'\t\t\t'%s'\n", ft_strchr(str_strchr, 'w'),  strchr(str_strchr, 'w'));
-	printf("  '%s'\t\t\t'%s'\n", ft_strchr(str_strchr, 'o'),  strchr(str_strchr, 'o'));
-	printf("  '%s'\t\t\t'%s'\n", ft_strchr(str_strchr, 'U'),  strchr(str_strchr, 'U'));
-	printf("  '%s'\t\t\t'%s'\n", ft_strchr("",         '\0'), strchr(""        , '\0'));
-	printf("  '%s'\t\t\t'%s'\n", ft_strchr("aaaa",     '\0'), strchr("aaaa"    , '\0'));
-	printf("  '%s'\t\t\t'%s'\n", ft_strchr("tripouille"    , 't' + 256), strchr("tripouille"    , 't' + 256));
-	printf("  '%s'\t\t\t'%s'\n", ft_strchr("teste", 1024), strchr("teste", 1024));
+	printf("\t'%s'\t'%s'\n", ft_strchr(str_strchr, 'w'),  strchr(str_strchr, 'w'));
+	printf("\t'%s'\t'%s'\n", ft_strchr(str_strchr, 'o'),  strchr(str_strchr, 'o'));
+	printf("\t'%s'\t'%s'\n", ft_strchr(str_strchr, 'U'),  strchr(str_strchr, 'U'));
+	printf("\t'%s'\t'%s'\n", ft_strchr("",         '\0'), strchr(""        , '\0'));
+	printf("\t'%s'\t'%s'\n", ft_strchr("aaaa",     '\0'), strchr("aaaa"    , '\0'));
+	printf("\t'%s'\t'%s'\n", ft_strchr("tripouille"    , 't' + 256), strchr("tripouille"    , 't' + 256));
+	printf("\t'%s'\t'%s'\n", ft_strchr("teste", 1024), strchr("teste", 1024));
 
 	printf("\n################################################# STRRCHR ###\n");
 	char *str_strrchr = "wind hello world";
 	// char *str_strrchr = "0123456789";
 
 	printf("\n##### MINE #################### REAL #############\n");
-	printf("\t'%s'\t\t'%s'\n", ft_strrchr(str_strrchr, 'w'),  strrchr(str_strrchr, 'w'));
-	printf("\t'%s'\t\t'%s'\n", ft_strrchr(str_strrchr, 'o'),  strrchr(str_strrchr, 'o'));
-	printf("\t'%s'\t\t'%s'\n", ft_strrchr(str_strrchr, 'U'),  strrchr(str_strrchr, 'U'));
-	printf("\t'%s'\t\t'%s'\n", ft_strrchr("",          '\0'), strrchr("",          '\0'));
-	printf("\t'%s'\t\t'%s'\n", ft_strrchr("aaaa",      '\0'), strrchr("aaaa",      '\0'));
-	printf("\t'%s'\t\t'%s'\n", ft_strrchr("a",         '\0'), strrchr("a",         '\0'));
+	printf("\t'%s'\t'%s'\n", ft_strrchr(str_strrchr, 'w'),  strrchr(str_strrchr, 'w'));
+	printf("\t'%s'\t'%s'\n", ft_strrchr(str_strrchr, 'o'),  strrchr(str_strrchr, 'o'));
+	printf("\t'%s'\t'%s'\n", ft_strrchr(str_strrchr, 'U'),  strrchr(str_strrchr, 'U'));
+	printf("\t'%s'\t'%s'\n", ft_strrchr("",          '\0'), strrchr("",          '\0'));
+	printf("\t'%s'\t'%s'\n", ft_strrchr("aaaa",      '\0'), strrchr("aaaa",      '\0'));
+	printf("\t'%s'\t'%s'\n", ft_strrchr("a",         '\0'), strrchr("a",         '\0'));
 
 	char str_strrchr002[300000];
 	ft_memset(str_strrchr002, 'a', 299999);
-	printf("\t'%s'\t\t'%s'\n", ft_strrchr(str_strrchr002, 'a'), strrchr(str_strrchr002, 'a'));
+	printf("\t'%s'\t'%s'\n", ft_strrchr(str_strrchr002, 'a'), strrchr(str_strrchr002, 'a'));
 	// char *str_strrchr = "0123456789";
 
 	printf("\n################################################# STRNCMP ###\n");
@@ -371,12 +369,12 @@ int main(void)
 	printf("\n####################### MEMCHR REAL ###\n");
 
 	printf("\n### MINE ###### REAL #############\n");
-	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr , 'e', 5),   (char *)memchr((void *)tab_memchr,  'e', 5));
-	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr , 'k', 5),   (char *)memchr((void *)tab_memchr,  'k', 5));
-	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr , 'k', 100), (char *)memchr((void *)tab_memchr,  'k', 100));
-	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr , '_', 100), (char *)memchr((void *)tab_memchr,  '_', 100));
-	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr , 'a', 0),   (char *)memchr((void *)tab_memchr,  'a', 0));
-	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)""         , 'a', 0),   (char *)memchr((void *)"",          'a', 0));
+	printf("\t'%s'\t'%s' \n", (char *)ft_memchr((void *)tab_memchr , 'e', 5),   (char *)memchr((void *)tab_memchr,  'e', 5));
+	printf("\t'%s'\t'%s' \n", (char *)ft_memchr((void *)tab_memchr , 'k', 5),   (char *)memchr((void *)tab_memchr,  'k', 5));
+	printf("\t'%s'\t'%s' \n", (char *)ft_memchr((void *)tab_memchr , 'k', 100), (char *)memchr((void *)tab_memchr,  'k', 100));
+	printf("\t'%s'\t'%s' \n", (char *)ft_memchr((void *)tab_memchr , '_', 100), (char *)memchr((void *)tab_memchr,  '_', 100));
+	printf("\t'%s'\t'%s' \n", (char *)ft_memchr((void *)tab_memchr , 'a', 0),   (char *)memchr((void *)tab_memchr,  'a', 0));
+	printf("\t'%s'\t'%s' \n", (char *)ft_memchr((void *)""         , 'a', 0),   (char *)memchr((void *)"",          'a', 0));
 
 	// printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab2_memchr, 'a', -1),  (char *)memchr((void *)tab2_memchr, 'a', -1));
 	// printf("'%d'             '%d' \n", (int)ft_memchr((void *)tab2_memchr, 3, 100),   (int)memchr((void *)tab2_memchr, 3, 100));
@@ -385,51 +383,51 @@ int main(void)
 	size_t n_memcmp = 200;
 
 	printf("\n### MINE ###### REAL #############\n");
-	printf("   '%d'           '%d'\n", ft_memcmp("hello", "hello",   n_memcmp), memcmp("hello", "hello",   n_memcmp));
-	printf("   '%d'           '%d'\n", ft_memcmp("hello", "hello\n", n_memcmp), memcmp("hello", "hello\n", n_memcmp));
-	printf("   '%d'           '%d'\n", ft_memcmp("hello", "helloa",  n_memcmp), memcmp("hello", "helloa",  n_memcmp));
-	printf("   '%d'           '%d'\n", ft_memcmp("aab",   "aaa",     n_memcmp), memcmp("aab",   "aaa",     n_memcmp));
-	printf("   '%d'           '%d'\n", ft_memcmp("aab",   "",        n_memcmp), memcmp("aab",   "",        n_memcmp));
-	printf("   '%d'           '%d'\n", ft_memcmp("",      "bbb",     n_memcmp), memcmp("",      "bbb",     n_memcmp));
-	printf("   '%d'           '%d'\n", ft_memcmp("",      "",        n_memcmp), memcmp("",      "",        n_memcmp));
-	printf("   '%d'           '%d'\n", ft_memcmp("",      "",        n_memcmp), memcmp("",      "",        n_memcmp));
+	printf("\t'%d'\t'%d'\n", ft_memcmp("hello", "hello",   n_memcmp), memcmp("hello", "hello",   n_memcmp));
+	printf("\t'%d'\t'%d'\n", ft_memcmp("hello", "hello\n", n_memcmp), memcmp("hello", "hello\n", n_memcmp));
+	printf("\t'%d'\t'%d'\n", ft_memcmp("hello", "helloa",  n_memcmp), memcmp("hello", "helloa",  n_memcmp));
+	printf("\t'%d'\t'%d'\n", ft_memcmp("aab",   "aaa",     n_memcmp), memcmp("aab",   "aaa",     n_memcmp));
+	printf("\t'%d'\t'%d'\n", ft_memcmp("aab",   "",        n_memcmp), memcmp("aab",   "",        n_memcmp));
+	printf("\t'%d'\t'%d'\n", ft_memcmp("",      "bbb",     n_memcmp), memcmp("",      "bbb",     n_memcmp));
+	printf("\t'%d'\t'%d'\n", ft_memcmp("",      "",        n_memcmp), memcmp("",      "",        n_memcmp));
+	printf("\t'%d'\t'%d'\n", ft_memcmp("",      "",        n_memcmp), memcmp("",      "",        n_memcmp));
 
 	printf("\n################################################# STRNSTR ###\n");
 	// size_t len_strnstr = 14;
-	// size_t len_strnstr = 15;
-	size_t len_strnstr = 0;
+	size_t len_strnstr = 15;
+	// size_t len_strnstr = 0;
 
 	printf("\n### MINE ###### REAL #############\n");
-	printf("   '%s'           '%s'\n", ft_strnstr("hello",              "hello",     len_strnstr), strnstr("hello",              "hello",     len_strnstr));
-	printf("   '%s'           '%s'\n", ft_strnstr("hello",              "lo",        len_strnstr), strnstr("hello",              "lo",        len_strnstr));
-	printf("   '%s'           '%s'\n", ft_strnstr("hello",              "helloa",    len_strnstr), strnstr("hello",              "helloa",    len_strnstr));
-	printf("   '%s'           '%s'\n", ft_strnstr("hellohello",         "hello",     len_strnstr), strnstr("hellohello",         "hello",     len_strnstr));
-	printf("   '%s'           '%s'\n", ft_strnstr("hellohello",         "lo",        len_strnstr), strnstr("hellohello",         "lo",        len_strnstr));
-	printf("   '%s'           '%s'\n", ft_strnstr("hellohello",         "",          len_strnstr), strnstr("hellohello",         "",          len_strnstr));
-	printf("   '%s'           '%s'\n", ft_strnstr("",                   "",          len_strnstr), strnstr("",                   "",          len_strnstr));
-	printf("   '%s'           '%s'\n", ft_strnstr("",                   "aa",        len_strnstr), strnstr("",                   "aa",        len_strnstr));
-	printf("   '%s'           '%s'\n", ft_strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", len_strnstr), strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", len_strnstr));
+	printf("\t'%s'\t'%s'\n", ft_strnstr("hello",              "hello",     len_strnstr), strnstr("hello",              "hello",     len_strnstr));
+	printf("\t'%s'\t'%s'\n", ft_strnstr("hello",              "lo",        len_strnstr), strnstr("hello",              "lo",        len_strnstr));
+	printf("\t'%s'\t'%s'\n", ft_strnstr("hello",              "helloa",    len_strnstr), strnstr("hello",              "helloa",    len_strnstr));
+	printf("\t'%s'\t'%s'\n", ft_strnstr("hellohello",         "hello",     len_strnstr), strnstr("hellohello",         "hello",     len_strnstr));
+	printf("\t'%s'\t'%s'\n", ft_strnstr("hellohello",         "lo",        len_strnstr), strnstr("hellohello",         "lo",        len_strnstr));
+	printf("\t'%s'\t'%s'\n", ft_strnstr("hellohello",         "",          len_strnstr), strnstr("hellohello",         "",          len_strnstr));
+	printf("\t'%s'\t'%s'\n", ft_strnstr("",                   "",          len_strnstr), strnstr("",                   "",          len_strnstr));
+	printf("\t'%s'\t'%s'\n", ft_strnstr("",                   "aa",        len_strnstr), strnstr("",                   "aa",        len_strnstr));
+	printf("\t'%s'\t'%s'\n", ft_strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", len_strnstr), strnstr("MZIRIBMZIRIBMZE123", "MZIRIBMZE", len_strnstr));
 
 	printf("\n################################################# MEMCMP ###\n");
 	printf("\n### MINE ###### REAL #############\n");
-	printf("   '%d'           '%d'\n", ft_atoi("hello"),           atoi("hello"));
-	printf("   '%d'           '%d'\n", ft_atoi("0"),               atoi("0"));
-	printf("   '%d'           '%d'\n", ft_atoi("1"),               atoi("1"));
-	printf("   '%d'           '%d'\n", ft_atoi("-1"),              atoi("-1"));
-	printf("   '%d'           '%d'\n", ft_atoi("--1"),             atoi("--1"));
-	printf("   '%d'           '%d'\n", ft_atoi("+1"),              atoi("+1"));
-	printf("   '%d'           '%d'\n", ft_atoi("+-1"),             atoi("+-1"));
-	printf("   '%d'           '%d'\n", ft_atoi("123"),             atoi("123"));
-	printf("   '%d'           '%d'\n", ft_atoi("-123"),            atoi("-123"));
-	printf("   '%d'           '%d'\n", ft_atoi("-123a33aaa"),      atoi("-123a33aaa"));
-	printf("   '%d'           '%d'\n", ft_atoi("a-123"),           atoi("a-123"));
-	printf("   '%d'           '%d'\n", ft_atoi("    -123"),        atoi("    -123"));
-	printf("   '%d'           '%d'\n", ft_atoi("  \t\n  -123"),    atoi("  \t\n  -123"));
-	printf("   '%d'           '%d'\n", ft_atoi("  \t\n  - 123"),   atoi("  \t\n  - 123"));
-	printf("   '%d'           '%d'\n", ft_atoi("2147483647"),      atoi("2147483647"));
-	printf("   '%d'           '%d'\n", ft_atoi("214748364800000"), atoi("214748364800000"));
-	printf("   '%d'           '%d'\n", ft_atoi("-2147483648"),     atoi("-2147483648"));
-	printf("   '%d'           '%d'\n", ft_atoi("-2147483649"),     atoi("-2147483649"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("hello"),           atoi("hello"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("0"),               atoi("0"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("1"),               atoi("1"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("-1"),              atoi("-1"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("--1"),             atoi("--1"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("+1"),              atoi("+1"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("+-1"),             atoi("+-1"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("123"),             atoi("123"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("-123"),            atoi("-123"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("-123a33aaa"),      atoi("-123a33aaa"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("a-123"),           atoi("a-123"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("    -123"),        atoi("    -123"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("  \t\n  -123"),    atoi("  \t\n  -123"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("  \t\n  - 123"),   atoi("  \t\n  - 123"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("2147483647"),      atoi("2147483647"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("214748364800000"), atoi("214748364800000"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("-2147483648"),     atoi("-2147483648"));
+	printf("\t'%d'\t'%d'\n", ft_atoi("-2147483649"),     atoi("-2147483649"));
 
 	printf("\n################################################## CALLOC ###\n");
 	size_t len_calloc = 1;
