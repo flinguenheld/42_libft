@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/13 16:43:28 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:34:24 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -513,9 +513,6 @@ int main(void)
 	char *sub_substr005 = ft_substr(NULL, 4, 10);
 	printf("'NULL' -> '%s'\n", sub_substr005);
 	free(sub_substr005);
-
-	return  0;
-	
 
 	printf("\n################################################# STRJOIN ###\n");
 	char *dst_strjoin001 = ft_strjoin("hello ", "world");

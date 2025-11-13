@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 21:20:48 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/13 12:53:30 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:34:24 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strrchr(const char *s, int c)
 		if (*s == (unsigned char)c)
 			found = (char *)s;
 		if (*s == '\0')
-			break;
+			break ;
 		s++;
 	}
 	return (found);

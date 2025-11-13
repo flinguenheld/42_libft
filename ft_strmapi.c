@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:03:44 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/11 19:07:24 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 21:34:24 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ DESCRIPTION
 Applies the function f to each character of the string s, passing its index as
 the first argument and the character itself as the second. A new string is
 created using malloc to store the results from the successive applications of f.
+
 RETURN VALUE
 The string created from the successive applications of ’f’.
 Returns NULL if the allocation fails.
