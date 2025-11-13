@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
 
 /*
 DESCRIPTION
@@ -25,12 +26,5 @@ indicate the cause of the error.
 */
 char	*ft_strdup(const char *s)
 {
-	char	*new;
-	size_t	full_length;
-
-	full_length = ft_strlen(s) + 1;
-	new = malloc(full_length);
-	if (new != NULL)
-		ft_strlcpy(new, s, full_length);
-	return (new);
+	return (ft_substr(s, 0, SIZE_MAX));
 }

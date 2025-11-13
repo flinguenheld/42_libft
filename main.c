@@ -463,29 +463,59 @@ int main(void)
 	free(ptr_calloc_real);
 
 	printf("\n################################################## STRDUP ###\n");
-	char *to_copy_strdup = "abcde fgh";
-	// char *to_copy_strdup = "";
-	char *res_strdup = ft_strdup(to_copy_strdup);
-	char *res_strdup_real = strdup(to_copy_strdup);;
-
 	printf("\n### MINE ###### REAL #############\n");
-	printf("   '%s'           '%s'\n", res_strdup, res_strdup_real);
+	char *res_strdup001 = ft_strdup("abcdefgh");
+	char *res_strdup001_real = strdup("abcdefgh");;
+	printf("\t'%s'\t'%s'\n", res_strdup001, res_strdup001_real);
+	free(res_strdup001);
+	free(res_strdup001_real);
 
-	free(res_strdup);
-	free(res_strdup_real);
+	char *res_strdup002 = ft_strdup("b");
+	char *res_strdup002_real = strdup("b");;
+	printf("\t'%s'\t'%s'\n", res_strdup002, res_strdup002_real);
+	free(res_strdup002);
+	free(res_strdup002_real);
+
+	char *res_strdup003 = ft_strdup("");
+	char *res_strdup003_real = strdup("");;
+	printf("\t'%s'\t'%s'\n", res_strdup003, res_strdup003_real);
+	free(res_strdup003);
+	free(res_strdup003_real);
+
+	// The real one does crash -_-'
+	// char *res_strdup004 = ft_strdup(NULL);
+	// char *res_strdup004_real = strdup(NULL);;
+	// printf("\t'%s'\t'%s'\n", res_strdup004, res_strdup004_real);
+	// free(res_strdup004);
+	// free(res_strdup004_real);
 
 	printf("\n################################################## SUBSTR ###\n");
-	char *to_copy_substr = "abcde";
-	unsigned int start_substr = 0;
-	size_t len_substr = 5;
+	char *sub_substr000 = ft_substr("abcde", 3, 10);
+	printf("'de' -> '%s'\n", sub_substr000);
+	free(sub_substr000);
 
-	// char *to_copy_substr = "01234";
-	// unsigned int start_substr = 10;
-	// size_t len_substr = 10;
+	char *sub_substr001 = ft_substr("abcde", 0, 5);
+	printf("'abcde'-> '%s'\n", sub_substr001);
+	free(sub_substr001);
 
-	char *sub_substr = ft_substr(to_copy_substr, start_substr, len_substr);
-	printf("-> '%s'", sub_substr);
-	free(sub_substr);
+	char *sub_substr002 = ft_substr("abcde", 8, 10);
+	printf("'' -> '%s'\n", sub_substr002);
+	free(sub_substr002);
+
+	char *sub_substr003 = ft_substr("", 3, 10);
+	printf("'' -> '%s'\n", sub_substr003);
+	free(sub_substr003);
+
+	char *sub_substr004 = ft_substr("abcde", 4, 10);
+	printf("'e' -> '%s'\n", sub_substr004);
+	free(sub_substr004);
+
+	char *sub_substr005 = ft_substr(NULL, 4, 10);
+	printf("'NULL' -> '%s'\n", sub_substr005);
+	free(sub_substr005);
+
+	return  0;
+	
 
 	printf("\n################################################# STRJOIN ###\n");
 	char *dst_strjoin001 = ft_strjoin("hello ", "world");
