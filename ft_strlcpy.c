@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 21:34:05 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/12 18:16:45 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:15:31 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	len = ft_strlen(src);
 	if (size > 0)
 	{
-		while (*src && (size - 1))
-		{
+		while (*src && (size-- > 1))
 			*dst++ = *src++;
-			size--;
-		}
 		*dst = '\0';
 	}
 	return (len);

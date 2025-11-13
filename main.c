@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/13 15:47:45 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 16:15:31 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,9 +209,6 @@ int main(void)
 	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
 		printf("%d ", tab_memmove_rev_2[i]);
 
-
-	return 0;
-
 	printf("\n################################################# STRLCPY ###\n");
 	// TO_COPY_STRLCPY cannot be higher than the buffer size !
 	// Otherwise, it destroys the next chars
@@ -229,6 +226,8 @@ int main(void)
 
 	size_t amount_strlcpy_real = strlcpy(dst_strlcpy_real, src_strlcpy, TO_COPY_STRLCPY);
 	printf("-> %zu -> '%s'", amount_strlcpy_real, dst_strlcpy_real);
+
+	return 0;
 
 	printf("\n################################################# STRLCAT ###\n");
 	#define BUFFER_SIZE_STRLCAT 100
@@ -379,7 +378,7 @@ int main(void)
 	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab_memchr , 'a', 0),   (char *)memchr((void *)tab_memchr,  'a', 0));
 	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)""         , 'a', 0),   (char *)memchr((void *)"",          'a', 0));
 
-	printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab2_memchr, 'a', -1),  (char *)memchr((void *)tab2_memchr, 'a', -1));
+	// printf("'%s'             '%s' \n", (char *)ft_memchr((void *)tab2_memchr, 'a', -1),  (char *)memchr((void *)tab2_memchr, 'a', -1));
 	// printf("'%d'             '%d' \n", (int)ft_memchr((void *)tab2_memchr, 3, 100),   (int)memchr((void *)tab2_memchr, 3, 100));
 
 	printf("\n################################################# MEMCMP ###\n");
