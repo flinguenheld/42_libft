@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/13 12:53:30 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/13 15:47:45 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,6 @@ int main(void)
 		printf("%d ", tab_memmove1[i]);
 
 	printf("\n###################### MEMMOVE REAL ###\n");
-
 	memmove((void *)(tab_memmove2), (void *)(tab_memmove2 + gap_memmove), nb_to_memmove * sizeof(int));
 
 	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
@@ -209,6 +208,9 @@ int main(void)
 
 	for (int i=0; i < TAB_LEN_MEMMOVE; i++)
 		printf("%d ", tab_memmove_rev_2[i]);
+
+
+	return 0;
 
 	printf("\n################################################# STRLCPY ###\n");
 	// TO_COPY_STRLCPY cannot be higher than the buffer size !
@@ -348,9 +350,6 @@ int main(void)
 	ft_memset(str_strrchr002, 'a', 299999);
 	printf("\t'%s'\t\t'%s'\n", ft_strrchr(str_strrchr002, 'a'), strrchr(str_strrchr002, 'a'));
 	// char *str_strrchr = "0123456789";
-
-	
-	return 0;
 
 	printf("\n################################################# STRNCMP ###\n");
 	size_t n_strncmp = 200;
