@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 21:26:48 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 22:09:36 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/14 21:41:14 by flinguen          #+#    #+#             */
+/*   Updated: 2025/11/14 22:16:18 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 /*
 DESCRIPTION
-Counts the number of nodes in the list.
+Returns the last node of the list.
 */
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
-		return (0);
+		return (NULL);
 	if (lst->next == NULL)
-		return (1);
-	return (ft_lstsize(lst->next) + 1);
+		return (lst);
+	return (ft_lstlast(lst->next));
 }

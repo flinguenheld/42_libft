@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 21:39:55 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 22:16:17 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -750,7 +750,7 @@ int main(void)
 	}
 	free(lstadd_002);
 
-	printf("\n############################################# FT_LST_SIZE ###\n");
+	printf("\n############################################## FT_LSTSIZE ###\n");
 	t_list *lstsize_001 = ft_lstnew((void *)ft_strdup("1"));
 	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("2")));
 	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("3")));
@@ -769,6 +769,27 @@ int main(void)
 	printf("0-> %d\n", ft_lstsize(lstsize_003));
 	free(lstsize_003);
 
+	printf("\n############################################## FT_LSTLAST ###\n");
+	t_list *lstlast_001 = ft_lstnew((void *)ft_strdup("last"));
+	ft_lstadd_front(&lstlast_001, ft_lstnew((void *)ft_strdup("2")));
+	ft_lstadd_front(&lstlast_001, ft_lstnew((void *)ft_strdup("3")));
+	ft_lstadd_front(&lstlast_001, ft_lstnew((void *)ft_strdup("4")));
+	ft_lstadd_front(&lstlast_001, ft_lstnew((void *)ft_strdup("5")));
+
+	printf("Last one -> %s\n", (char *)ft_lstlast(lstlast_001)->content);
+	free(lstlast_001);
+
+	printf("######\n");
+	t_list *lstlast_002 = NULL;
+	if (ft_lstlast(lstlast_002) == NULL)
+		printf("last is null\n");
+	else
+		printf("last is NOT null !!!!!!!! -> FAIL\n");
+
+	printf("######\n");
+	t_list *lstlast_003 = ft_lstnew(ft_strdup("only one"));
+	printf("Last one -> %s\n", (char *)ft_lstlast(lstlast_003)->content);
+	free(lstlast_003);
 	
 	return 0;
 }
