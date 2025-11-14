@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:09:09 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 18:24:06 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 21:23:48 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ A pointer to the new node.
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
+
 	new_node = malloc(sizeof(t_list));
 	if (new_node != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 18:01:18 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 20:44:52 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
-
-# define LIBFT_INT32_MAX 2147483647
-# define LIBFT_INT32_MIN -2147483648
-# define LIBFT_SIZE_MAX 18446744073709551615UL
 
 typedef struct s_list
 {
@@ -70,5 +66,6 @@ void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
 t_list		*ft_lstnew(void *content);
+void		ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif

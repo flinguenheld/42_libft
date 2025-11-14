@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 20:48:42 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 20:44:51 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/14 18:27:10 by flinguen          #+#    #+#             */
+/*   Updated: 2025/11/14 21:23:48 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	run(unsigned int n, int fd)
-{
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd('0' + n % 10, fd);
-}
-
 /*
 DESCRIPTION
-Outputs the integer ’n’ to the specified file descriptor.
+Adds the node ’new’ at the beginning of the list.
 */
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		run((unsigned int)-n, fd);
-	}
-	else
-		run((unsigned int)n, fd);
+	new->next = *lst;
+	(*lst) = new;
 }

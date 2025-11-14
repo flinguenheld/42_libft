@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 21:00:42 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 18:01:18 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 20:44:51 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 size_t	ft_strlen(const char *s)
 {
-	return (ft_memchr(s, '\0', LIBFT_SIZE_MAX) - (void *)s);
+	return (ft_memchr(s, '\0', SIZE_MAX) - (void *)s);
 }

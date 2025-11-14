@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 18:24:06 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 21:23:48 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -434,8 +434,8 @@ int main(void)
 	size_t nb_elem_calloc = 3;
 
 	// Size max has to return a ptn NULL --
-	// size_t len_calloc = LIBFT_SIZE_MAX;
-	// size_t nb_elem_calloc = LIBFT_SIZE_MAX;
+	// size_t len_calloc = SIZE_MAX;
+	// size_t nb_elem_calloc = SIZE_MAX;
 
 	int *ptr_calloc = ft_calloc(nb_elem_calloc, len_calloc);
 	if (ptr_calloc)
@@ -645,8 +645,8 @@ int main(void)
 			printf("%d -> NOK <--------------------------------------------\n", i);
 	}
 
-	printf("min: %d -> %d\n", LIBFT_INT32_MIN, ft_atoi(ft_itoa(LIBFT_INT32_MIN)));
-	printf("max: %d -> %d\n", LIBFT_INT32_MAX, ft_atoi(ft_itoa(LIBFT_INT32_MAX)));
+	printf("min: %ld -> %d\n", INT32_MIN, ft_atoi(ft_itoa(INT32_MIN)));
+	printf("max: %d -> %d\n", INT32_MAX, ft_atoi(ft_itoa(INT32_MAX)));
 
 	printf("\n################################################# STRMAPI ###\n");
 	char *mapped_001 = ft_strmapi("abcdefghijklmnopqrstuvwxyz", &function_strmapi);
@@ -712,20 +712,42 @@ int main(void)
 	ft_putchar_fd('\n', 1);
 	ft_putnbr_fd(-123, 1);
 	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(LIBFT_INT32_MAX, 1);
+	ft_putnbr_fd(INT32_MAX, 1);
 	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(LIBFT_INT32_MIN, 1);
+	ft_putnbr_fd(INT32_MIN, 1);
 	ft_putchar_fd('\n', 1);
 
 	printf("\n############################################### FT_LSTNEW ###\n");
-	char *new_list_content001 = "abcdef";
-	t_list *new001 = ft_lstnew((void *)new_list_content001);
-	printf("node001 content: %s", (char *)new001->content);
-	free(new001);
+	t_list *lstnew001 = ft_lstnew((void *)ft_strdup("abcdef"));
+	printf("node001 content: %s", (char *)lstnew001->content);
+	free(lstnew001);
 
 	printf("\n");
-	int new_list_content002 = 123;
-	t_list *new002 = ft_lstnew((void *)&new_list_content002);
-	printf("node002 content: %d", *(int *)new002->content);
-	free(new002);
+	int lstnew_content002 = 123;
+	t_list *lstnew002 = ft_lstnew((void *)&lstnew_content002);
+	printf("node002 content: %d", *(int *)lstnew002->content);
+	free(lstnew002);
+
+	printf("\n######################################### FT_LSTADD_FRONT ###\n");
+	t_list *lstadd_001 = ft_lstnew((void *)ft_strdup("mnop"));
+	ft_lstadd_front(&lstadd_001, ft_lstnew((void *)ft_strdup("ijkl")));
+	ft_lstadd_front(&lstadd_001, ft_lstnew((void *)ft_strdup("efgh")));
+	ft_lstadd_front(&lstadd_001, ft_lstnew((void *)ft_strdup("abcd")));
+
+	while (lstadd_001 != NULL)
+	{
+		printf("%s\n", (char *)lstadd_001->content);
+		lstadd_001 = lstadd_001->next;
+	}
+
+	printf("######\n");
+	t_list *lstadd_002 = ft_lstnew(ft_strdup("start"));
+	ft_lstadd_front(&lstadd_002, ft_lstnew((void *)ft_strdup("pouet")));
+	while (lstadd_002 != NULL)
+	{
+		printf("%s\n", (char *)lstadd_002->content);
+		lstadd_002 = lstadd_002->next;
+	}
+	free(lstadd_002);
+
 }
