@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 21:23:48 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 21:39:55 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -750,4 +750,25 @@ int main(void)
 	}
 	free(lstadd_002);
 
+	printf("\n############################################# FT_LST_SIZE ###\n");
+	t_list *lstsize_001 = ft_lstnew((void *)ft_strdup("1"));
+	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("2")));
+	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("3")));
+	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("4")));
+	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("5")));
+	printf("5 -> %d\n", ft_lstsize(lstsize_001));
+	free(lstsize_001);
+
+	printf("######\n");
+	t_list *lstsize_002 = ft_lstnew((void *)ft_strdup("1"));
+	printf("1-> %d\n", ft_lstsize(lstsize_002));
+	free(lstsize_002);
+
+	printf("######\n");
+	t_list *lstsize_003 = NULL;
+	printf("0-> %d\n", ft_lstsize(lstsize_003));
+	free(lstsize_003);
+
+	
+	return 0;
 }
