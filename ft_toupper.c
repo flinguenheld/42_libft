@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 20:41:00 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/08 22:56:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 16:59:14 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	return (c - 32 * (c >= 'a' && c <= 'z'));
 }
