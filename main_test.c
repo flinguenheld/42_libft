@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 18:01:19 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:24:06 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -716,4 +716,16 @@ int main(void)
 	ft_putchar_fd('\n', 1);
 	ft_putnbr_fd(LIBFT_INT32_MIN, 1);
 	ft_putchar_fd('\n', 1);
+
+	printf("\n############################################### FT_LSTNEW ###\n");
+	char *new_list_content001 = "abcdef";
+	t_list *new001 = ft_lstnew((void *)new_list_content001);
+	printf("node001 content: %s", (char *)new001->content);
+	free(new001);
+
+	printf("\n");
+	int new_list_content002 = 123;
+	t_list *new002 = ft_lstnew((void *)&new_list_content002);
+	printf("node002 content: %d", *(int *)new002->content);
+	free(new002);
 }
