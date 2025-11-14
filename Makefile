@@ -39,7 +39,7 @@ SRC = ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 
-SRC_BONUS = ft_bonus.c
+SRC_BONUS = ft_lstnew_bonus.c
 
 OBJS := $(SRC:%.c=%.o)
 OBJS_BONUS := $(SRC_BONUS:%.c=%.o)

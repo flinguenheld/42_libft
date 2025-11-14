@@ -6,12 +6,11 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 19:41:06 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/13 21:34:24 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:01:18 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
 
 /*
 DESCRIPTION
@@ -26,5 +25,5 @@ indicate the cause of the error.
 */
 char	*ft_strdup(const char *s)
 {
-	return (ft_substr(s, 0, SIZE_MAX));
+	return (ft_substr(s, 0, LIBFT_SIZE_MAX));
 }

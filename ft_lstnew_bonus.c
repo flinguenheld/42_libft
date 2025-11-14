@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 20:30:04 by flinguen          #+#    #+#             */
+/*   Created: 2025/11/14 17:09:09 by flinguen          #+#    #+#             */
 /*   Updated: 2025/11/14 18:01:18 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+/*
+DESCRIPTION
+Allocates memory (using malloc(3)) and returns a new node.
+The ’content’ member variable is initialized with the given parameter ’content’.
+The variable ’next’ is initialized to NULL.
+
+RETURN VALUE
+A pointer to the new node.
+*/
+t_list	*ft_lstnew(void *content)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+
+	
 }

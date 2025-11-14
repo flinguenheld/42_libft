@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 16:59:13 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/14 18:01:19 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -434,8 +434,8 @@ int main(void)
 	size_t nb_elem_calloc = 3;
 
 	// Size max has to return a ptn NULL --
-	// size_t len_calloc = SIZE_MAX;
-	// size_t nb_elem_calloc = SIZE_MAX;
+	// size_t len_calloc = LIBFT_SIZE_MAX;
+	// size_t nb_elem_calloc = LIBFT_SIZE_MAX;
 
 	int *ptr_calloc = ft_calloc(nb_elem_calloc, len_calloc);
 	if (ptr_calloc)
@@ -645,8 +645,8 @@ int main(void)
 			printf("%d -> NOK <--------------------------------------------\n", i);
 	}
 
-	printf("min: %d -> %d\n", INT32_MIN, ft_atoi(ft_itoa(INT32_MIN)));
-	printf("max: %d -> %d\n", INT32_MAX, ft_atoi(ft_itoa(INT32_MAX)));
+	printf("min: %d -> %d\n", LIBFT_INT32_MIN, ft_atoi(ft_itoa(LIBFT_INT32_MIN)));
+	printf("max: %d -> %d\n", LIBFT_INT32_MAX, ft_atoi(ft_itoa(LIBFT_INT32_MAX)));
 
 	printf("\n################################################# STRMAPI ###\n");
 	char *mapped_001 = ft_strmapi("abcdefghijklmnopqrstuvwxyz", &function_strmapi);
@@ -712,10 +712,8 @@ int main(void)
 	ft_putchar_fd('\n', 1);
 	ft_putnbr_fd(-123, 1);
 	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(INT32_MAX, 1);
+	ft_putnbr_fd(LIBFT_INT32_MAX, 1);
 	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(INT32_MIN, 1);
+	ft_putnbr_fd(LIBFT_INT32_MIN, 1);
 	ft_putchar_fd('\n', 1);
-
-	return 0;
 }
