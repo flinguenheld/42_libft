@@ -16,7 +16,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <bsd/string.h>
-// #include <string.h>
+#include <string.h>
 
 char *print_bool(int val)
 {

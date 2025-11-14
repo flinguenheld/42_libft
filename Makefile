@@ -1,9 +1,8 @@
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-INC_DIR = .
-ARNAME = ar rcs $(NAME)
-RANNAME = ar rcs $(NAME)
+TEST = main_test
+ARCHIVE = ar rcs $(NAME)
 
 SRC = ft_atoi.c \
 		ft_bzero.c \
@@ -40,22 +39,29 @@ SRC = ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 
+SRC_BONUS = ft_bonus.c
+
 OBJS := $(SRC:%.c=%.o)
+OBJS_BONUS := $(SRC_BONUS:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(ARNAME) $(OBJS)
-	$(RANNAME)
+	$(ARCHIVE) $(OBJS)
 
-# so:
-# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-# 	gcc -nostartfiles -shared -o libft.so $(OBJS)
+bonus: $(OBJS) $(OBJS_BONUS)
+	$(ARCHIVE) $(OBJS) $(OBJS_BONUS)
+
+test_main: fclean bonus
+	$(CC) -lbsd $(TEST).c $(NAME) -o $(TEST)
+	./$(TEST)
 
 clean:
 	rm -f $(OBJS)
+	rm -f $(OBJS_BONUS)
+	rm -f $(TEST)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
