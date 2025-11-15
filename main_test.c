@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/15 13:15:09 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/15 17:08:31 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ static void function_delone(void *content)
 {
 	printf("From function del one: free the content\n");
 	if (content != NULL)
+	{
 		free(content);
+		content = NULL;
+	}
 }
 
 int main(void)
@@ -869,6 +872,35 @@ int main(void)
 	printf("\n############################################ FT_LSTDELONE ###\n");
 	t_list *lst_delone_001 = ft_lstnew((void *)ft_strdup("hello"));
 	ft_lstdelone(lst_delone_001, function_delone);
+
+	printf("\n############################################# FT_LSTCLEAR ###\n");
+
+	t_list *lst_clear_node_001 = ft_lstnew((void *)ft_strdup("1"));
+	t_list *lst_clear_node_002 = ft_lstnew((void *)ft_strdup("2"));
+	t_list *lst_clear_node_003 = ft_lstnew((void *)ft_strdup("3"));
+	t_list *lst_clear_node_004 = ft_lstnew((void *)ft_strdup("4"));
+	t_list *lst_clear_node_005 = ft_lstnew((void *)ft_strdup("5"));
+
+	printf("value of : %s\n", (char *)lst_clear_node_002->content);
+	ft_lstadd_back(&lst_clear_node_001, lst_clear_node_002);
+	ft_lstadd_back(&lst_clear_node_001, lst_clear_node_003);
+	ft_lstadd_back(&lst_clear_node_001, lst_clear_node_004);
+	ft_lstadd_back(&lst_clear_node_001, lst_clear_node_005);
+
+	ft_lstclear(&lst_clear_node_001, function_delone);
+
+	if (lst_clear_node_001 == NULL)
+		printf("lst clear the list ok\n");
+	else
+		printf("lst clear the list FAIL !!!!!!!!!!!!!!!!!!!!!!!!\n");
+
+	// printf("###### These nodes have been freed so they have to segfault\n");
+	// printf("%s\n", (char *)(lst_clear_node_002->content));
+	// printf("%s\n", (char *)(lst_clear_node_003->content));
+	// printf("%s\n", (char *)(lst_clear_node_004->content));
+	// printf("%s\n", (char *)(lst_clear_node_005->content));
+
+	
 
 	return 0;
 }

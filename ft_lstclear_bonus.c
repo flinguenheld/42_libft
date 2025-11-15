@@ -1,11 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 11:44:41 by flinguen          #+#    #+#             */
+/*   Created: 2025/11/15 13:16:12 by flinguen          #+#    #+#             */
 /*   Updated: 2025/11/15 17:08:31 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,15 +14,15 @@
 
 /*
 DESCRIPTION
-Takes a node as parameter and frees its content using the function ’del’.
-Free the node itself but does NOT free the next node.
+Deletes and frees the given node and all its successors, using the
+function ’del’ and free(3). Finally, set the pointer to the list to NULL.
 */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (lst != NULL)
+	if (lst != NULL && *lst != NULL)
 	{
-		del(lst->content);
-		lst->content = NULL;
-		free(lst);
+		ft_lstclear(&(*lst)->next, del);
+		ft_lstdelone(*lst, del);
+		*lst = NULL;
 	}
 }
