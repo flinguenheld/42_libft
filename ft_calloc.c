@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:58:24 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 20:44:52 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/15 22:01:33 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 	size_t	full_size;
 
-	if (nmemb == SIZE_MAX || size == SIZE_MAX)
-		return (NULL);
 	ptr = NULL;
 	full_size = nmemb * size;
 	if (full_size == 0)
