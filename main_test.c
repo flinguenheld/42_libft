@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/15 11:42:12 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/15 13:15:09 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,13 @@ static void function_striteri(unsigned int v, char *c)
 		*c = ('a' + v);
 	else
 		*c = ('a' + v);
+}
+
+static void function_delone(void *content)
+{
+	printf("From function del one: free the content\n");
+	if (content != NULL)
+		free(content);
 }
 
 int main(void)
@@ -859,5 +866,9 @@ int main(void)
 	}
 	free(lst_addback_003_start);
 	
+	printf("\n############################################ FT_LSTDELONE ###\n");
+	t_list *lst_delone_001 = ft_lstnew((void *)ft_strdup("hello"));
+	ft_lstdelone(lst_delone_001, function_delone);
+
 	return 0;
 }
