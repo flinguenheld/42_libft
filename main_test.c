@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/15 17:08:31 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/15 13:15:09 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char *print_bool(int val)
 }
 
 
-static char function_strmapi(unsigned int v, char c)
+char function_strmapi(unsigned int v, char c)
 {
 	if (c >= 'a' && c <= 'z')
 		return ('A' + v);
@@ -35,7 +35,7 @@ static char function_strmapi(unsigned int v, char c)
 		return ('a' + v);
 }
 
-static void function_striteri(unsigned int v, char *c)
+void function_striteri(unsigned int v, char *c)
 {
 	if (*c >= 'a' && *c <= 'z')
 		*c = ('A' + v);
@@ -45,14 +45,20 @@ static void function_striteri(unsigned int v, char *c)
 		*c = ('a' + v);
 }
 
-static void function_delone(void *content)
+void function_delone(void *content)
 {
-	printf("From function del one: free the content\n");
+	// printf("From function del one: free the content\n");
 	if (content != NULL)
 	{
 		free(content);
 		content = NULL;
 	}
+}
+
+void function_lstiter(void *content)
+{
+	// printf("apply function lstiter\n");
+	ft_striteri((char *)content, &function_striteri);
 }
 
 int main(void)
@@ -681,7 +687,7 @@ int main(void)
 	printf("-> '%s'\n", mapped_006);
 	free(mapped_006);
 
-	printf("\n################################################# STRMAPI ###\n");
+	printf("\n################################################ STRITERI ###\n");
 	char src_iteri001[] = "abcdefghijklmnopqrstuvwxyz";
 	ft_striteri(src_iteri001, &function_striteri);
 	printf("-> '%s'\n", src_iteri001);
@@ -874,7 +880,6 @@ int main(void)
 	ft_lstdelone(lst_delone_001, function_delone);
 
 	printf("\n############################################# FT_LSTCLEAR ###\n");
-
 	t_list *lst_clear_node_001 = ft_lstnew((void *)ft_strdup("1"));
 	t_list *lst_clear_node_002 = ft_lstnew((void *)ft_strdup("2"));
 	t_list *lst_clear_node_003 = ft_lstnew((void *)ft_strdup("3"));
@@ -900,7 +905,33 @@ int main(void)
 	// printf("%s\n", (char *)(lst_clear_node_004->content));
 	// printf("%s\n", (char *)(lst_clear_node_005->content));
 
-	
+	printf("\n############################################## FT_LSTITER ###\n");
+	t_list *lst_lstiter_001 = ft_lstnew((void *)ft_strdup("abcdefghijkl"));
+	ft_lstadd_back(&lst_lstiter_001, ft_lstnew((void *)ft_strdup("ABCDEFGHIJKL")));
+	ft_lstadd_back(&lst_lstiter_001, ft_lstnew((void *)ft_strdup("abcdefghijkl")));
+	ft_lstadd_back(&lst_lstiter_001, ft_lstnew((void *)ft_strdup("ABCDEFGHIJKL")));
+	ft_lstadd_back(&lst_lstiter_001, ft_lstnew((void *)ft_strdup("aBcDeFgHiJkL")));
+	ft_lstadd_back(&lst_lstiter_001, ft_lstnew((void *)ft_strdup("AbCdEfGhIjKl")));
+
+	printf("###### Before\n");
+	t_list *lst_lsiter_001_to_print_before = lst_lstiter_001;
+	while (lst_lsiter_001_to_print_before != NULL)
+	{
+		printf("This node: '%s'\n", (char *)lst_lsiter_001_to_print_before->content);
+		lst_lsiter_001_to_print_before = lst_lsiter_001_to_print_before->next;
+	}
+
+	ft_lstiter(lst_lstiter_001, &function_lstiter);
+
+	printf("###### After\n");
+	t_list *lst_lsiter_001_to_print = lst_lstiter_001;
+	while (lst_lsiter_001_to_print != NULL)
+	{
+		printf("This node: '%s'\n", (char *)lst_lsiter_001_to_print->content);
+		lst_lsiter_001_to_print = lst_lsiter_001_to_print->next;
+	}
+
+	ft_lstclear(&lst_lstiter_001, &function_delone);
 
 	return 0;
 }
