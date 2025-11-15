@@ -6,16 +6,14 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/14 22:16:17 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/15 11:42:12 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <stddef.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <bsd/string.h>
+#include <stdlib.h>
 #include <string.h>
 
 char *print_bool(int val)
@@ -645,7 +643,7 @@ int main(void)
 			printf("%d -> NOK <--------------------------------------------\n", i);
 	}
 
-	printf("min: %ld -> %d\n", INT32_MIN, ft_atoi(ft_itoa(INT32_MIN)));
+	printf("min: %d -> %d\n", INT32_MIN, ft_atoi(ft_itoa(INT32_MIN)));
 	printf("max: %d -> %d\n", INT32_MAX, ft_atoi(ft_itoa(INT32_MAX)));
 
 	printf("\n################################################# STRMAPI ###\n");
@@ -718,78 +716,148 @@ int main(void)
 	ft_putchar_fd('\n', 1);
 
 	printf("\n############################################### FT_LSTNEW ###\n");
-	t_list *lstnew001 = ft_lstnew((void *)ft_strdup("abcdef"));
-	printf("node001 content: %s", (char *)lstnew001->content);
-	free(lstnew001);
+	t_list *lst_new001 = ft_lstnew((void *)ft_strdup("abcdef"));
+	printf("node001 content: %s", (char *)lst_new001->content);
+	free(lst_new001->content);
+	free(lst_new001);
 
 	printf("\n");
-	int lstnew_content002 = 123;
-	t_list *lstnew002 = ft_lstnew((void *)&lstnew_content002);
-	printf("node002 content: %d", *(int *)lstnew002->content);
-	free(lstnew002);
+	int lst_new_content002 = 123;
+	t_list *lst_new002 = ft_lstnew((void *)&lst_new_content002);
+	printf("node002 content: %d", *(int *)lst_new002->content);
+	free(lst_new002);
 
 	printf("\n######################################### FT_LSTADD_FRONT ###\n");
-	t_list *lstadd_001 = ft_lstnew((void *)ft_strdup("mnop"));
-	ft_lstadd_front(&lstadd_001, ft_lstnew((void *)ft_strdup("ijkl")));
-	ft_lstadd_front(&lstadd_001, ft_lstnew((void *)ft_strdup("efgh")));
-	ft_lstadd_front(&lstadd_001, ft_lstnew((void *)ft_strdup("abcd")));
+	t_list *lst_add_001 = ft_lstnew((void *)ft_strdup("mnop"));
+	ft_lstadd_front(&lst_add_001, ft_lstnew((void *)ft_strdup("ijkl")));
+	ft_lstadd_front(&lst_add_001, ft_lstnew((void *)ft_strdup("efgh")));
+	ft_lstadd_front(&lst_add_001, ft_lstnew((void *)ft_strdup("abcd")));
 
-	while (lstadd_001 != NULL)
+	while (lst_add_001 != NULL)
 	{
-		printf("%s\n", (char *)lstadd_001->content);
-		lstadd_001 = lstadd_001->next;
+		printf("%s\n", (char *)lst_add_001->content);
+		t_list *to_free = lst_add_001;
+		lst_add_001 = lst_add_001->next;
+		free(to_free);
 	}
+	free(lst_add_001);
 
 	printf("######\n");
-	t_list *lstadd_002 = ft_lstnew(ft_strdup("start"));
-	ft_lstadd_front(&lstadd_002, ft_lstnew((void *)ft_strdup("pouet")));
-	while (lstadd_002 != NULL)
+	t_list *lst_add_002 = ft_lstnew(ft_strdup("start"));
+	ft_lstadd_front(&lst_add_002, ft_lstnew((void *)ft_strdup("pouet")));
+	while (lst_add_002 != NULL)
 	{
-		printf("%s\n", (char *)lstadd_002->content);
-		lstadd_002 = lstadd_002->next;
+		printf("%s\n", (char *)lst_add_002->content);
+		t_list *to_free = lst_add_002;
+		lst_add_002 = lst_add_002->next;
+		free(to_free);
 	}
-	free(lstadd_002);
+	free(lst_add_002);
 
 	printf("\n############################################## FT_LSTSIZE ###\n");
-	t_list *lstsize_001 = ft_lstnew((void *)ft_strdup("1"));
-	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("2")));
-	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("3")));
-	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("4")));
-	ft_lstadd_front(&lstsize_001, ft_lstnew((void *)ft_strdup("5")));
-	printf("5 -> %d\n", ft_lstsize(lstsize_001));
-	free(lstsize_001);
+	t_list *lst_size_001 = ft_lstnew((void *)ft_strdup("1"));
+	ft_lstadd_front(&lst_size_001, ft_lstnew((void *)ft_strdup("2")));
+	ft_lstadd_front(&lst_size_001, ft_lstnew((void *)ft_strdup("3")));
+	ft_lstadd_front(&lst_size_001, ft_lstnew((void *)ft_strdup("4")));
+	ft_lstadd_front(&lst_size_001, ft_lstnew((void *)ft_strdup("5")));
+	printf("5 -> %d\n", ft_lstsize(lst_size_001));
+	while (lst_size_001 != NULL)
+	{
+		free(lst_size_001->content);
+		t_list *to_free = lst_size_001;
+		lst_size_001 = lst_size_001->next;
+		free(to_free);
+	}
+	free(lst_size_001);
 
-	printf("######\n");
-	t_list *lstsize_002 = ft_lstnew((void *)ft_strdup("1"));
-	printf("1-> %d\n", ft_lstsize(lstsize_002));
-	free(lstsize_002);
+	printf("###### size of one\n");
+	t_list *lst_size_002 = ft_lstnew((void *)ft_strdup("1"));
+	printf("1 -> %d\n", ft_lstsize(lst_size_002));
+	free(lst_size_002->content);
+	free(lst_size_002);
 
-	printf("######\n");
-	t_list *lstsize_003 = NULL;
-	printf("0-> %d\n", ft_lstsize(lstsize_003));
-	free(lstsize_003);
+	printf("###### size of zero\n");
+	t_list *lst_size_003 = NULL;
+	printf("0 -> %d\n", ft_lstsize(lst_size_003));
 
 	printf("\n############################################## FT_LSTLAST ###\n");
-	t_list *lstlast_001 = ft_lstnew((void *)ft_strdup("last"));
-	ft_lstadd_front(&lstlast_001, ft_lstnew((void *)ft_strdup("2")));
-	ft_lstadd_front(&lstlast_001, ft_lstnew((void *)ft_strdup("3")));
-	ft_lstadd_front(&lstlast_001, ft_lstnew((void *)ft_strdup("4")));
-	ft_lstadd_front(&lstlast_001, ft_lstnew((void *)ft_strdup("5")));
+	t_list *lst_last_001 = ft_lstnew((void *)ft_strdup("last"));
+	ft_lstadd_front(&lst_last_001, ft_lstnew((void *)ft_strdup("2")));
+	ft_lstadd_front(&lst_last_001, ft_lstnew((void *)ft_strdup("3")));
+	ft_lstadd_front(&lst_last_001, ft_lstnew((void *)ft_strdup("4")));
+	ft_lstadd_front(&lst_last_001, ft_lstnew((void *)ft_strdup("5")));
 
-	printf("Last one -> %s\n", (char *)ft_lstlast(lstlast_001)->content);
-	free(lstlast_001);
+	printf("Last one -> %s\n", (char *)ft_lstlast(lst_last_001)->content);
+	while (lst_last_001 != NULL)
+	{
+		free(lst_last_001->content);
+		t_list *to_free = lst_last_001;
+		lst_last_001 = lst_last_001->next;
+		free(to_free);
+	}
+	free(lst_last_001);
 
 	printf("######\n");
 	t_list *lstlast_002 = NULL;
 	if (ft_lstlast(lstlast_002) == NULL)
-		printf("last is null\n");
+		printf("last is null (that's ok)\n");
 	else
 		printf("last is NOT null !!!!!!!! -> FAIL\n");
 
 	printf("######\n");
-	t_list *lstlast_003 = ft_lstnew(ft_strdup("only one"));
-	printf("Last one -> %s\n", (char *)ft_lstlast(lstlast_003)->content);
-	free(lstlast_003);
+	t_list *lst_last_003 = ft_lstnew(ft_strdup("only one"));
+	printf("Last one -> %s\n", (char *)ft_lstlast(lst_last_003)->content);
+	free(lst_last_003->content);
+	free(lst_last_003);
+
+	printf("\n########################################### FT_LSTADDLAST ###\n");
+	t_list *lst_addback_001 = ft_lstnew((void *)ft_strdup("1"));
+	ft_lstadd_back(&lst_addback_001, ft_lstnew((void *)ft_strdup("2")));
+	ft_lstadd_back(&lst_addback_001, ft_lstnew((void *)ft_strdup("3")));
+	ft_lstadd_back(&lst_addback_001, ft_lstnew((void *)ft_strdup("4")));
+	ft_lstadd_back(&lst_addback_001, ft_lstnew((void *)ft_strdup("5")));
+	ft_lstadd_back(&lst_addback_001, ft_lstnew((void *)ft_strdup("LAST OK")));
+
+	printf("Last one -> %s\n", (char *)ft_lstlast(lst_addback_001)->content);
+	while (lst_addback_001 != NULL)
+	{
+		free(lst_addback_001->content);
+		t_list *to_free = lst_addback_001;
+		lst_addback_001 = lst_addback_001->next;
+		free(to_free);
+	}
+	free(lst_addback_001);
+
+	printf("###### Test with empty list\n");
+	t_list *lst_addback_002 = NULL;
+	printf("size: %d\n", ft_lstsize(lst_addback_002));
+	ft_lstadd_back(&lst_addback_002, ft_lstnew((void *)ft_strdup("Only one")));
+	printf("Is there one ?\n");
+	printf("size: %d -> '%s'\n", ft_lstsize(lst_addback_002), (char *)ft_lstlast(lst_addback_002)->content);
+	free(lst_addback_002);
+
+	printf("###### Test with another list added at the end\n");
+	int lst_addback_common_content_003 = 42;
+	t_list *lst_addback_003_to_add = ft_lstnew((void *)&lst_addback_common_content_003);
+	ft_lstadd_back(&lst_addback_003_to_add, ft_lstnew((void *)&lst_addback_common_content_003));
+	ft_lstadd_back(&lst_addback_003_to_add, ft_lstnew((void *)&lst_addback_common_content_003));
+	ft_lstadd_back(&lst_addback_003_to_add, ft_lstnew((void *)&lst_addback_common_content_003));
+
+	int lst_addback_common_content_start_003 = 33;
+	t_list *lst_addback_003_start = ft_lstnew((void *)&lst_addback_common_content_start_003);
+	ft_lstadd_back(&lst_addback_003_start, ft_lstnew((void *)&lst_addback_common_content_start_003));
+
+	ft_lstadd_back(&lst_addback_003_start, lst_addback_003_to_add);
+	printf("It would be: 33 33 42 42 42 42:\n");
+	printf("           : ");
+	while (lst_addback_003_start != NULL)
+	{
+		printf("%d ", *(int*)(lst_addback_003_start->content));
+		t_list *to_free = lst_addback_003_start;
+		lst_addback_003_start = lst_addback_003_start->next;
+		free(to_free);
+	}
+	free(lst_addback_003_start);
 	
 	return 0;
 }

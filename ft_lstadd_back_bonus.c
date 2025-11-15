@@ -1,11 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 21:41:14 by flinguen          #+#    #+#             */
+/*   Created: 2025/11/14 22:18:11 by flinguen          #+#    #+#             */
 /*   Updated: 2025/11/15 11:42:12 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,13 +14,12 @@
 
 /*
 DESCRIPTION
-Returns the last node of the list.
+Adds the node ’new’ at the end of the list.
 */
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (lst == NULL)
-		return (NULL);
-	if (lst->next == NULL)
-		return (lst);
-	return (ft_lstlast(lst->next));
+	if (*lst == NULL)
+		*lst = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }
