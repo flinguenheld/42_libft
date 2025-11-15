@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/15 13:15:09 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/15 21:19:42 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,13 @@ void function_lstiter(void *content)
 {
 	// printf("apply function lstiter\n");
 	ft_striteri((char *)content, &function_striteri);
+}
+
+void *function_lst_map_clone_only_even(void *content)
+{
+	if (ft_atoi((char *)content) % 2 == 0)
+		return (void *)(ft_strdup((char *)content));
+	return NULL;
 }
 
 int main(void)
@@ -932,6 +939,35 @@ int main(void)
 	}
 
 	ft_lstclear(&lst_lstiter_001, &function_delone);
+
+	printf("\n############################################### FT_LSTMAP ###\n");
+	t_list *lst_map_001 = ft_lstnew((void *)ft_strdup("0"));
+	ft_lstadd_back(&lst_map_001, ft_lstnew((void *)ft_strdup("1")));
+	ft_lstadd_back(&lst_map_001, ft_lstnew((void *)ft_strdup("2")));
+	ft_lstadd_back(&lst_map_001, ft_lstnew((void *)ft_strdup("3")));
+	ft_lstadd_back(&lst_map_001, ft_lstnew((void *)ft_strdup("4")));
+	ft_lstadd_back(&lst_map_001, ft_lstnew((void *)ft_strdup("5")));
+	ft_lstadd_back(&lst_map_001, ft_lstnew((void *)ft_strdup("6")));
+	ft_lstadd_back(&lst_map_001, ft_lstnew((void *)ft_strdup("7")));
+
+	printf("###### LIST SOURCE\n");
+	t_list *lst_map_001_start = lst_map_001;
+	while (lst_map_001_start != NULL)
+	{
+		printf("This node: '%s'\n", (char *)lst_map_001_start->content);
+		lst_map_001_start = lst_map_001_start->next;
+	}
+
+	t_list *lst_map_new_list = ft_lstmap(lst_map_001, &function_lst_map_clone_only_even, function_delone);
+	ft_lstclear(&lst_map_001, &function_delone);
+
+	printf("###### LIST DEST\n");
+	while (lst_map_new_list != NULL)
+	{
+		printf("This node: '%s'\n", (char *)lst_map_new_list->content);
+		lst_map_new_list = lst_map_new_list->next;
+	}
+	ft_lstclear(&lst_map_new_list, &function_delone);
 
 	return 0;
 }
