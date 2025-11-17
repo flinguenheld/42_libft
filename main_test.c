@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:15:05 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:17:00 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -639,6 +639,21 @@ int main(void)
 	printf("-> %d elements\n\n", nb_split006);
 	free(start_split006);
 
+	printf("--------- 007 -----\n");
+	char **dst_split007 = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+	char **start_split007 = dst_split007;
+	int nb_split007 = 0;
+	while (*dst_split007 != NULL)
+	{
+		printf("'%s'\n", *dst_split007);
+		free(*dst_split007);
+		dst_split007++;
+		nb_split007++;
+	}
+	printf("-> %d elements\n\n", nb_split007);
+	free(start_split007);
+	
+
 	// printf("\nSplit voluntarily fail ######\n");
 
 	// Add that just after substr:
@@ -650,11 +665,11 @@ int main(void)
 		// 	new = NULL;
 		// }
 
-	// char **dst_split007 = ft_split("aaa-bbb-12345678901234567890-cccc-dddd", '-');
-	// char **start_split007 = dst_split007;
-	// int nb_split007 = 0;
+	// char **dst_split008 = ft_split("aaa-bbb-12345678901234567890-cccc-dddd", '-');
+	// char **start_split008 = dst_split008;
+	// int nb_split008 = 0;
 
-	// if (dst_split007 == NULL)
+	// if (dst_split008 == NULL)
 	// {
 	// 	printf("split has failed and the tab has been freed\n");
 	// }
