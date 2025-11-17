@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:58:24 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:58:51 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:51:45 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ DESCRIPTION
 The  calloc() function allocates memory for an array of nmemb elements of size
 bytes each and returns a pointer to the allocated memory.
 The memory is set to zero.
-If nmemb or size is 0, then calloc() returns  either  NULL, or a unique
-pointer value that can later be successfully passed to free().
-If the multiplication of nmemb and size would result in integer overflow,
-then calloc() returns an error. By contrast, an integer overflow would not
-be detected in the following call to malloc(), with the result
-that an incorrectly sized block of memory would be allocated:
 
-           malloc(nmemb * size);
+If nmemb or size is 0, calloc() returns a malloc(0) which returns a unique
+pointer value that can be successfully passed to free().
+
+If the multiplication of nmemb and size would result in integer overflow,
+then calloc() returns a NULL.
 */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -35,7 +33,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	full_size = nmemb * size;
 	if (full_size == 0)
 		return (malloc(0));
-		// full_size = 1;
 	if (full_size == 1 || full_size / nmemb == size)
 	{
 		ptr = malloc(full_size);

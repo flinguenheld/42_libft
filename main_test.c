@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 21:17:00 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:51:46 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -442,7 +442,7 @@ int main(void)
 	printf("\t'%d'\t'%d'\n", ft_atoi("-2147483649"),     atoi("-2147483649"));
 
 	printf("\n################################################## CALLOC ###\n");
-	size_t len_calloc = 1;
+	size_t len_calloc = 10;
 	size_t nb_elem_calloc = 3;
 
 	// Size max has to return a ptn NULL --
@@ -453,13 +453,17 @@ int main(void)
 	if (ptr_calloc)
 	{
 		printf("first: '%c'\n", *ptr_calloc);
-		for (size_t i = 0; i < 10; i++)
+		for (size_t i = 0; i < len_calloc; i++)
 			printf("'%c' ", (char)ptr_calloc[i]);
 	}
 	else
 		printf("ptr null");
 	// printf("\n");
 	free(ptr_calloc);
+
+	char *test = ft_calloc(0, 0);
+	printf("test: '%c'\n", *test);
+	free(test);
 
 	printf("\n####################### CALLOC REAL ###\n");
 	int *ptr_calloc_real = calloc(nb_elem_calloc, len_calloc);
@@ -678,8 +682,6 @@ int main(void)
 	// 	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
 	// 	printf("split has failed but the tab hasn't been free !!!!!!!!!!!!!!!!!!!!!!!\n");
 	// }
-
-	return 0;
 
 	printf("\n#################################################### ITOA ###\n");
 
