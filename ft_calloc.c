@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:58:24 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:15:04 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:58:51 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = NULL;
 	full_size = nmemb * size;
 	if (full_size == 0)
-		full_size = 1;
+		return (malloc(0));
+		// full_size = 1;
 	if (full_size == 1 || full_size / nmemb == size)
 	{
 		ptr = malloc(full_size);

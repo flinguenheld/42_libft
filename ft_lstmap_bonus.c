@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 18:02:43 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:15:05 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:59:27 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*new_node;
+	void	*new_content;
 
 	new = NULL;
 	while (lst != NULL)
 	{
-		new_node = ft_lstnew(f(lst->content));
+		new_content = f(lst->content);
+		new_node = ft_lstnew(new_content);
 		if (new_node == NULL)
 		{
+			del(new_content);
 			ft_lstclear(&new, del);
 			return (NULL);
 		}
