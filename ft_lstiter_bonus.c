@@ -6,17 +6,12 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 17:18:33 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:15:04 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 23:12:08 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-DESCRIPTION
-Iterates through the list ’lst’ and applies the
-function ’f’ to the content of each node.
-*/
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (lst != NULL)

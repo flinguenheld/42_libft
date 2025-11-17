@@ -6,17 +6,12 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 11:44:41 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:15:04 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 23:12:08 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-DESCRIPTION
-Takes a node as parameter and frees its content using the function ’del’.
-Free the node itself but does NOT free the next node.
-*/
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst != NULL)

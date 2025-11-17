@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:01:36 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:15:04 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 23:12:08 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@ static void	run(char *ptr, unsigned int value)
 	*ptr = (value % 10) + '0';
 }
 
-/*
-DESCRIPTION
-Allocates memory (using malloc(3)) and returns a string representing the
-integer received as an argument. Negative numbers must be handled.
-*/
 char	*ft_itoa(int n)
 {
 	size_t	length;

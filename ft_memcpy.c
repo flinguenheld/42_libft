@@ -6,19 +6,12 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 13:33:19 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:15:04 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 23:12:07 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-DESCRIPTION
-The  memcpy() function copies n bytes from memory area src to memory area dest.
-The memory areas must not overlap. Use memmove if the memory areas do overlap.
-RETURN VALUE
-The memcpy() function returns a pointer to dest.
-*/
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*copied_dest;

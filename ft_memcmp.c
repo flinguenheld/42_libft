@@ -6,28 +6,12 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 14:14:30 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:15:04 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 23:12:08 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-DESCRIPTION
-The  memcmp() function compares the first n bytes (each interpreted as
-unsigned char) of the memory areas s1 and s2.
-
-RETURN VALUE
-The memcmp() function returns an integer less than, equal to, or greater than
-zero if the first n bytes of s1 is found, respectively, to be less than,
-to match, or be greater than the first n bytes of s2.
-
-For a nonzero return value, the sign is determined by the sign of the
-difference between the first pair of bytes (interpreted as unsigned char)
-that differ in s1 and s2.
-
-If n is zero, the return value is zero.
-*/
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	if (n <= 0)

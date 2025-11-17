@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 11:58:13 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 21:16:59 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 23:12:07 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,6 @@ static int	run(const char *str, char delimiter, char **to_fill, char ***start)
 	return (run(next_delimiter + 1, delimiter, to_fill, start));
 }
 
-/*
-DESCRIPTION
-Allocates memory (using malloc(3)) and returns an array of strings obtained by
-splitting ’s’ using the character ’c’ as a delimiter.
-The array must end with a NULL pointer.
-
-RETURN VALUE
-The array of new strings resulting from the split.
-NULL if the allocation fails.
-*/
 char	**ft_split(char const *s, char c)
 {
 	int		count;

@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 20:48:42 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 16:15:04 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 23:12:07 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@ static void	run(unsigned int n, int fd)
 	ft_putchar_fd('0' + n % 10, fd);
 }
 
-/*
-DESCRIPTION
-Outputs the integer ’n’ to the specified file descriptor.
-*/
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
