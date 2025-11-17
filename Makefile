@@ -60,7 +60,7 @@ $(NAME): $(OBJS)
 bonus: $(OBJS) $(OBJS_BONUS)
 	$(ARCHIVE) $(OBJS) $(OBJS_BONUS)
 
-test_main: fclean bonus
+main_test: fclean bonus
 	$(CC) -lbsd $(TEST).c $(NAME) -o $(TEST)
 	./$(TEST)
 
@@ -73,3 +73,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all bonus $(NAME) $(TEST) clean fclean

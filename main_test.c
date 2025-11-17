@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/15 21:19:42 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:15:05 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,6 @@
 #include <bsd/string.h>
 #include <stdlib.h>
 #include <string.h>
-
-char *print_bool(int val)
-{
-	if (val)
-		return "true";
-	else
-		return "false";
-}
-
 
 char function_strmapi(unsigned int v, char c)
 {
@@ -564,14 +555,6 @@ int main(void)
 	free(dst_strtrim);
 
 	printf("\n################################################### SPLIT ###\n");
-	// char * * tab = ft_split("  tripouille  42  ", ' ');
-	// /* 1 */ mcheck(tab, sizeof(char *) * 3);
-
-	// char *src_split = "Hello   to you";
-	// char *src_split = "  tripouille 42 ";
-	// char c_split = ' ';
-	// char c_split = '\0';
-
 	printf("--------- 001 -----\n");
 	char **dst_split001 = ft_split("Hello to you", ' ');
 	char **start_split001 = dst_split001;
@@ -655,6 +638,33 @@ int main(void)
 	}
 	printf("-> %d elements\n\n", nb_split006);
 	free(start_split006);
+
+	// printf("\nSplit voluntarily fail ######\n");
+
+	// Add that just after substr:
+	// It has to free all strings, the tab and set it to NULL
+		// if (strlen(new) == 20)
+		// {
+		// 	printf("voluntarily fail with: %s\n", new);
+		// 	free(new);
+		// 	new = NULL;
+		// }
+
+	// char **dst_split007 = ft_split("aaa-bbb-12345678901234567890-cccc-dddd", '-');
+	// char **start_split007 = dst_split007;
+	// int nb_split007 = 0;
+
+	// if (dst_split007 == NULL)
+	// {
+	// 	printf("split has failed and the tab has been freed\n");
+	// }
+	// else
+	// {
+	// 	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+	// 	printf("split has failed but the tab hasn't been free !!!!!!!!!!!!!!!!!!!!!!!\n");
+	// }
+
+	return 0;
 
 	printf("\n#################################################### ITOA ###\n");
 
