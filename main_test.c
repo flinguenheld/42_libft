@@ -6,7 +6,7 @@
 /*   By: flinguen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:31:17 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/15 21:19:42 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/17 21:51:46 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,6 @@
 #include <bsd/string.h>
 #include <stdlib.h>
 #include <string.h>
-
-char *print_bool(int val)
-{
-	if (val)
-		return "true";
-	else
-		return "false";
-}
-
 
 char function_strmapi(unsigned int v, char c)
 {
@@ -451,7 +442,7 @@ int main(void)
 	printf("\t'%d'\t'%d'\n", ft_atoi("-2147483649"),     atoi("-2147483649"));
 
 	printf("\n################################################## CALLOC ###\n");
-	size_t len_calloc = 1;
+	size_t len_calloc = 10;
 	size_t nb_elem_calloc = 3;
 
 	// Size max has to return a ptn NULL --
@@ -462,13 +453,17 @@ int main(void)
 	if (ptr_calloc)
 	{
 		printf("first: '%c'\n", *ptr_calloc);
-		for (size_t i = 0; i < 10; i++)
+		for (size_t i = 0; i < len_calloc; i++)
 			printf("'%c' ", (char)ptr_calloc[i]);
 	}
 	else
 		printf("ptr null");
 	// printf("\n");
 	free(ptr_calloc);
+
+	char *test = ft_calloc(0, 0);
+	printf("test: '%c'\n", *test);
+	free(test);
 
 	printf("\n####################### CALLOC REAL ###\n");
 	int *ptr_calloc_real = calloc(nb_elem_calloc, len_calloc);
@@ -564,14 +559,6 @@ int main(void)
 	free(dst_strtrim);
 
 	printf("\n################################################### SPLIT ###\n");
-	// char * * tab = ft_split("  tripouille  42  ", ' ');
-	// /* 1 */ mcheck(tab, sizeof(char *) * 3);
-
-	// char *src_split = "Hello   to you";
-	// char *src_split = "  tripouille 42 ";
-	// char c_split = ' ';
-	// char c_split = '\0';
-
 	printf("--------- 001 -----\n");
 	char **dst_split001 = ft_split("Hello to you", ' ');
 	char **start_split001 = dst_split001;
@@ -655,6 +642,46 @@ int main(void)
 	}
 	printf("-> %d elements\n\n", nb_split006);
 	free(start_split006);
+
+	printf("--------- 007 -----\n");
+	char **dst_split007 = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+	char **start_split007 = dst_split007;
+	int nb_split007 = 0;
+	while (*dst_split007 != NULL)
+	{
+		printf("'%s'\n", *dst_split007);
+		free(*dst_split007);
+		dst_split007++;
+		nb_split007++;
+	}
+	printf("-> %d elements\n\n", nb_split007);
+	free(start_split007);
+	
+
+	// printf("\nSplit voluntarily fail ######\n");
+
+	// Add that just after substr:
+	// It has to free all strings, the tab and set it to NULL
+		// if (strlen(new) == 20)
+		// {
+		// 	printf("voluntarily fail with: %s\n", new);
+		// 	free(new);
+		// 	new = NULL;
+		// }
+
+	// char **dst_split008 = ft_split("aaa-bbb-12345678901234567890-cccc-dddd", '-');
+	// char **start_split008 = dst_split008;
+	// int nb_split008 = 0;
+
+	// if (dst_split008 == NULL)
+	// {
+	// 	printf("split has failed and the tab has been freed\n");
+	// }
+	// else
+	// {
+	// 	printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+	// 	printf("split has failed but the tab hasn't been free !!!!!!!!!!!!!!!!!!!!!!!\n");
+	// }
 
 	printf("\n#################################################### ITOA ###\n");
 
