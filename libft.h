@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 23:12:08 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/11/18 10:25:44 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdint.h>
 # include <unistd.h>
 
+/**
+ * List node.
+ */
 typedef struct s_list
 {
 	void			*content;
@@ -31,6 +34,8 @@ int			ft_isprint(int c);
 
 int			ft_toupper(int c);
 int			ft_tolower(int c);
+
+size_t		ft_strlen(const char *s);
 
 /**
  * @brief
@@ -145,8 +150,6 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size);
  * The converted value or 0 on error.
  */
 int			ft_atoi(const char *nptr);
-
-size_t		ft_strlen(const char *s);
 
 /**
  * @brief
