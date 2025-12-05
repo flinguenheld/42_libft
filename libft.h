@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/18 10:25:44 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:19:17 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -338,7 +338,7 @@ t_list		*ft_lstnew(void *content);
  * @brief
  * Adds the node ’new’ at the beginning of the list.
  */
-void		ft_lstadd_front(t_list **lst, t_list *new);
+void		ft_lstadd_front(t_list **lst, t_list *new_node);
 
 /**
  * @brief
@@ -356,7 +356,7 @@ t_list		*ft_lstlast(t_list *lst);
  * @brief
  * Adds the node ’new’ at the end of the list.
  */
-void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstadd_back(t_list **lst, t_list *new_node);
 
 /**
  * @brief

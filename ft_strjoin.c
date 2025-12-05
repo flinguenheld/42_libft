@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 21:23:22 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 23:12:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:19:54 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*new;
+	char	*new_str;
 	size_t	buffer_size;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	buffer_size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	new = ft_calloc(buffer_size, sizeof(char));
-	if (new != NULL)
+	new_str = ft_calloc(buffer_size, sizeof(char));
+	if (new_str != NULL)
 	{
-		ft_strlcpy(new, s1, buffer_size);
-		ft_strlcat(new, s2, buffer_size);
+		ft_strlcpy(new_str, s1, buffer_size);
+		ft_strlcat(new_str, s2, buffer_size);
 	}
-	return (new);
+	return (new_str);
 }

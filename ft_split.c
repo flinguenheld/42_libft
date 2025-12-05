@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 11:58:13 by flinguen          #+#    #+#             */
-/*   Updated: 2025/11/17 23:12:07 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:19:17 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ Returns one on success (or on dry run) and a negative value on malloc fail
 */
 static int	fill(char ***to_fill, const char *s, size_t length)
 {
-	char	*new;
+	char	*new_str;
 
 	if (*to_fill != NULL && length > 0)
 	{
-		new = ft_substr(s, 0, length);
-		if (new == NULL)
+		new_str = ft_substr(s, 0, length);
+		if (new_str == NULL)
 			return (INT32_MIN);
-		**to_fill = new;
+		**to_fill = new_str;
 		(*to_fill)++;
 	}
 	return (1);
