@@ -2,7 +2,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 TEST = main_test
-ARCHIVE = ar rcs $(NAME)
 
 SRC = ft_atoi.c \
 		ft_bzero.c \
@@ -38,40 +37,34 @@ SRC = ft_atoi.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-
-SRC_BONUS = ft_lstnew_bonus.c \
-			ft_lstadd_front_bonus.c \
-			ft_lstsize_bonus.c \
-			ft_lstlast_bonus.c \
-			ft_lstadd_back_bonus.c \
-			ft_lstdelone_bonus.c \
-			ft_lstclear_bonus.c \
-			ft_lstiter_bonus.c \
-			ft_lstmap_bonus.c
+		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 OBJS := $(SRC:%.c=%.o)
-OBJS_BONUS := $(SRC_BONUS:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(ARCHIVE) $(OBJS)
+	@ar rcsv $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	$(ARCHIVE) $(OBJS) $(OBJS_BONUS)
-
-$(TEST): fclean bonus
+$(TEST): fclean
 	$(CC) -lbsd $(TEST).c $(NAME) -o $(TEST)
 	./$(TEST)
 
 clean:
-	rm -f $(OBJS)
-	rm -f $(OBJS_BONUS)
-	rm -f $(TEST)
+	@rm -vf $(OBJS)
+	@rm -vf $(TEST)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -vf $(NAME)
 
 re: fclean all
 
-.PHONY: all $(NAME) bonus $(TEST) clean fclean re
+.PHONY: all $(NAME) $(TEST) clean fclean re
