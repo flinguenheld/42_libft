@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_itohex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 14:56:18 by flinguen          #+#    #+#             */
-/*   Updated: 2025/12/21 20:19:40 by flinguen         ###   ########.fr       */
+/*   Created: 2025/12/16 12:05:57 by flinguen          #+#    #+#             */
+/*   Updated: 2025/12/21 20:19:39 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_ltohex(long value)
 {
-	size_t	little_len;
+	return (ft_ltobase(value, "0123456789ABCDEF"));
+}
 
-	little_len = ft_strlen(little);
-	if (little_len == 0)
-		return ((char *)big);
-	if (len > 0)
-	{
-		while (*big && len-- >= little_len)
-		{
-			if (ft_strncmp(big, little, little_len) == 0)
-				return ((char *)big);
-			big++;
-		}
-	}
-	return (NULL);
+char	*ft_itohex(int value)
+{
+	return (ft_ltobase((long)value, "0123456789ABCDEF"));
+}
+
+char	*ft_utohex(unsigned int value)
+{
+	return (ft_ltobase((long)value, "0123456789ABCDEF"));
 }

@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 18:53:41 by flinguen          #+#    #+#             */
-/*   Updated: 2025/12/05 18:19:19 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/12/21 20:19:40 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		{
 			f(index, &s[index]);
 			index++;
+		}
+	}
+}
+
+void	ft_striter(char *s, int (*f)(int))
+{
+	if (s != NULL)
+	{
+		while (*s != '\0')
+		{
+			*s = f(*s);
+			s++;
 		}
 	}
 }

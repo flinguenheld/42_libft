@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2025/12/05 18:19:17 by flinguen         ###   ########.fr       */
+/*   Updated: 2025/12/21 20:19:40 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
+# include <limits.h>
 
 /**
  * List node.
@@ -80,6 +81,19 @@ void		*ft_memmove(void *dest, const void *src, size_t n);
  * or NULL if the character does not occur in the given memory area.
  */
 void		*ft_memchr(const void *s, int c, size_t n);
+
+/**
+ * @brief
+ * The  memrchr()  function  scans the initial n bytes of the memory area pointed
+ * to by s for the first instance of c.
+ * Both c and the bytes of the memory area pointed to by s are interpreted as
+ * unsigned char.
+ * 
+ * @return
+ * The  memchr() and  memrchr() functions return a pointer to the matching byte
+ * or NULL if the character does not occur in the given memory area.
+ */
+void		*ft_memrchr(const void *s, int c, size_t n);
 
 /**
  * @brief
@@ -274,9 +288,57 @@ char		**ft_split(char const *s, char c);
 /**
  * @brief
  * Allocates memory (using malloc(3)) and returns a string representing the
- * integer received as an argument. Negative numbers must be handled.
+ * value in the given base.
  */
-char		*ft_itoa(int n);
+char		*ft_ltobase(long value, char *base_str);
+/**
+ * @brief
+ * Allocates memory (using malloc(3)) and returns a string representing the
+ * value in the given base.
+ */
+char		*ft_ultobase(unsigned long value, char *base_str);
+
+/**
+ * @brief
+ * Allocates memory (using malloc(3)) and returns a string representing the
+ * value in base 10.
+ */
+char		*ft_ltoa(long value);
+
+/**
+ * @brief
+ * Allocates memory (using malloc(3)) and returns a string representing the
+ * value in base 10.
+ */
+char		*ft_itoa(int value);
+
+/**
+ * @brief
+ * Allocates memory (using malloc(3)) and returns a string representing the
+ * value in base 10.
+ */
+char		*ft_utoa(unsigned int value);
+
+/**
+ * @brief
+ * Allocates memory (using malloc(3)) and returns a string representing the
+ * value in base 16 uppercase.
+ */
+char		*ft_ltohex(long value);
+
+/**
+ * @brief
+ * Allocates memory (using malloc(3)) and returns a string representing the
+ * value in base 16 uppercase.
+ */
+char		*ft_itohex(int value);
+
+/**
+ * @brief
+ * Allocates memory (using malloc(3)) and returns a string representing the
+ * value in base 16 uppercase.
+ */
+char		*ft_utohex(unsigned int value);
 
 /**
  * @brief
@@ -298,6 +360,13 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
  * address to ’f’ so it can be modified if necessary.
  */
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+/**
+ * @brief
+ * Applies the function ’f’ to each character of the string passed as argument.
+ * And replace them by the result of the function.
+ */
+void		ft_striter(char *s, int (*f)(int));
 
 /**
  * @brief

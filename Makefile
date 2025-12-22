@@ -13,6 +13,7 @@ SRC = ft_atoi.c \
 		ft_isdigit.c \
 		ft_isprint.c \
 		ft_memchr.c \
+		ft_memrchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
 		ft_memmove.c \
@@ -30,7 +31,9 @@ SRC = ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
+		ft_ltobase.c \
 		ft_itoa.c \
+		ft_itohex.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 		ft_putchar_fd.c \
@@ -52,7 +55,7 @@ OBJS := $(SRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcsv $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 $(TEST): fclean
 	$(CC) -lbsd $(TEST).c $(NAME) -o $(TEST)
@@ -60,10 +63,10 @@ $(TEST): fclean
 
 clean:
 	@rm -vf $(OBJS)
-	@rm -vf $(TEST)
 
 fclean: clean
 	@rm -vf $(NAME)
+	@rm -vf $(TEST)
 
 re: fclean all
 
