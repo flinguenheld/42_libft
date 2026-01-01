@@ -17,6 +17,7 @@
 # include <stdint.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdarg.h>
 
 /**
  * List node.
@@ -27,17 +28,21 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+/* ****************************************************************************/
+/* ******************************************************************* IS *****/
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
 
+/* ****************************************************************************/
+/* ******************************************************************* TO *****/
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 
-size_t		ft_strlen(const char *s);
-
+/* ****************************************************************************/
+/* ****************************************************************** MEM *****/
 /**
  * @brief
  * The memset() function fills the first n bytes of the memory area pointed
@@ -126,6 +131,26 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
  */
 void		ft_bzero(void *s, size_t n);
 
+/* ****************************************************************************/
+/* *************************************************************** MALLOC *****/
+/*
+ * @brief
+ * The  calloc() function allocates memory for an array of nmemb elements of
+ * size bytes each and returns a pointer to the allocated memory.
+ * The memory is set to zero.
+ * 
+ * If nmemb or size is 0, calloc() returns a malloc(0) which returns a unique
+ * pointer value that can be successfully passed to free().
+ * 
+ * If the multiplication of nmemb and size would result in integer overflow,
+ * then calloc() returns a NULL.
+ */
+void		*ft_calloc(size_t nmemb, size_t size);
+
+/* ****************************************************************************/
+/* ****************************************************************** STR *****/
+size_t		ft_strlen(const char *s);
+
 /**
  * @brief
  * The strlcpy() function copies up to size - 1 characters from the
@@ -150,20 +175,6 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size);
  * detection simple.
  */
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
-
-/**
- * @brief
- * The atoi() function converts the initial portion of the string pointed to by 
- * nptr to int.  The behavior is the same as 'strtol(nptr, NULL, 10);'
- * except that atoi() does not detect errors.
- * 
- * The atol() and atoll() functions behave the same as atoi(),
- * except that they convert the initial portion of the string to their return 
- * type of long or long long.
- * @return
- * The converted value or 0 on error.
- */
-int			ft_atoi(const char *nptr);
 
 /**
  * @brief
@@ -224,20 +235,6 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
  */
 char		*ft_strnstr(const char *big, const char *little, size_t len);
 
-/*
- * @brief
- * The  calloc() function allocates memory for an array of nmemb elements of
- * size bytes each and returns a pointer to the allocated memory.
- * The memory is set to zero.
- * 
- * If nmemb or size is 0, calloc() returns a malloc(0) which returns a unique
- * pointer value that can be successfully passed to free().
- * 
- * If the multiplication of nmemb and size would result in integer overflow,
- * then calloc() returns a NULL.
- */
-void		*ft_calloc(size_t nmemb, size_t size);
-
 /**
  * @brief
  * The strdup() function returns a pointer to a new string which is a duplicate
@@ -285,6 +282,24 @@ char		*ft_strtrim(char const *s1, char const *set);
  */
 char		**ft_split(char const *s, char c);
 
+/* ****************************************************************************/
+/* ************************************************************ STR TO NB *****/
+/**
+ * @brief
+ * The atoi() function converts the initial portion of the string pointed to by 
+ * nptr to int.  The behavior is the same as 'strtol(nptr, NULL, 10);'
+ * except that atoi() does not detect errors.
+ * 
+ * The atol() and atoll() functions behave the same as atoi(),
+ * except that they convert the initial portion of the string to their return 
+ * type of long or long long.
+ * @return
+ * The converted value or 0 on error.
+ */
+int			ft_atoi(const char *nptr);
+
+/* ****************************************************************************/
+/* ************************************************************ NB TO STR *****/
 /**
  * @brief
  * Allocates memory (using malloc(3)) and returns a string representing the
@@ -340,6 +355,8 @@ char		*ft_itohex(int value);
  */
 char		*ft_utohex(unsigned int value);
 
+/* ****************************************************************************/
+/* ****************************************************************** STR *****/
 /**
  * @brief
  * Applies the function f to each character of the string s, passing its index
@@ -368,6 +385,8 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char*));
  */
 void		ft_striter(char *s, int (*f)(int));
 
+/* ****************************************************************************/
+/* ****************************************************************** PUT *****/
 /**
  * @brief
  * Outputs the character ’c’ to the specified file descriptor.
@@ -392,6 +411,8 @@ void		ft_putendl_fd(char *s, int fd);
  */
 void		ft_putnbr_fd(int n, int fd);
 
+/* ****************************************************************************/
+/* ***************************************************************** LIST *****/
 /**
  * @brief
  * Allocates memory (using malloc(3)) and returns a new node.
@@ -456,5 +477,41 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
  * The ’del’ function is used to delete the content of a node if needed.
  */
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* ****************************************************************************/
+/* *************************************************************** PRINTF *****/
+/**
+ * @brief
+ * Print str in the standard output and manage fields
+
+ * Writes the pointed by format to the standard output.
+ * If format includes format specifiers (subsequences beginning with %),
+ * the additional arguments following format are formatted and inserted in the
+ * resulting string replacing their respective specifiers.
+ *
+ * The following fields are managed:
+ *  %c -> char
+ *  %s -> string
+ *  %p -> pointer
+ *  %d -> decimal
+ *  %i -> integer
+ *  %u -> unsigned integer
+ *  %x -> hexadecimal
+ *  %X -> hexadecimal uppercase
+ *  %% -> percent sign
+ *
+ * The function also accepts formats flags which are used as well:
+ * (their behaviour can change according to the field type)
+ *
+ *  - -> Left-justify within the given field width
+ *  + -> Prepends a plus sign for a positive value
+ * ' ' -> Prepends a space character for a positive value; ignored if the
+ *             + flag exists
+ *  0 -> When the 'width' option is specified, prepends zeros instead of
+ *             spaces for numeric types
+ *  . -> Precision specifies the minimum number of digits to be written
+ *  # -> for %x & % X -> 0x, 0X, respectively, is prepended to non-zero numbers
+ */
+int			ft_printf(const char *str, ...);
 
 #endif

@@ -48,7 +48,17 @@ SRC = ft_atoi.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c
+		ft_lstmap.c \
+		ft_printf/ft_printf.c \
+		ft_printf/ft_printf_utils.c \
+		ft_printf/ft_printf_flags.c \
+		ft_printf/ft_printf_string.c \
+		ft_printf/ft_printf_pointer.c \
+		ft_printf/ft_printf_uint.c \
+		ft_printf/ft_printf_number.c \
+		ft_printf/ft_printf_int.c \
+		ft_printf/ft_printf_hexa.c \
+		ft_printf/ft_printf_char.c \
 
 OBJS := $(SRC:%.c=%.o)
 
@@ -57,8 +67,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-$(TEST): fclean
-	$(CC) -lbsd $(TEST).c $(NAME) -o $(TEST)
+test: all
+	$(CC) $(TEST).c $(NAME) -o $(TEST)
 	./$(TEST)
 
 clean:
