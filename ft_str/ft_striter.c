@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,17 +12,14 @@
 
 #include "../libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striter(char *s, int (*f)(int))
 {
-	size_t	index;
-
 	if (s != NULL)
 	{
-		index = 0;
-		while (s[index])
+		while (*s != '\0')
 		{
-			f(index, &s[index]);
-			index++;
+			*s = f(*s);
+			s++;
 		}
 	}
 }

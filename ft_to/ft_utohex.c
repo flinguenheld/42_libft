@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_utohex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 18:53:41 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/01 22:35:44 by flinguen         ###   ########.fr       */
+/*   Created: 2025/12/16 12:05:57 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/01 22:35:46 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+char	*ft_utohex(unsigned int value)
 {
-	size_t	index;
-
-	if (s != NULL)
-	{
-		index = 0;
-		while (s[index])
-		{
-			f(index, &s[index]);
-			index++;
-		}
-	}
+	return (ft_ltobase((long)value, "0123456789ABCDEF"));
 }

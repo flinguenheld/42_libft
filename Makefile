@@ -3,62 +3,75 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 TEST = main_test
 
-SRC = ft_atoi.c \
-		ft_bzero.c \
-		ft_calloc.c \
-		ft_strjoin.c \
-		ft_isalnum.c \
-		ft_isalpha.c \
-		ft_isascii.c \
-		ft_isdigit.c \
-		ft_isprint.c \
-		ft_memchr.c \
-		ft_memrchr.c \
-		ft_memcmp.c \
-		ft_memcpy.c \
-		ft_memmove.c \
-		ft_memset.c \
-		ft_split.c \
-		ft_strchr.c \
-		ft_strdup.c \
-		ft_strlcat.c \
-		ft_strlcpy.c \
-		ft_strlen.c \
-		ft_strncmp.c \
-		ft_strnstr.c \
-		ft_strrchr.c \
-		ft_strtrim.c \
-		ft_substr.c \
-		ft_tolower.c \
-		ft_toupper.c \
-		ft_ltobase.c \
-		ft_itoa.c \
-		ft_itohex.c \
-		ft_strmapi.c \
-		ft_striteri.c \
-		ft_putchar_fd.c \
-		ft_putstr_fd.c \
-		ft_putendl_fd.c \
-		ft_putnbr_fd.c \
-		ft_lstnew.c \
-		ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
+SRC =  \
+		ft_is/ft_isalnum.c \
+		ft_is/ft_isalpha.c \
+		ft_is/ft_isascii.c \
+		ft_is/ft_isdigit.c \
+		ft_is/ft_isprint.c \
+		\
+		ft_list/ft_lstadd_back.c \
+		ft_list/ft_lstadd_front.c \
+		ft_list/ft_lstclear.c \
+		ft_list/ft_lstdelone.c \
+		ft_list/ft_lstiter.c \
+		ft_list/ft_lstlast.c \
+		ft_list/ft_lstmap.c \
+		ft_list/ft_lstnew.c \
+		ft_list/ft_lstsize.c \
+		\
+		ft_malloc/ft_calloc.c \
+		\
+		ft_mem/ft_bzero.c \
+		ft_mem/ft_memchr.c \
+		ft_mem/ft_memcmp.c \
+		ft_mem/ft_memcpy.c \
+		ft_mem/ft_memmove.c \
+		ft_mem/ft_memrchr.c \
+		ft_mem/ft_memset.c \
+		\
 		ft_printf/ft_printf.c \
-		ft_printf/ft_printf_utils.c \
-		ft_printf/ft_printf_flags.c \
-		ft_printf/ft_printf_string.c \
-		ft_printf/ft_printf_pointer.c \
-		ft_printf/ft_printf_uint.c \
-		ft_printf/ft_printf_number.c \
-		ft_printf/ft_printf_int.c \
-		ft_printf/ft_printf_hexa.c \
 		ft_printf/ft_printf_char.c \
+		ft_printf/ft_printf_flags.c \
+		ft_printf/ft_printf_hexa.c \
+		ft_printf/ft_printf_int.c \
+		ft_printf/ft_printf_number.c \
+		ft_printf/ft_printf_pointer.c \
+		ft_printf/ft_printf_string.c \
+		ft_printf/ft_printf_utils.c \
+		ft_printf/ft_printf_uint.c \
+		\
+		ft_put/ft_putchar_fd.c \
+		ft_put/ft_putendl_fd.c \
+		ft_put/ft_putnbr_fd.c \
+		ft_put/ft_putstr_fd.c \
+		\
+		ft_str/ft_split.c \
+		ft_str/ft_strchr.c \
+		ft_str/ft_strdup.c \
+		ft_str/ft_striter.c \
+		ft_str/ft_striteri.c \
+		ft_str/ft_strjoin.c \
+		ft_str/ft_strlcat.c \
+		ft_str/ft_strlcpy.c \
+		ft_str/ft_strlen.c \
+		ft_str/ft_strmapi.c \
+		ft_str/ft_strncmp.c \
+		ft_str/ft_strnstr.c \
+		ft_str/ft_strrchr.c \
+		ft_str/ft_strtrim.c \
+		ft_str/ft_substr.c \
+		\
+		ft_to/ft_atoi.c \
+		ft_to/ft_itoa.c \
+		ft_to/ft_itohex.c \
+		ft_to/ft_ltoa.c \
+		ft_to/ft_ltohex.c \
+		ft_to/ft_tolower.c \
+		ft_to/ft_toupper.c \
+		ft_to/ft_u_ul_tobase.c \
+		ft_to/ft_utoa.c \
+		ft_to/ft_utohex.c \
 
 OBJS := $(SRC:%.c=%.o)
 
