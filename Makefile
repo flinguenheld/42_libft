@@ -84,6 +84,9 @@ test: all
 	$(CC) $(TEST).c $(NAME) -o $(TEST)
 	./$(TEST)
 
+test_no_flag: CFLAGS =
+test_no_flag: test
+
 clean:
 	@rm -vf $(OBJS)
 
@@ -93,4 +96,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all $(NAME) $(TEST) clean fclean re
+.PHONY: all $(NAME) test test_no_flag clean fclean re
