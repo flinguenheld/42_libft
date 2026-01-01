@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 11:03:51 by flinguen          #+#    #+#             */
-/*   Updated: 2025/12/21 20:19:40 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/08 14:56:18 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/01 20:00:43 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (n <= 0)
-		return (0);
-	while (n > 1 && *s1 == *s2 && *s1 && *s2)
+	size_t	little_len;
+
+	little_len = ft_strlen(little);
+	if (little_len == 0)
+		return ((char *)big);
+	if (len > 0)
 	{
-		s1++;
-		s2++;
-		n--;
+		while (*big && len-- >= little_len)
+		{
+			if (ft_strncmp(big, little, little_len) == 0)
+				return ((char *)big);
+			big++;
+		}
 	}
-	return ((unsigned char)(*s1) - (unsigned char)(*s2));
+	return (NULL);
 }

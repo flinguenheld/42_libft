@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 11:20:09 by flinguen          #+#    #+#             */
-/*   Updated: 2025/12/21 20:19:40 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/08 19:41:06 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/01 20:00:43 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+// ! Voluntarily segfault if 's' is NULL to fit the original !
+
+char	*ft_strdup(const char *s)
 {
-	size_t	from;
-	size_t	to;
-
-	if (s1 == NULL || set == NULL)
-		return (NULL);
-	from = 0;
-	to = ft_strlen(s1) -1;
-	while (s1[from] && ft_strchr(set, s1[from]) != NULL)
-		from++;
-	while (to && ft_strrchr(set, s1[to]) != NULL)
-		to--;
-	return (ft_substr(s1, from, to - from + 1));
+	if (s == NULL)
+		s += 42;
+	return (ft_substr(s, 0, SIZE_MAX));
 }

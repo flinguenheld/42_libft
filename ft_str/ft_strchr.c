@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 14:56:18 by flinguen          #+#    #+#             */
-/*   Updated: 2025/12/21 20:19:40 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/07 20:55:44 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/01 20:00:43 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	little_len;
-
-	little_len = ft_strlen(little);
-	if (little_len == 0)
-		return ((char *)big);
-	if (len > 0)
+	while (1)
 	{
-		while (*big && len-- >= little_len)
-		{
-			if (ft_strncmp(big, little, little_len) == 0)
-				return ((char *)big);
-			big++;
-		}
+		if (*s == (unsigned char)c)
+			return ((char *)s);
+		if (*s == '\0')
+			return (NULL);
+		s++;
 	}
-	return (NULL);
 }

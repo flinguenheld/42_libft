@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 21:34:05 by flinguen          #+#    #+#             */
-/*   Updated: 2025/12/21 20:19:40 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/11 16:03:44 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/01 20:00:43 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	len;
+	char	*duplicated;
+	size_t	index;
 
-	len = ft_strlen(src);
-	if (size > 0)
+	if (s == NULL)
+		return (NULL);
+	duplicated = ft_strdup(s);
+	if (duplicated != NULL)
 	{
-		while (*src && (size-- > 1))
-			*dst++ = *src++;
-		*dst = '\0';
+		index = 0;
+		while (duplicated[index])
+		{
+			duplicated[index] = f(index, duplicated[index]);
+			index++;
+		}
 	}
-	return (len);
+	return (duplicated);
 }

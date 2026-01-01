@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 18:53:41 by flinguen          #+#    #+#             */
-/*   Updated: 2025/12/21 20:19:40 by flinguen         ###   ########.fr       */
+/*   Created: 2025/11/08 11:03:51 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/01 20:00:43 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	index;
-
-	if (s != NULL)
+	if (n <= 0)
+		return (0);
+	while (n > 1 && *s1 == *s2 && *s1 && *s2)
 	{
-		index = 0;
-		while (s[index])
-		{
-			f(index, &s[index]);
-			index++;
-		}
+		s1++;
+		s2++;
+		n--;
 	}
-}
-
-void	ft_striter(char *s, int (*f)(int))
-{
-	if (s != NULL)
-	{
-		while (*s != '\0')
-		{
-			*s = f(*s);
-			s++;
-		}
-	}
+	return ((unsigned char)(*s1) - (unsigned char)(*s2));
 }
