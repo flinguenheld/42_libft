@@ -287,16 +287,16 @@ char		**ft_split(char const *s, char c);
 
 /**
  * @brief
- * The strchr() function returns a pointer to the first occurrence of the
- *  character c in the string s.
+ * The strchr() function returns a pointer to the first occurrence of
+ * the character c in the string s.
  * 
  * @return
- * The strrchr() function returns a pointer to the matched character
- * or NULL if the character is not found.  The terminating null byte is
- * considered part of the string, so that if c is specified as
- * '\0', this function returns a pointer to the terminator.
+ * The strchr() function returns a pointer to the matched character
+ * or NULL if the character is not found.
+ * The terminating null byte is considered part of the string, so that if c is
+ * specified as '\0', this function returns a pointer to the terminator.
  */
-char		*ft_strrchr(const char *s, int c);
+char		*ft_strchr(const char *s, int c);
 
 /**
  * @brief
@@ -412,16 +412,16 @@ char		*ft_strnstr(const char *big, const char *little, size_t len);
 
 /**
  * @brief
- * The strchr() function returns a pointer to the first occurrence of
- * the character c in the string s.
+ * The strchr() function returns a pointer to the first occurrence of the
+ *  character c in the string s.
  * 
  * @return
- * The strchr() function returns a pointer to the matched character
- * or NULL if the character is not found.
- * The terminating null byte is considered part of the string, so that if c is
- * specified as '\0', this function returns a pointer to the terminator.
+ * The strrchr() function returns a pointer to the matched character
+ * or NULL if the character is not found.  The terminating null byte is
+ * considered part of the string, so that if c is specified as
+ * '\0', this function returns a pointer to the terminator.
  */
-char		*ft_strchr(const char *s, int c);
+char		*ft_strrchr(const char *s, int c);
 
 /**
  * @brief
@@ -464,16 +464,16 @@ char		*ft_itoa(int value);
 /**
  * @brief
  * Allocates memory (using malloc(3)) and returns a string representing the
- * value in base 10.
+ * value in base 16 uppercase.
  */
-char		*ft_ltoa(long value);
+char		*ft_itohex(int value);
 
 /**
  * @brief
  * Allocates memory (using malloc(3)) and returns a string representing the
- * value in base 16 uppercase.
+ * value in base 10.
  */
-char		*ft_itohex(int value);
+char		*ft_ltoa(long value);
 
 /**
  * @brief
@@ -489,8 +489,8 @@ char		*ft_ltobase(long value, char *base_str);
  */
 char		*ft_ltohex(long value);
 
-int			ft_toupper(int c);
 int			ft_tolower(int c);
+int			ft_toupper(int c);
 
 /**
  * @brief
