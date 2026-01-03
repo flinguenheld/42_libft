@@ -47,21 +47,33 @@ void		ft_lst_clear(t_list **lst, void (*del)(void *));
 
 /**
  * @brief
+ * Wrapper of 'ft_lst_clear' which deletes all contents with the free fuction.
+ */
+void		ft_lst_clear_basic(t_list **lst);
+
+/**
+ * @brief
  * Takes a node as parameter and frees its content using the function ’del’.
  * Free the node itself but does NOT free the next node.
  */
 void		ft_lst_delone(t_list *lst, void (*del)(void *));
 
 /**
- *@brief
- *Iterates through the list ’lst’ and applies the
- *function ’f’ to the content of each node.
+ * @brief
+ * Wrapper of 'ft_lst_delone' which deletes the content with the 'free' fuction.
+ */
+void		ft_lst_delone_basic(t_list *lst);
+
+/**
+ * @brief
+ * Iterates through the list ’lst’ and applies the
+ * function ’f’ to the content of each node.
  */
 void		ft_lst_iter(t_list *lst, void (*f)(void *));
 
 /**
- *@brief
- *Returns the last node of the list.
+ * @brief
+ * Returns the last node of the list.
  */
 t_list		*ft_lst_last(t_list *lst);
 
