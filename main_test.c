@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                       :::      ::::::::    */
+/*   main_test.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/03 17:14:54 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/03 17:14:54 by flinguen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 int *new_content(int value)
@@ -29,7 +40,13 @@ int main()
 	ft_lst_push_back(&node_aaa, node_ddd);
 	ft_lst_push_back(&node_aaa, node_eee);
 
+	ft_printf("before swap --\n");
 	ft_lst_iter(node_aaa, print_node);
+
+	ft_printf("after swap --\n");
+	ft_lst_swap(node_bbb, node_ccc);
+	ft_lst_iter(node_aaa, print_node);
+
 	ft_lst_clear_basic(&node_aaa);
 
 

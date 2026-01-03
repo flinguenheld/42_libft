@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/01 22:35:43 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/03 17:16:54 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,8 @@ void		ft_lst_push_front(t_list **lst, t_list *new_node);
  */
 int			ft_lst_size(t_list *lst);
 
+void		ft_lst_swap(t_list *a, t_list *b);
+
 /* ****************************************************************************/
 /* *************************************************************** MALLOC *****/
 /*
@@ -220,6 +222,12 @@ void		*ft_memchr(const void *s, int c, size_t n);
  * The memset() function returns a pointer to the memory area s.
  */
 void		*ft_memset(void *s, int c, size_t n);
+
+/**
+ * @brief
+ * Swap the two values pointed by a & b.
+ */
+void		ft_swap(void **a, void **b);
 
 /* ****************************************************************************/
 /* *************************************************************** PRINTF *****/

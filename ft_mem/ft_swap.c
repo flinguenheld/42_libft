@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_lst_clear.c                                     :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 13:16:12 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/03 17:16:54 by flinguen         ###   ########.fr       */
+/*   Created: 2026/01/03 17:14:54 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/03 17:16:55 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lst_clear_basic(t_list **lst)
+void	ft_swap(void **a, void **b)
 {
-	if (lst != NULL && *lst != NULL)
-	{
-		ft_lst_clear_basic(&(*lst)->next);
-		ft_lst_delone_basic(*lst);
-		*lst = NULL;
-	}
-}
+	void	*tmp;
 
-void	ft_lst_clear(t_list **lst, void (*del)(void *))
-{
-	if (lst != NULL && *lst != NULL)
-	{
-		ft_lst_clear(&(*lst)->next, del);
-		ft_lst_delone(*lst, del);
-		*lst = NULL;
-	}
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

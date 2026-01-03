@@ -19,6 +19,7 @@ SRC =  \
 		ft_list/ft_lst_map.c \
 		ft_list/ft_lst_new.c \
 		ft_list/ft_lst_size.c \
+		ft_list/ft_lst_swap.c \
 		\
 		ft_malloc/ft_calloc.c \
 		\
@@ -29,6 +30,7 @@ SRC =  \
 		ft_mem/ft_memmove.c \
 		ft_mem/ft_memrchr.c \
 		ft_mem/ft_memset.c \
+		ft_mem/ft_swap.c \
 		\
 		ft_printf/ft_printf.c \
 		ft_printf/ft_printf_char.c \
