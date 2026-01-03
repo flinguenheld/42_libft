@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 13:16:12 by flinguen          #+#    #+#             */
+/*   Created: 2025/11/15 17:18:33 by flinguen          #+#    #+#             */
 /*   Updated: 2026/01/01 22:35:44 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lst_iter(t_list *lst, void (*f)(void *))
 {
-	if (lst != NULL && *lst != NULL)
+	if (lst != NULL)
 	{
-		ft_lstclear(&(*lst)->next, del);
-		ft_lstdelone(*lst, del);
-		*lst = NULL;
+		f(lst->content);
+		ft_lst_iter(lst->next, f);
 	}
 }

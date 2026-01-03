@@ -40,42 +40,30 @@ int			ft_isprint(int c);
 /* ***************************************************************** LIST *****/
 /**
  * @brief
- * Adds the node ’new’ at the end of the list.
- */
-void		ft_lstadd_back(t_list **lst, t_list *new_node);
-
-/**
- * @brief
- * Adds the node ’new’ at the beginning of the list.
- */
-void		ft_lstadd_front(t_list **lst, t_list *new_node);
-
-/**
- * @brief
  * Deletes and frees the given node and all its successors, using the
  * function ’del’ and free(3). Finally, set the pointer to the list to NULL.
  */
-void		ft_lstclear(t_list **lst, void (*del)(void *));
+void		ft_lst_clear(t_list **lst, void (*del)(void *));
 
 /**
  * @brief
  * Takes a node as parameter and frees its content using the function ’del’.
  * Free the node itself but does NOT free the next node.
  */
-void		ft_lstdelone(t_list *lst, void (*del)(void *));
+void		ft_lst_delone(t_list *lst, void (*del)(void *));
 
 /**
  *@brief
  *Iterates through the list ’lst’ and applies the
  *function ’f’ to the content of each node.
  */
-void		ft_lstiter(t_list *lst, void (*f)(void *));
+void		ft_lst_iter(t_list *lst, void (*f)(void *));
 
 /**
  *@brief
  *Returns the last node of the list.
  */
-t_list		*ft_lstlast(t_list *lst);
+t_list		*ft_lst_last(t_list *lst);
 
 /**
  * @brief
@@ -84,7 +72,7 @@ t_list		*ft_lstlast(t_list *lst);
  * the function ’f’.
  * The ’del’ function is used to delete the content of a node if needed.
  */
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list		*ft_lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /**
  * @brief
@@ -95,13 +83,25 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * @return
  * A pointer to the new node.
  */
-t_list		*ft_lstnew(void *content);
+t_list		*ft_lst_new(void *content);
+
+/**
+ * @brief
+ * Push the node ’new’ at the end of the list.
+ */
+void		ft_lst_push_back(t_list **lst, t_list *new_node);
+
+/**
+ * @brief
+ * Push the node ’new’ at the beginning of the list.
+ */
+void		ft_lst_push_front(t_list **lst, t_list *new_node);
 
 /**
  * @brief
  * Counts the number of nodes in the list.
  */
-int			ft_lstsize(t_list *lst);
+int			ft_lst_size(t_list *lst);
 
 /* ****************************************************************************/
 /* *************************************************************** MALLOC *****/
