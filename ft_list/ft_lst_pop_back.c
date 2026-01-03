@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_lst_swap.c                                      :+:      :+:    :+:   */
+/*   ft_lst_pop_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/03 17:14:54 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/03 22:51:21 by flinguen         ###   ########.fr       */
+/*   Created: 2026/01/03 17:46:37 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/03 22:52:48 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lst_swap(t_list *a, t_list *b)
+t_list	*ft_lst_pop_back(t_list **lst)
 {
-	ft_swap(&a->content, &b->content);
+	t_list	*penultimate;
+
+	if (*lst == NULL)
+		return (NULL);
+	if ((*lst)->next == NULL)
+	{
+		penultimate = *lst;
+		*lst = NULL;
+		return (penultimate);
+	}
+	if (((*lst)->next)->next == NULL)
+	{
+		penultimate = (*lst)->next;
+		(*lst)->next = NULL;
+		return (penultimate);
+	}
+	return (ft_lst_pop_back(&(*lst)->next));
 }

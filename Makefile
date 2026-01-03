@@ -10,14 +10,15 @@ SRC =  \
 		ft_is/ft_isdigit.c \
 		ft_is/ft_isprint.c \
 		\
-		ft_list/ft_lst_push_back.c \
-		ft_list/ft_lst_push_front.c \
 		ft_list/ft_lst_clear.c \
 		ft_list/ft_lst_delone.c \
 		ft_list/ft_lst_iter.c \
 		ft_list/ft_lst_last.c \
 		ft_list/ft_lst_map.c \
 		ft_list/ft_lst_new.c \
+		ft_list/ft_lst_pop_back.c \
+		ft_list/ft_lst_push_back.c \
+		ft_list/ft_lst_push_front.c \
 		ft_list/ft_lst_size.c \
 		ft_list/ft_lst_swap.c \
 		\
