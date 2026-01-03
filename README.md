@@ -9,15 +9,18 @@ My beautifull libft that I lovely use and complete with all 42 C projects 😘
   - [int			ft_isdigit(int c);](https://github.com/flinguenheld/42_libft/blob/master/ft_is/ft_isdigit.c)
   - [int			ft_isprint(int c);](https://github.com/flinguenheld/42_libft/blob/master/ft_is/ft_isprint.c)
 - list
-  - [void		ft_lstadd_back(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstadd_back.c)
-  - [void		ft_lstadd_front(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstadd_front.c)
-  - [void		ft_lstclear(t_list **lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstclear.c)
-  - [void		ft_lstdelone(t_list *lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstdelone.c)
-  - [void		ft_lstiter(t_list *lst, void (*f)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstiter.c)
-  - [t_list	*ft_lstlast(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstlast.c)
-  - [t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstmap.c)
-  - [t_list	*ft_lstnew(void *content);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstnew.c)
-  - [int			ft_lstsize(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstsize.c)
+  - [void		ft_lst_clear(t_list **lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clear.c)
+  - [void		ft_lst_clear_basic(t_list **lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clear.c)
+  - [void		ft_lst_delone(t_list *lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_delone.c)
+  - [void		ft_lst_delone_basic(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_delone.c)
+  - [void		ft_lst_iter(t_list *lst, void (*f)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_iter.c)
+  - [t_list	*ft_lst_last(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstlast.c)
+  - [t_list	*ft_lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_map.c)
+  - [void		ft_lst_pop_back(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_pop_back.c)
+  - [void		ft_lst_push_back(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_push_back.c)
+  - [void		ft_lst_push_front(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_push_front.c)
+  - [t_list	*ft_lst_new(void *content);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_new.c)
+  - [int			ft_lst_size(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_size.c)
 - malloc
   - [void		*ft_calloc(size_t nmemb, size_t size);](https://github.com/flinguenheld/42_libft/blob/master/ft_malloc/ft_calloc.c)
 - mem
@@ -28,6 +31,8 @@ My beautifull libft that I lovely use and complete with all 42 C projects 😘
   - [void		*ft_memmove(void *dest, const void *src, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memmove.c)
   - [void		*ft_memchr(const void *s, int c, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memrchr.c)
   - [void		*ft_memset(void *s, int c, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memset.c)
+  - [void		*ft_memset(void *s, int c, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memset.c)
+  - [void		ft_swap(void **a, void **b);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_swap.c)
 - printf
   - [int			ft_printf(const char *str, ...);](https://github.com/flinguenheld/42_libft/blob/master/ft_printf)
 - put
