@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/04 21:30:02 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/04 22:13:00 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,15 @@ void		ft_lst_clear_basic(t_list **lst);
  * 1 if one node's comparison is valid.
  */
 int			ft_lst_contains(t_list *lst, int (*comparison)(void *));
+
+/**
+ * @brief
+ * Loop in the list and apply the comparison on each node.
+ * @return
+ * 1 if one node's comparison is valid.
+ */
+int			ft_lst_contains_key(t_list *lst, void *key,
+				int (*comp)(void *, void *));
 
 /**
  * @brief
