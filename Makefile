@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-TEST = main_test
+TEST = tests/main_test
 
 SRC =  \
 		ft_is/ft_isalnum.c \
@@ -84,12 +84,12 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-test: all
-	$(CC) $(TEST).c $(NAME) -o $(TEST)
+test_list: all
+	$(CC) tests/test_list.c $(NAME) -o $(TEST)
 	./$(TEST)
 
 test_no_flag: CFLAGS =
-test_no_flag: test
+test_no_flag: test_list
 
 clean:
 	@rm -vf $(OBJS)
@@ -100,4 +100,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all $(NAME) test test_no_flag clean fclean re
+.PHONY: all $(NAME) test_list test_no_flag clean fclean re
