@@ -13,6 +13,7 @@ My beautifull libft that I lovely use and complete with all 42 C projects 😘
 - list
   - [void		ft_lst_clear(t_list **lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clear.c)
   - [void		ft_lst_clear_basic(t_list **lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clear.c)
+  - [int		ft_lst_contains(t_list *lst, int (*comparison)(void *))](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_contains.c)
   - [void		ft_lst_delone(t_list *lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_delone.c)
   - [void		ft_lst_delone_basic(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_delone.c)
   - [void		ft_lst_iter(t_list *lst, void (*f)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_iter.c)
