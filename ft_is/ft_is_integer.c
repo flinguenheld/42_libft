@@ -18,10 +18,10 @@ int	ft_is_integer(char *str)
 		return (0);
 	while (ft_isspace(*str))
 		str++;
-	if (*str == '\0')
-		return (0);
 	if (*str == '-' || *str == '+')
 		str++;
+	if (*str == '\0')
+		return (0);
 	while (*str != '\0')
 	{
 		if (!ft_isdigit(*str))

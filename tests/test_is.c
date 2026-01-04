@@ -14,22 +14,24 @@
 void test_is_integer()
 {
 	ft_printf("-----------------------------------------------------------\n");
-	ft_printf("------------------------------------ TEST IS DIGIT STR ----\n");
+	ft_printf("---------------------------------- TEST IS INTEGER STR ----\n");
 
-	ft_printf("% 10s -> %d\n", "123", ft_is_integer("123"));
-	ft_printf("% 10s -> %d\n", "123   ", ft_is_integer("123   "));
-	ft_printf("% 10s -> %d\n", "-123", ft_is_integer("-123"));
-	ft_printf("% 10s -> %d\n", "   123", ft_is_integer("   123"));
-	ft_printf("% 10s -> %d\n", "123a", ft_is_integer("123a"));
-	ft_printf("% 10s -> %d\n", "1a23a", ft_is_integer("1a23a"));
-	ft_printf("% 10s -> %d\n", "one", ft_is_integer("one"));
-	ft_printf("% 10s -> %d\n", "   ", ft_is_integer("   "));
-	ft_printf("% 10s -> %d\n", "00000", ft_is_integer("00000"));
-	ft_printf("% 10s -> %d\n", "-00000", ft_is_integer("-00000"));
-	ft_printf("% 10s -> %d\n", "+00000", ft_is_integer("+00000"));
-	ft_printf("% 10s -> %d\n", "++00000", ft_is_integer("++00000"));
-	ft_printf("% 10s -> %d\n", "0", ft_is_integer("0"));
-	ft_printf("% 10s -> %d\n", "+-123", ft_is_integer("+-123"));
+	ft_printf("% 10s  OK -> %d\n", "123", ft_is_integer("123"));
+	ft_printf("% 10s NOK -> %d\n", "123   ", ft_is_integer("123   "));
+	ft_printf("% 10s  OK -> %d\n", "-123", ft_is_integer("-123"));
+	ft_printf("% 10s  OK -> %d\n", "   123", ft_is_integer("   123"));
+	ft_printf("% 10s NOK -> %d\n", "+ 123", ft_is_integer("+ 123"));
+	ft_printf("% 10s NOK -> %d\n", "123a", ft_is_integer("123a"));
+	ft_printf("% 10s NOK -> %d\n", "1a23a", ft_is_integer("1a23a"));
+	ft_printf("% 10s NOK -> %d\n", "one", ft_is_integer("one"));
+	ft_printf("% 10s NOK -> %d\n", "   ", ft_is_integer("   "));
+	ft_printf("% 10s  OK -> %d\n", "00000", ft_is_integer("00000"));
+	ft_printf("% 10s  OK -> %d\n", "-00000", ft_is_integer("-00000"));
+	ft_printf("% 10s  OK -> %d\n", "+00000", ft_is_integer("+00000"));
+	ft_printf("% 10s NOK -> %d\n", "++00000", ft_is_integer("++00000"));
+	ft_printf("% 10s  OK -> %d\n", "0", ft_is_integer("0"));
+	ft_printf("% 10s NOK -> %d\n", "+-123", ft_is_integer("+-123"));
+	ft_printf("% 10s NOK -> %d\n", "   -", ft_is_integer("   -"));
 }
 
 int main()

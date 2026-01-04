@@ -37,12 +37,13 @@ typedef struct s_list
  * "123"
  * " -123"
  * " +123"
- * "       0"
+ * "       +0"
  * Non valid
  * ""
  * "--123"
  * "123a"
- * "12+"
+ * "+ 12"
+ * "-"
  * @return
  * 1 if str is a valid number otherwise 0.
  */
