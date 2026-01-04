@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_is_integer.c                                    :+:      :+:    :+:   */
+/*   ft_lst_contains.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/04 15:49:47 by flinguen          #+#    #+#             */
+/*   Created: 2026/01/04 20:59:10 by flinguen          #+#    #+#             */
 /*   Updated: 2026/01/04 21:30:02 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_is_integer(char *str)
+int	ft_lst_contains(t_list *lst, int (*comparison)(void *))
 {
-	if (str == NULL)
+	if (lst == NULL)
 		return (0);
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-' || *str == '+')
-		str++;
-	if (*str == '\0')
-		return (0);
-	while (*str != '\0')
-	{
-		if (!ft_isdigit(*str))
-			return (0);
-		str++;
-	}
-	return (1);
+	if (comparison(lst->content))
+		return (1);
+	return (ft_lst_contains(lst->next, comparison));
 }

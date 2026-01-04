@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/04 18:05:46 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/04 21:30:02 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,14 @@ void		ft_lst_clear(t_list **lst, void (*del)(void *));
  * Wrapper of 'ft_lst_clear' which deletes all contents with the free fuction.
  */
 void		ft_lst_clear_basic(t_list **lst);
+
+/**
+ * @brief
+ * Loop in the list and apply the comparison on each node.
+ * @return
+ * 1 if one node's comparison is valid.
+ */
+int			ft_lst_contains(t_list *lst, int (*comparison)(void *));
 
 /**
  * @brief

@@ -13,6 +13,7 @@ SRC =  \
 		ft_is/ft_isspace.c \
 		\
 		ft_list/ft_lst_clear.c \
+		ft_list/ft_lst_contains.c \
 		ft_list/ft_lst_delone.c \
 		ft_list/ft_lst_iter.c \
 		ft_list/ft_lst_last.c \
