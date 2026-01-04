@@ -16,11 +16,15 @@ My beautifull libft that I lovely use and complete with all 42 C projects 😘
   - [void		ft_lst_iter(t_list *lst, void (*f)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_iter.c)
   - [t_list	*ft_lst_last(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstlast.c)
   - [t_list	*ft_lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_map.c)
+  - [t_list	*ft_lst_new(void *content);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_new.c)
   - [void		ft_lst_pop_back(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_pop_back.c)
+  - [void		ft_lst_pop_front(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_pop_front.c)
   - [void		ft_lst_push_back(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_push_back.c)
   - [void		ft_lst_push_front(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_push_front.c)
-  - [t_list	*ft_lst_new(void *content);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_new.c)
-  - [int			ft_lst_size(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_size.c)
+  - [void		ft_lst_rotate_left(t_list **lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_rotate_left.c)
+  - [void		ft_lst_rotate_right(t_list **lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_rotate_right.c)
+  - [int		ft_lst_size(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_size.c)
+  - [void		ft_lst_swap_content(t_list *a, t_list *b);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_swap_content.c)
 - malloc
   - [void		*ft_calloc(size_t nmemb, size_t size);](https://github.com/flinguenheld/42_libft/blob/master/ft_malloc/ft_calloc.c)
 - mem
