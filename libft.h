@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/04 11:35:00 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/04 12:20:47 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,18 @@ void		ft_lst_push_back(t_list **lst, t_list *new_node);
  * Push the node ’new’ at the beginning of the list.
  */
 void		ft_lst_push_front(t_list **lst, t_list *new_node);
+
+/**
+ * @brief
+ * Rotate the list of one position to the left.
+ */
+void		ft_lst_rotate_left(t_list **lst);
+
+/**
+ * @brief
+ * Rotate the list of one position to the right.
+ */
+void		ft_lst_rotate_right(t_list **lst);
 
 /**
  * @brief

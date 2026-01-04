@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_lst_pop_front.c                                 :+:      :+:    :+:   */
+/*   ft_lst_rotate_right.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/04 11:25:04 by flinguen          #+#    #+#             */
+/*   Created: 2026/01/04 12:08:11 by flinguen          #+#    #+#             */
 /*   Updated: 2026/01/04 12:20:48 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-t_list	*ft_lst_pop_front(t_list **lst)
+void	ft_lst_rotate_left(t_list **lst)
 {
 	t_list	*first;
 
-	if (*lst == NULL)
-		return (NULL);
-	first = *lst;
-	*lst = first->next;
-	first->next = NULL;
-	return (first);
+	first = ft_lst_pop_front(lst);
+	if (first != NULL)
+		ft_lst_push_back(lst, first);
 }

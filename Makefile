@@ -20,6 +20,8 @@ SRC =  \
 		ft_list/ft_lst_pop_front.c \
 		ft_list/ft_lst_push_back.c \
 		ft_list/ft_lst_push_front.c \
+		ft_list/ft_lst_rotate_left.c \
+		ft_list/ft_lst_rotate_right.c \
 		ft_list/ft_lst_size.c \
 		ft_list/ft_lst_swap_content.c \
 		\

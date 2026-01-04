@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   test_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:14:54 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/04 11:35:00 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/04 12:20:47 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,46 @@ void test_list_pop_front()
 	}
 }
 
+void test_list_rotate()
+{
+	ft_printf("-----------------------------------------------------------\n");
+	ft_printf("--------------------------------------- TEST POP FRONT ----\n");
+
+	t_list *node_aaa = ft_lst_new(new_content(1));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(222)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(3)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(444)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(5)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(666)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(7)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(888)));
+
+	ft_printf("Original --\n");
+	ft_lst_iter(node_aaa, print_node);
+
+	ft_printf("\n");
+	ft_printf("Rotate one left --\n");
+	ft_lst_rotate_left(&node_aaa);
+	ft_lst_iter(node_aaa, print_node);
+
+	ft_printf("\n");
+	ft_printf("Rotate one right --\n");
+	ft_lst_rotate_right(&node_aaa);
+	ft_lst_iter(node_aaa, print_node);
+
+	ft_printf("\n");
+	ft_printf("Rotate 50 left --\n");
+	for (int i=0; i< 50; i++)
+		ft_lst_rotate_left(&node_aaa);
+	ft_lst_iter(node_aaa, print_node);
+
+	ft_printf("\n");
+	ft_printf("Rotate 50 right --\n");
+	for (int i=0; i< 50; i++)
+		ft_lst_rotate_right(&node_aaa);
+	ft_lst_iter(node_aaa, print_node);
+}
+
 void test_list_swap()
 {
 	ft_printf("-----------------------------------------------------------\n");
@@ -111,6 +151,7 @@ int main()
 	test_list_swap();
 	test_list_pop_back();
 	test_list_pop_front();
+	test_list_rotate();
 
 	return 0;
 }
