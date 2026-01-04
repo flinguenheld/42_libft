@@ -17,6 +17,7 @@ SRC =  \
 		ft_list/ft_lst_map.c \
 		ft_list/ft_lst_new.c \
 		ft_list/ft_lst_pop_back.c \
+		ft_list/ft_lst_pop_front.c \
 		ft_list/ft_lst_push_back.c \
 		ft_list/ft_lst_push_front.c \
 		ft_list/ft_lst_size.c \

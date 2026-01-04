@@ -6,9 +6,10 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 17:14:54 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/03 22:51:21 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/04 11:35:00 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int *new_content(int value)
@@ -44,6 +45,32 @@ void test_list_pop_back()
 		t_list *last = ft_lst_pop_back(&node_aaa);
 		print_node(last->content);
 		free(last);
+	}
+}
+
+void test_list_pop_front()
+{
+	ft_printf("-----------------------------------------------------------\n");
+	ft_printf("--------------------------------------- TEST POP FRONT ----\n");
+
+	t_list *node_aaa = ft_lst_new(new_content(1));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(222)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(3)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(444)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(5)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(666)));
+	ft_lst_push_back(&node_aaa, ft_lst_new(new_content(7)));
+
+	ft_printf("before pop --\n");
+	ft_lst_iter(node_aaa, print_node);
+
+	ft_printf("\n");
+	ft_printf("Pop and print --\n");
+	while (node_aaa != NULL)
+	{
+		t_list *first = ft_lst_pop_front(&node_aaa);
+		print_node(first->content);
+		free(first);
 	}
 }
 
@@ -83,6 +110,7 @@ int main()
 	// ------------------------------------------------------- TEST LISTS -----
 	test_list_swap();
 	test_list_pop_back();
+	test_list_pop_front();
 
 	return 0;
 }

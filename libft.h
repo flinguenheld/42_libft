@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/03 22:53:18 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/04 11:35:00 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,18 @@ t_list		*ft_lst_new(void *content);
  * Pop the last node of the list.
  * Set lst to NULL if there was only one node left.
  * @return
- * The last node or NULL if lst in empty.
+ * The last node or NULL if lst is empty.
  */
 t_list		*ft_lst_pop_back(t_list **lst);
+
+/**
+ * @brief
+ * Pop the first node of the list.
+ * Set list to the second node or NULL if there was only one node left.
+ * @return
+ * The first node or NULL if lst is empty.
+ */
+t_list		*ft_lst_pop_front(t_list **lst);
 
 /**
  * @brief
