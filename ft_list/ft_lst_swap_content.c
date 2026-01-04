@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-void	ft_lst_swap(t_list *a, t_list *b)
+void	ft_lst_swap_content(t_list *a, t_list *b)
 {
 	ft_swap(&a->content, &b->content);
 }

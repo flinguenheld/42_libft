@@ -20,7 +20,7 @@ SRC =  \
 		ft_list/ft_lst_push_back.c \
 		ft_list/ft_lst_push_front.c \
 		ft_list/ft_lst_size.c \
-		ft_list/ft_lst_swap.c \
+		ft_list/ft_lst_swap_content.c \
 		\
 		ft_malloc/ft_calloc.c \
 		\

@@ -66,8 +66,8 @@ void test_list_swap()
 	ft_printf("before swap --\n");
 	ft_lst_iter(node_aaa, print_node);
 
-	ft_lst_swap(node_aaa, node_eee);
-	ft_lst_swap(node_bbb, node_ddd);
+	ft_lst_swap_content(node_aaa, node_eee);
+	ft_lst_swap_content(node_bbb, node_ddd);
 
 	ft_printf("\n");
 	ft_printf("after swap --\n");
