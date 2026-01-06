@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 18:10:23 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/03 17:16:55 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:22:26 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,29 @@ static void	run(int fd, const char *str, va_list params, int *total)
 	run(fd, str + 1, params, total);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_printf_fd(int file_descriptor, const char *str, va_list params)
 {
 	int		total;
-	va_list	params;
 
 	if (str == NULL)
 		return (-1);
-	va_start(params, str);
 	total = 0;
-	run(1, str, params, &total);
+	run(file_descriptor, str, params, &total);
 	return (total);
+}
+
+int	ft_printf(const char *str, ...)
+{
+	va_list	params;
+
+	va_start(params, str);
+	return (ft_printf_fd(1, str, params));
+}
+
+int	ft_printf_err(const char *str, ...)
+{
+	va_list	params;
+
+	va_start(params, str);
+	return (ft_printf_fd(2, str, params));
 }

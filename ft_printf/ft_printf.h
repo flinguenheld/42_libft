@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 18:10:23 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/03 17:16:55 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:28:49 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,16 @@ typedef struct s_flags
 }	t_flags;
 
 /* ****************************************************************************/
-/* ****************************************************************  *****/
-
+/* ************************************************************ PRINTF FD *****/
+/**
+ * @brief
+ * Launch ft_printf logic in the given file descriptor.
+ * Don't use this function directly, use instead:
+ *   - ft_printf
+ *   - ft_printf_err
+ * @return
+ * The amount of printed char or -1 if error
+ */
 int			ft_printf_fd(int fd, const char *str, va_list params);
 
 /* ****************************************************************************/
