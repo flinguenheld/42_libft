@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
-# include <limits.h>
 # include <stdarg.h>
 
 /**

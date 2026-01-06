@@ -65,7 +65,8 @@ My beautifull libft that I lovely use and complete with all 42 C projects 😘
   - [char		*ft_strtrim(char const *s1, char const *set);](https://github.com/flinguenheld/42_libft/blob/master/ft_str/ft_strtrim.c)
   - [char		*ft_substr(char const *s, unsigned int start, size_t len);](https://github.com/flinguenheld/42_libft/blob/master/ft_str/ft_substr.c)
 - to
-  - [int		ft_atoi(const char *nptr);](https://github.com/flinguenheld/42_libft/blob/master/ft_to/ft_atoi.c)
+  - [int		ft_atoi(const char *str);](https://github.com/flinguenheld/42_libft/blob/master/ft_to/ft_atoi.c)
+  - [int		ft_atol(const char *str);](https://github.com/flinguenheld/42_libft/blob/master/ft_to/ft_atol.c)
   - [char		*ft_itoa(int value);](https://github.com/flinguenheld/42_libft/blob/master/ft_to/ft_itoa.c)
   - [char		*ft_itohex(int value);](https://github.com/flinguenheld/42_libft/blob/master/ft_to/ft_itohex.c)
   - [char		*ft_ltoa(long value);](https://github.com/flinguenheld/42_libft/blob/master/ft_to/ft_ltoa.c)
