@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-int	putchar_count(char c)
+int	putchar_count(char c, t_flags flags)
 {
-	ft_putchar_fd(c, 1);
+	ft_putchar_fd(c, flags.file_descriptor);
 	return (1);
 }
 

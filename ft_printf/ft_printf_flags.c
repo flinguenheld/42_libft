@@ -12,15 +12,15 @@
 
 #include "ft_printf.h"
 
-t_flags	init_flags(void)
+t_flags	init_flags(int file_descriptor)
 {
 	return ((t_flags){
+		.file_descriptor = file_descriptor,
 		.width = (t_width){.on = 0, .val = 0, .filler = ' ', .after = 0},
 		.prec = (t_precision){.on = 0, .val = 0},
 		.plus = 0,
 		.space = 0,
-		.hexa = "",
-		.error = 0});
+		.hexa = "" });
 }
 
 /**
@@ -93,8 +93,6 @@ const char	*parse_flags(const char *ptr, t_flags *flags)
 			flags->prec.on = 1;
 			ptr = (get_value(ptr + 1, &flags->prec.val));
 		}
-		if (ft_strchr("diuscpxX%", *ptr) == NULL)
-			flags->error = 1;
 	}
 	return (ptr);
 }

@@ -19,9 +19,9 @@ int	print_char(char value, t_flags flags)
 	total = 0;
 	flags.width.val--;
 	while (!flags.width.after && flags.width.val-- > 0)
-		total += putchar_count(' ');
-	total += putchar_count(value);
+		total += putchar_count(' ', flags);
+	total += putchar_count(value, flags);
 	while (flags.width.after && flags.width.val-- > 0)
-		total += putchar_count(' ');
+		total += putchar_count(' ', flags);
 	return (total);
 }

@@ -36,7 +36,7 @@ static void	pfield(const char *str, va_list params, t_flags flags, int *total)
 	else if (*str == 'X')
 		*total += print_hexa(va_arg(params, unsigned int), flags, 1, 1);
 	else if (*str == '%')
-		*total += putchar_count('%');
+		*total += putchar_count('%', flags);
 	else
 		*total = -1;
 }
@@ -46,11 +46,11 @@ static void	pfield(const char *str, va_list params, t_flags flags, int *total)
  * Recursively print the current character or call pfield if the char is a %.
  * Update the total value for each printed char.
  */
-static void	run(const char *str, va_list params, int *total)
+static void	run(int fd, const char *str, va_list params, int *total)
 {
 	t_flags	flags;
 
-	flags = init_flags();
+	flags = init_flags(fd);
 	if (*str == '\0')
 	{
 		va_end(params);
@@ -65,8 +65,8 @@ static void	run(const char *str, va_list params, int *total)
 			return ;
 	}
 	else
-		*total += putchar_count(*str);
-	run(str + 1, params, total);
+		*total += putchar_count(*str, flags);
+	run(fd, str + 1, params, total);
 }
 
 int	ft_printf(const char *str, ...)
@@ -78,6 +78,6 @@ int	ft_printf(const char *str, ...)
 		return (-1);
 	va_start(params, str);
 	total = 0;
-	run(str, params, &total);
+	run(1, str, params, &total);
 	return (total);
 }

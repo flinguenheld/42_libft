@@ -31,13 +31,18 @@ typedef struct s_width
 
 typedef struct s_flags
 {
+	int			file_descriptor;
 	t_precision	prec;
 	t_width		width;
 	char		plus;
 	char		space;
 	char		*hexa;
-	char		error;
 }	t_flags;
+
+/* ****************************************************************************/
+/* ****************************************************************  *****/
+
+int			ft_printf_fd(int fd, const char *str, va_list params);
 
 /* ****************************************************************************/
 /* **************************************************************** FLAGS *****/
@@ -58,7 +63,7 @@ const char	*parse_flags(const char *ptr, t_flags *flags);
  * @brief
  * Set default flag values
  */
-t_flags		init_flags(void);
+t_flags		init_flags(int file_descriptor);
 
 /* ****************************************************************************/
 /* ************************************************************** NUMBERS *****/
@@ -169,7 +174,7 @@ int			print_string(char *value, t_flags flags);
  * @return
  * 1
  */
-int			putchar_count(char c);
+int			putchar_count(char c, t_flags flags);
 
 /**
  * @brief
