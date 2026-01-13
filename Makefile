@@ -118,4 +118,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all $(NAME) test_printf test_list test_is test_no_flag clean fclean re
+.PHONY: all test_printf test_list test_is test_no_flag clean fclean re
