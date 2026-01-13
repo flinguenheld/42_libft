@@ -1,7 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
-TEST = tests/main_test
 
 SRC =  \
 		ft_is/ft_is_integer.c \
@@ -90,24 +89,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-test_list: all
-	$(CC) tests/test_list.c $(NAME) -o $(TEST)
-	./$(TEST)
-
-test_is: all
-	$(CC) tests/test_is.c $(NAME) -o $(TEST)
-	./$(TEST)
-
-test_to: all
-	$(CC) tests/test_to.c $(NAME) -o $(TEST)
-	./$(TEST)
-
-test_printf: all
-	$(CC) tests/test_printf.c $(NAME) -o $(TEST)
-	./$(TEST)
-
-test_no_flag: CFLAGS =
-test_no_flag: test_printf
+test: all
+	@make -C tests/ --no-print-directory
 
 clean:
 	@rm -vf $(OBJS)
