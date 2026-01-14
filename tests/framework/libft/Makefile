@@ -89,12 +89,17 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
+test: all
+	@make -C tests/ --no-print-directory
+
 clean:
 	@rm -f $(OBJS)
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f $(TEST)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.SILENT: $(OBJS) clean fclean
+.PHONY: all test_printf test_list test_is test_no_flag clean fclean re

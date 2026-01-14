@@ -93,12 +93,12 @@ test: all
 	@make -C tests/ --no-print-directory
 
 clean:
-	@rm -vf $(OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	@rm -vf $(NAME)
-	@rm -vf $(TEST)
+	@rm -f $(NAME)
+	@rm -f $(TEST)
 
 re: fclean all
 
-.PHONY: all test_printf test_list test_is test_no_flag clean fclean re
+.PHONY: all test clean fclean re

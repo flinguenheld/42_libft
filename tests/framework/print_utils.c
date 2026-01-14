@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   print_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 18:55:27 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/13 23:50:47 by flinguen         ###   ########.fr       */
+/*   Created: 2026/01/14 14:41:57 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/14 14:53:24 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libunit.h"
 
-int	putchar_count(char c, t_flags flags)
+void	print_close_frame_right(int already_printed)
 {
-	ft_putchar_fd(c, flags.file_descriptor);
-	return (1);
+	int	len;
+
+	len = 71 - already_printed;
+	while (len--)
+		ft_printf(" ");
+	ft_printf("=====\n");
 }
 
-int	sub_min_zero(int a, int b)
+void	print_frame_line(int empty)
 {
-	int	result;
+	int	length;
 
-	result = a - b;
-	if (result < 0)
-		return (0);
-	return (result);
-}
-
-int	mini(int a, int b)
-{
-	if (a <= b)
-		return (a);
+	length = 80;
+	if (empty == 1)
+		ft_printf("=====% 70c=====\n", ' ');
 	else
-		return (b);
+	{
+		while (length--)
+			ft_printf("=");
+		ft_printf("\n");
+	}
 }
