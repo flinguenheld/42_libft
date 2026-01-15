@@ -1,6 +1,7 @@
 ### Libft
 
 My beautifull libft that I lovely use and complete with all 42 C projects 😘  
+Use the [dev](https://github.com/flinguenheld/42_libft/tree/dev) branch to work with tests.  
 
 - is
   - [int			ft_is_integer(char *str);](https://github.com/flinguenheld/42_libft/blob/master/ft_is/ft_is_integer.c)
