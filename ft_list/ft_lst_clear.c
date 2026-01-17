@@ -12,16 +12,6 @@
 
 #include "../libft.h"
 
-void	ft_lst_clear_basic(t_list **lst)
-{
-	if (lst != NULL && *lst != NULL)
-	{
-		ft_lst_clear_basic(&(*lst)->next);
-		ft_lst_delone_basic(*lst);
-		*lst = NULL;
-	}
-}
-
 void	ft_lst_clear(t_list **lst, void (*del)(void *))
 {
 	if (lst != NULL && *lst != NULL)

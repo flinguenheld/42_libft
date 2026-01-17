@@ -65,12 +65,6 @@ void		ft_lst_clear(t_list **lst, void (*del)(void *));
 
 /**
  * @brief
- * Wrapper of 'ft_lst_clear' which deletes all contents with the free fuction.
- */
-void		ft_lst_clear_basic(t_list **lst);
-
-/**
- * @brief
  * Loop in the list and apply the comparison on each node.
  * @return
  * 1 if one node's comparison is valid.
@@ -92,12 +86,6 @@ int			ft_lst_contains_key(t_list *lst, void *key,
  * Free the node itself but does NOT free the next node.
  */
 void		ft_lst_delone(t_list *lst, void (*del)(void *));
-
-/**
- * @brief
- * Wrapper of 'ft_lst_delone' which deletes the content with the 'free' fuction.
- */
-void		ft_lst_delone_basic(t_list *lst);
 
 /**
  * @brief

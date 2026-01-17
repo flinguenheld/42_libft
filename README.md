@@ -13,11 +13,9 @@ Use the [dev](https://github.com/flinguenheld/42_libft/tree/dev) branch to work 
   - [int			ft_isspace(int c);](https://github.com/flinguenheld/42_libft/blob/master/ft_is/ft_isspace.c)
 - list
   - [void		ft_lst_clear(t_list **lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clear.c)
-  - [void		ft_lst_clear_basic(t_list **lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clear.c)
   - [int		ft_lst_contains(t_list *lst, int (*comparison)(void *))](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_contains.c)
   - [int		ft_lst_contains_key(t_list *lst, void *key, int (*comp)(void *, void *))](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_contains.c)
   - [void		ft_lst_delone(t_list *lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_delone.c)
-  - [void		ft_lst_delone_basic(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_delone.c)
   - [void		ft_lst_iter(t_list *lst, void (*f)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_iter.c)
   - [t_list	*ft_lst_last(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lstlast.c)
   - [t_list	*ft_lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_map.c)
@@ -26,6 +24,7 @@ Use the [dev](https://github.com/flinguenheld/42_libft/tree/dev) branch to work 
   - [t_list	*ft_lst_pop_front(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_pop_front.c)
   - [void		ft_lst_push_back(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_push_back.c)
   - [void		ft_lst_push_front(t_list **lst, t_list *new_node);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_push_front.c)
+  - [void		ft_lst_remove_if(t_list **lst, void *key, int (*comparison)(void *, void *), void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_remove_if.c)
   - [void		ft_lst_rotate_left(t_list **lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_rotate_left.c)
   - [void		ft_lst_rotate_right(t_list **lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_rotate_right.c)
   - [int		ft_lst_size(t_list *lst);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_size.c)
@@ -35,11 +34,10 @@ Use the [dev](https://github.com/flinguenheld/42_libft/tree/dev) branch to work 
 - mem
   - [void		ft_bzero(void *s, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_bzero.c)
   - [void		*ft_memrchr(const void *s, int c, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memchr.c)
-  - [int			ft_memcmp(const void *s1, const void *s2, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memcmp.c)
+  - [int		ft_memcmp(const void *s1, const void *s2, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memcmp.c)
   - [void		*ft_memcpy(void *dest, const void *src, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memcpy.c)
   - [void		*ft_memmove(void *dest, const void *src, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memmove.c)
   - [void		*ft_memchr(const void *s, int c, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memrchr.c)
-  - [void		*ft_memset(void *s, int c, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memset.c)
   - [void		*ft_memset(void *s, int c, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memset.c)
   - [void		ft_swap(void **a, void **b);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_swap.c)
 - printf

@@ -12,16 +12,6 @@
 
 #include "../libft.h"
 
-static void	del_node_basic(void *content)
-{
-	free(content);
-}
-
-void	ft_lst_delone_basic(t_list *lst)
-{
-	ft_lst_delone(lst, del_node_basic);
-}
-
 void	ft_lst_delone(t_list *lst, void (*del)(void *))
 {
 	if (lst != NULL)
