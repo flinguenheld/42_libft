@@ -164,6 +164,14 @@ void		ft_lst_push_front(t_list **lst, t_list *new_node);
 
 /**
  * @brief
+ * Remove all nodes where comparison == 1
+ */
+void		ft_lst_remove_if(t_list **lst, void *key,
+						int (*comparison)(void *, void *),
+						void (*del)(void *));
+
+/**
+ * @brief
  * Rotate the list of one position to the left.
  */
 void		ft_lst_rotate_left(t_list **lst);
