@@ -13,6 +13,7 @@ Use the [dev](https://github.com/flinguenheld/42_libft/tree/dev) branch to work 
   - [int			ft_isspace(int c);](https://github.com/flinguenheld/42_libft/blob/master/ft_is/ft_isspace.c)
 - list
   - [void		ft_lst_clear(t_list **lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clear.c)
+  - [t_list	*ft_lst_clone(t_list *source, void *(*clone_content)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clone.c)
   - [int		ft_lst_contains(t_list *lst, int (*comparison)(void *))](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_contains.c)
   - [int		ft_lst_contains_key(t_list *lst, void *key, int (*comp)(void *, void *))](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_contains.c)
   - [void		ft_lst_delone(t_list *lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_delone.c)

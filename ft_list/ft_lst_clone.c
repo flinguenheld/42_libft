@@ -14,9 +14,9 @@
 
 t_list	*ft_lst_clone(t_list *source, void *(*clone_content)(void *))
 {
-	t_list *new_node;
-	t_list *new_list_start;
-	t_list *new_list_last_node;
+	t_list	*new_node;
+	t_list	*new_list_start;
+	t_list	*new_list_last_node;
 
 	new_list_start = NULL;
 	new_list_last_node = NULL;
@@ -28,5 +28,5 @@ t_list	*ft_lst_clone(t_list *source, void *(*clone_content)(void *))
 			new_list_start = new_node;
 		new_list_last_node = new_node;
 	}
-	return new_list_start;
+	return (new_list_start);
 }

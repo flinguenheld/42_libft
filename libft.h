@@ -73,6 +73,16 @@ int			ft_lst_contains(t_list *lst, int (*comparison)(void *));
 
 /**
  * @brief
+ * Clone the source in a brand new list
+ * Apply 'clone_content to create new nodes'
+ * @return
+ * The first node of the new list
+ * NULL if source is empty
+ */
+t_list		*ft_lst_clone(t_list *source, void *(*clone_content)(void *));
+
+/**
+ * @brief
  * Loop in the list and apply the comparison on each node.
  * @return
  * 1 if one node's comparison is valid.
@@ -155,8 +165,8 @@ void		ft_lst_push_front(t_list **lst, t_list *new_node);
  * Remove all nodes where comparison == 1
  */
 void		ft_lst_remove_if(t_list **lst, void *key,
-						int (*comparison)(void *, void *),
-						void (*del)(void *));
+				int (*comparison)(void *, void *),
+				void (*del)(void *));
 
 /**
  * @brief
