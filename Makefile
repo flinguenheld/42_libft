@@ -12,6 +12,7 @@ SRC =  \
 		ft_is/ft_isspace.c \
 		\
 		ft_list/ft_lst_clear.c \
+		ft_list/ft_lst_clone.c \
 		ft_list/ft_lst_contains.c \
 		ft_list/ft_lst_delone.c \
 		ft_list/ft_lst_iter.c \
@@ -95,10 +96,12 @@ test: all
 
 clean:
 	@rm -f $(OBJS)
+	@make -C tests/ --no-print-directory clean
 
 fclean: clean
 	@rm -f $(NAME)
 	@rm -f $(TEST)
+	@make -C tests/ --no-print-directory fclean
 
 re: fclean all
 

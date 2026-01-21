@@ -1,5 +1,4 @@
-
-#include "../../libft.h"
+#include "is_integer_tests.h"
 
 int	is_not_int_1(void) {
 	return (!ft_is_integer("+ 1"));

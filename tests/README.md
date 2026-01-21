@@ -17,7 +17,7 @@ Once done, a simple make command will, execute all tests in separated forks and 
 Clone this repository in the root of your project and name the folder **tests**.  
 You can remove the **tests/.git** folder  
 ``` Bash
-git clone --recursive https://github.com/flinguenheld/42_libunit tests
+git clone https://github.com/flinguenheld/42_libunit tests
 ```
 
 The purpose is to have this structure:  
@@ -96,7 +96,7 @@ Here an example:
 int	atol_launcher(t_count *final_count)
 {
 	// Create a list which will contain all your tests --
-	t_list	*list;
+	t_lu_list	*list;
 
 	list = NULL;
 
@@ -122,7 +122,7 @@ int	atol_launcher(t_count *final_count)
 int	main(void)
 {
 	// Create and init a counter --
-	t_count	s_count;
+	t_lu_counter	s_count;
 
 	s_count = counter_init();
 
@@ -167,15 +167,16 @@ libunit:
 	@make -C $(LIBUNIT_FOLDER)
 
 clean:
-	@rm -vf $(OBJS)
+	@rm -f $(OBJS)
 	make -C $(LIBUNIT_FOLDER) clean
 
 fclean: clean
-	@rm -vf $(NAME)
+	@rm -f $(NAME)
 	make -C $(LIBUNIT_FOLDER) fclean
 
 re: fclean all
 
+.SILENT: $(OBJS) $(NAME)
 .PHONY: all clean fclean re libunit
 ```
 

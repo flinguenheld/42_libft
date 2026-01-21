@@ -9,6 +9,8 @@ SRC =	main.c \
 		is_integer/00_launcher.c \
 		is_integer/01_is_integer_test.c \
 		is_integer/02_is_not_integer_test.c \
+		list/00_launcher.c \
+		list/01_lst_clone.c \
 		template_tests/00_launcher.c \
 		template_tests/01_template_test.c \
 
@@ -17,7 +19,7 @@ all: $(NAME)
 OBJS := $(SRC:%.c=%.o)
 
 $(NAME): libunit $(OBJS)
-	$(CC) -o $(NAME) $(OBJS) $(LIBUNIT_FILE)
+	$(CC) -o $(NAME) $(OBJS) $(LIBUNIT_FILE) ../libft.a
 	./$(NAME) || true
 
 libunit:

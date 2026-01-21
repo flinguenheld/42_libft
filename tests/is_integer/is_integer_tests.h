@@ -10,13 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IS_INTEGER_H
-# define IS_INTEGER_H
+#ifndef IS_INTEGER_TESTS_H
+# define IS_INTEGER_TESTS_H
 
 #include "../framework/libunit.h"
+#include "../../libft.h"
 
 // Launcher used in main
-int	is_integer_launcher(t_count *final_counter);
+int	is_integer_launcher(t_lu_counter *final_counter);
 
 int	is_int_1(void);
 int	is_int_123(void);

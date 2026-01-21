@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 18:55:27 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/13 23:50:47 by flinguen         ###   ########.fr       */
+/*   Created: 2026/01/13 18:39:23 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/13 23:50:50 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "list.h"
 
-int	putchar_count(char c, t_flags flags)
+int	list_launcher(t_lu_counter *final_counter)
 {
-	ft_putchar_fd(c, flags.file_descriptor);
-	return (1);
-}
+	t_lu_list	*list;
 
-int	sub_min_zero(int a, int b)
-{
-	int	result;
+	list = NULL;
+	load_test(&list, "Clone empty list", &clone_list_empty);
+	load_test(&list, "Clone 100 nodes", &clone_list_100_nodes);
 
-	result = a - b;
-	if (result < 0)
-		return (0);
-	return (result);
-}
-
-int	mini(int a, int b)
-{
-	if (a <= b)
-		return (a);
-	else
-		return (b);
+	return (launch_tests("LIST", list, final_counter));
 }

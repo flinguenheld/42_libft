@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_lst_clear.c                                     :+:      :+:    :+:   */
+/*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 13:16:12 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/03 17:16:54 by flinguen         ###   ########.fr       */
+/*   Created: 2026/01/13 18:39:23 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/21 17:19:43 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#ifndef LIST_TESTS_H
+# define LIST_TESTS_H
 
-void	ft_lst_clear_basic(t_list **lst)
-{
-	if (lst != NULL && *lst != NULL)
-	{
-		ft_lst_clear_basic(&(*lst)->next);
-		ft_lst_delone_basic(*lst);
-		*lst = NULL;
-	}
-}
+#include "../framework/libunit.h"
+#include "../../libft.h"
 
-void	ft_lst_clear(t_list **lst, void (*del)(void *))
-{
-	if (lst != NULL && *lst != NULL)
-	{
-		ft_lst_clear(&(*lst)->next, del);
-		ft_lst_delone(*lst, del);
-		*lst = NULL;
-	}
-}
+// Launcher used in main
+int	list_launcher(t_lu_counter *final_counter);
+
+int	clone_list_empty(void);
+int	clone_list_100_nodes(void);
+
+#endif

@@ -27,6 +27,7 @@ t_list	*ft_lst_clone(t_list *source, void *(*clone_content)(void *))
 		if (new_list_start == NULL)
 			new_list_start = new_node;
 		new_list_last_node = new_node;
+		source = source->next;
 	}
 	return (new_list_start);
 }

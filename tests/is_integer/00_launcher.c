@@ -13,9 +13,9 @@
 #include "../framework/libunit.h"
 #include "is_integer_tests.h"
 
-int	is_integer_launcher(t_count *final_counter)
+int	is_integer_launcher(t_lu_counter *final_counter)
 {
-	t_list	*list;
+	t_lu_list	*list;
 
 	list = NULL;
 	load_test(&list, "'1' is a int", &is_int_1);
