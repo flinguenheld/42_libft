@@ -15,6 +15,7 @@ SRC =  \
 		ft_list/ft_lst_clone.c \
 		ft_list/ft_lst_contains.c \
 		ft_list/ft_lst_delone.c \
+		ft_list/ft_lst_init.c \
 		ft_list/ft_lst_iter.c \
 		ft_list/ft_lst_last.c \
 		ft_list/ft_lst_map.c \

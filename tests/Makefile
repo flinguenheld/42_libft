@@ -11,6 +11,7 @@ SRC =	main.c \
 		is_integer/02_is_not_integer_test.c \
 		list/00_launcher.c \
 		list/01_lst_clone.c \
+		list/02_lst_init.c \
 		template_tests/00_launcher.c \
 		template_tests/01_template_test.c \
 
