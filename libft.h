@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/23 11:08:39 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/23 17:42:58 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void		ft_lst_delone(t_list *lst, void (*del)(void *));
  * @return
  * The pointer of the first node
  */
-t_list		*ft_lst_init(int size, void *(*init_content(void)));
+t_list		*ft_lst_init(int size, void *(*init_content)(void));
 
 /**
  * @brief
