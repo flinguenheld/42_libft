@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/06 18:28:47 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/23 11:08:39 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,15 @@ int			ft_lst_contains_key(t_list *lst, void *key,
  * Free the node itself but does NOT free the next node.
  */
 void		ft_lst_delone(t_list *lst, void (*del)(void *));
+
+/**
+ * @brief
+ * Create a new list of 'size' nodes and use the function init_content to set
+ * their content
+ * @return
+ * The pointer of the first node
+ */
+t_list		*ft_lst_init(int size, void *(*init_content(void)));
 
 /**
  * @brief

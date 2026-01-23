@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_lst_push_front.c                                :+:      :+:    :+:   */
+/*   ft_lst_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 18:27:10 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/23 10:30:36 by flinguen         ###   ########.fr       */
+/*   Created: 2026/01/23 10:38:44 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/23 11:08:40 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	ft_lst_push_front(t_list **lst, t_list *new_node)
+t_list	*ft_lst_init(int size, void *(*init_content(void)))
 {
-	if (new_node != NULL)
+	t_list	*new_list;
+
+	new_list = NULL;
+	if (size > 0)
 	{
-		new_node->next = *lst;
-		(*lst) = new_node;
+		while (size--)
+			ft_lst_push_front(&new_list, ft_lst_new(init_content));
 	}
+	return (new_list);
 }
