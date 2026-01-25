@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/23 17:42:58 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/25 18:11:50 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,15 @@ int			ft_lst_contains_key(t_list *lst, void *key,
  * Free the node itself but does NOT free the next node.
  */
 void		ft_lst_delone(t_list *lst, void (*del)(void *));
+
+/**
+ * @brief
+ * Loop into the list to get the node at the given position.
+ * @return
+ * The pointer of the node
+ * NULL if it does not exist
+ */
+t_list		*ft_lst_get_at(t_list *lst, int position);
 
 /**
  * @brief

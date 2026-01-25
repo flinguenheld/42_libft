@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 18:39:23 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/23 10:35:57 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/25 18:11:53 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	clone_list_empty(void)
 
 int	clone_list_100_nodes(void)
 {
-	t_list *source = ft_lst_new(new_content(0));
-	for (int i=0; i<10; i++)
+	t_list *source = NULL;
+	for (int i=0; i<100; i++)
 		ft_lst_push_back(&source, ft_lst_new(new_content(i)));
 
 	t_list *cloned = ft_lst_clone(source, clone_content);

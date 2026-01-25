@@ -12,6 +12,7 @@ SRC =	main.c \
 		list/00_launcher.c \
 		list/01_lst_clone.c \
 		list/02_lst_init.c \
+		list/03_lst_get_at.c \
 		template_tests/00_launcher.c \
 		template_tests/01_template_test.c \
 
