@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/25 18:11:50 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/28 00:56:33 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_list
 
 /* ****************************************************************************/
 /* ******************************************************************* IS *****/
+
 /**
  * @brief
  * Check if the given str is an integer.
@@ -56,6 +57,7 @@ int			ft_isspace(int c);
 
 /* ****************************************************************************/
 /* ***************************************************************** LIST *****/
+
 /**
  * @brief
  * Deletes and frees the given node and all its successors, using the
@@ -212,6 +214,7 @@ void		ft_lst_swap_content(t_list *a, t_list *b);
 
 /* ****************************************************************************/
 /* *************************************************************** MALLOC *****/
+
 /*
  * @brief
  * The  calloc() function allocates memory for an array of nmemb elements of
@@ -227,7 +230,29 @@ void		ft_lst_swap_content(t_list *a, t_list *b);
 void		*ft_calloc(size_t nmemb, size_t size);
 
 /* ****************************************************************************/
+/* ***************************************************************** MATH *****/
+
+/**
+ * @brief
+ * Return the maximun between a & b
+ */
+int			ft_max(int a, int b);
+
+/**
+ * @brief
+ * Return the minimun between a & b
+ */
+int			ft_min(int a, int b);
+
+/**
+ * @brief
+ * Return the absolute value of a - b
+ */
+int			ft_sub_abs(int a, int b);
+
+/* ****************************************************************************/
 /* ****************************************************************** MEM *****/
+
 /**
  * @brief
  * The  bzero()  function erases the data in the n bytes of the memory starting
@@ -324,6 +349,7 @@ void		ft_swap(void **a, void **b);
 
 /* ****************************************************************************/
 /* *************************************************************** PRINTF *****/
+
 /**
  * @brief
  * Print str in the standard output and manage fields
@@ -370,6 +396,7 @@ int			ft_printf_err(const char *str, ...);
 
 /* ****************************************************************************/
 /* ****************************************************************** PUT *****/
+
 /**
  * @brief
  * Outputs the character ’c’ to the specified file descriptor.
@@ -396,6 +423,7 @@ void		ft_putstr_fd(char *s, int fd);
 
 /* ****************************************************************************/
 /* ****************************************************************** STR *****/
+
 /**
  * @brief
  * Allocates memory (using malloc(3)) and returns an array of strings obtained
@@ -563,6 +591,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 /* ****************************************************************************/
 /* ******************************************************************* TO *****/
+
 /**
  * @brief
  * Converts the initial portion of str to int.

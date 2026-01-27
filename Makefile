@@ -33,6 +33,10 @@ SRC =  \
 		\
 		ft_malloc/ft_calloc.c \
 		\
+		ft_math/ft_max.c \
+		ft_math/ft_min.c \
+		ft_math/ft_sub_abs.c \
+		\
 		ft_mem/ft_bzero.c \
 		ft_mem/ft_memchr.c \
 		ft_mem/ft_memcmp.c \

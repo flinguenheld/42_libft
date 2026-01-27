@@ -34,6 +34,10 @@ Use the [dev](https://github.com/flinguenheld/42_libft/tree/dev) branch to work 
   - [void		ft_lst_swap_content(t_list *a, t_list *b);](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_swap_content.c)
 - malloc
   - [void		*ft_calloc(size_t nmemb, size_t size);](https://github.com/flinguenheld/42_libft/blob/master/ft_malloc/ft_calloc.c)
+- math
+  - [int			ft_max(int a, int b);](https://github.com/flinguenheld/42_libft/blob/master/ft_math/ft_max.c)
+  - [int			ft_min(int a, int b);](https://github.com/flinguenheld/42_libft/blob/master/ft_math/ft_min.c)
+  - [int			ft_sub_abs(int a, int b);](https://github.com/flinguenheld/42_libft/blob/master/ft_math/ft_sub_abs.c)
 - mem
   - [void		ft_bzero(void *s, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_bzero.c)
   - [void		*ft_memrchr(const void *s, int c, size_t n);](https://github.com/flinguenheld/42_libft/blob/master/ft_mem/ft_memchr.c)
