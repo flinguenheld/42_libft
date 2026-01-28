@@ -6,13 +6,13 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 00:40:21 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/28 00:56:34 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/28 01:01:35 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_minus_abs(int a, int b)
+int	ft_sub_abs(int a, int b)
 {
 	if (a >= b)
 		return (a - b);
