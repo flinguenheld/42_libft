@@ -116,7 +116,7 @@ static size_t	poor_remainder_in_line(char *remainder, char **line, size_t len)
  * @return
  * A pointer to the new line (has to be freed by user)
  */
-char	*get_next_line(int fd)
+char	*ft_get_next_line(int fd)
 {
 	size_t				len;
 	char				*line;

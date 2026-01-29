@@ -20,8 +20,8 @@
  */
 void	save_ptr(char *remainder, char *ptr, size_t slot)
 {
-	ft_memcpy((char *)(intptr_t) & ptr,
-		remainder + GNL_BUFFER_SIZE + (slot * sizeof(intptr_t)),
+	ft_memcpy(remainder + GNL_BUFFER_SIZE + (slot * sizeof(intptr_t)),
+		(char *)(intptr_t) & ptr,
 		sizeof(intptr_t));
 }
 
@@ -36,9 +36,9 @@ char	*get_ptr(char *remainder, size_t slot)
 {
 	intptr_t	read_address;
 
-	read_address = 0;
-	ft_memcpy((remainder + GNL_BUFFER_SIZE + (slot * sizeof(intptr_t))),
-		(char *)&read_address, sizeof(intptr_t));
+	ft_memcpy(&read_address,
+		(remainder + GNL_BUFFER_SIZE + (slot * sizeof(intptr_t))),
+		sizeof(intptr_t));
 	return ((char *)read_address);
 }
 
