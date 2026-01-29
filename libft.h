@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/28 00:56:33 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/29 14:26:20 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,28 @@ int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int c);
 int			ft_isspace(int c);
+
+/* ****************************************************************************/
+/* ******************************************************** GET NEXT LINE *****/
+
+/**
+ * @brief
+ * Get the next line of the file pointed by fd
+ * This version allows you to use multiple fd in the same program.
+ * It will keep track of all given file descriptors.
+ *
+ * A line is a chain of any char that ends with a '\n' (included) or not when
+ * the file descriptor has reached the end of the file.
+ *
+ * The buffer size can be set at compilation time with the flag:
+ *   -D GNL_BUFFER_SIZE=100   (default: 42)
+ * The maximum of simultaneous fd can be set at compilation time with the flag:
+ *   -D GNL_NB_FILE_MAX=100   (default: 84)
+ * @return
+ * The next line which has to free by the user.
+ * NULL if there's an error or nothing else to read.
+ */
+char		*get_next_line(int fd);
 
 /* ****************************************************************************/
 /* ***************************************************************** LIST *****/

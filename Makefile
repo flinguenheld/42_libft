@@ -11,6 +11,9 @@ SRC =  \
 		ft_is/ft_isprint.c \
 		ft_is/ft_isspace.c \
 		\
+		ft_get_next_line/get_next_line.c \
+		ft_get_next_line/get_next_line_utils.c \
+		\
 		ft_list/ft_lst_clear.c \
 		ft_list/ft_lst_clone.c \
 		ft_list/ft_lst_contains.c \
