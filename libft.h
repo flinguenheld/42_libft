@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/29 14:26:20 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/29 16:39:10 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int			ft_isspace(int c);
  * The next line which has to free by the user.
  * NULL if there's an error or nothing else to read.
  */
-char		*get_next_line(int fd);
+char		*ft_get_next_line(int fd);
 
 /* ****************************************************************************/
 /* ***************************************************************** LIST *****/
@@ -321,24 +321,20 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /**
  * @brief
- * The memcpy function copies n bytes from memory area src to memory area dest.
- * The memory areas must not overlap. Use memmove if the memory areas overlap.
+ * Copies n bytes from memory area src to memory area dest.
+ * It takes care of overlaping
  * @return
- * The memcpy() function returns a pointer to dest.
+ * A pointer to dest.
  */
-void		*ft_memcpy(void *dest, const void *src, size_t n);
+void		*ft_memcpy(void *to, const void *from, size_t len);
 
 /**
  * @brief
- * The memmove function copies n bytes from memory area src to memory area dest.
- * The memory areas may overlap: copying takes place as though the bytes in src
- * are first copied into a temporary array that does not overlap src or dest,
- * and * the bytes are then copied from the temporary array to dest.
- * 
+ * Same as memcpy.
  * @return
- * The memmove() function returns a pointer to dest.
+ * A pointer to dest.
  */
-void		*ft_memmove(void *dest, const void *src, size_t n);
+void		*ft_memmove(void *to, const void *from, size_t len);
 
 /**
  * @brief
