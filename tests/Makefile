@@ -6,6 +6,8 @@ LIBUNIT_FOLDER = framework/
 LIBUNIT_FILE = framework/libunit.a
 
 SRC =	main.c \
+		get_next_line/00_launcher.c \
+		get_next_line/01_gnl.c \
 		is_integer/00_launcher.c \
 		is_integer/01_is_integer_test.c \
 		is_integer/02_is_not_integer_test.c \

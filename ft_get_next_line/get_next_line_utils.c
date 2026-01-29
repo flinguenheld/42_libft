@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:51:27 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/29 14:31:34 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/29 19:14:44 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ char	*get_ptr(char *remainder, size_t slot)
 {
 	intptr_t	read_address;
 
-	ft_memcpy(&read_address,
-		(remainder + GNL_BUFFER_SIZE + (slot * sizeof(intptr_t))),
+	ft_memcpy((char *)&read_address,
+		remainder + GNL_BUFFER_SIZE + (slot * sizeof(intptr_t)),
 		sizeof(intptr_t));
 	return ((char *)read_address);
 }

@@ -6,13 +6,11 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:51:27 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/29 14:26:23 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/29 19:14:44 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stddef.h>
-#include <stdio.h>
 
 /**
  * @brief
@@ -55,7 +53,7 @@ static size_t	set_line(char *old_l, char **new_l, char *remainder, size_t len)
 
 	remainder_from = get_ptr(remainder, 0);
 	remainder_to = get_ptr(remainder, 1);
-	ft_memcpy(old_l, *new_l, len);
+	ft_memcpy(*new_l, old_l, len);
 	while (remainder_from != remainder_to)
 	{
 		(*new_l)[len++] = *remainder_from++;

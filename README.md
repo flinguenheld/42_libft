@@ -11,6 +11,8 @@ Use the [dev](https://github.com/flinguenheld/42_libft/tree/dev) branch to work 
   - [int			ft_isdigit(int c);](https://github.com/flinguenheld/42_libft/blob/master/ft_is/ft_isdigit.c)
   - [int			ft_isprint(int c);](https://github.com/flinguenheld/42_libft/blob/master/ft_is/ft_isprint.c)
   - [int			ft_isspace(int c);](https://github.com/flinguenheld/42_libft/blob/master/ft_is/ft_isspace.c)
+- get next line
+  - [char		*ft_get_next_line(int fd);](https://github.com/flinguenheld/42_libft/tree/dev/ft_get_next_line)
 - list
   - [void		ft_lst_clear(t_list **lst, void (*del)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clear.c)
   - [t_list	*ft_lst_clone(t_list *source, void *(*clone_content)(void *));](https://github.com/flinguenheld/42_libft/blob/master/ft_list/ft_lst_clone.c)
