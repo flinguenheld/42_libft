@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 15:23:19 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/29 16:39:11 by flinguen         ###   ########.fr       */
+/*   Created: 2026/01/28 00:40:21 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/28 00:56:34 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memmove(void *to, const void *from, size_t len)
+int	ft_max(int a, int b)
 {
-	return (ft_memcpy(to, from, len));
+	if (a >= b)
+		return (a);
+	return (b);
 }

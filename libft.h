@@ -6,7 +6,7 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:46:57 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/23 17:42:58 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/29 16:39:10 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_list
 
 /* ****************************************************************************/
 /* ******************************************************************* IS *****/
+
 /**
  * @brief
  * Check if the given str is an integer.
@@ -55,7 +56,30 @@ int			ft_isprint(int c);
 int			ft_isspace(int c);
 
 /* ****************************************************************************/
+/* ******************************************************** GET NEXT LINE *****/
+
+/**
+ * @brief
+ * Get the next line of the file pointed by fd
+ * This version allows you to use multiple fd in the same program.
+ * It will keep track of all given file descriptors.
+ *
+ * A line is a chain of any char that ends with a '\n' (included) or not when
+ * the file descriptor has reached the end of the file.
+ *
+ * The buffer size can be set at compilation time with the flag:
+ *   -D GNL_BUFFER_SIZE=100   (default: 42)
+ * The maximum of simultaneous fd can be set at compilation time with the flag:
+ *   -D GNL_NB_FILE_MAX=100   (default: 84)
+ * @return
+ * The next line which has to free by the user.
+ * NULL if there's an error or nothing else to read.
+ */
+char		*ft_get_next_line(int fd);
+
+/* ****************************************************************************/
 /* ***************************************************************** LIST *****/
+
 /**
  * @brief
  * Deletes and frees the given node and all its successors, using the
@@ -96,6 +120,15 @@ int			ft_lst_contains_key(t_list *lst, void *key,
  * Free the node itself but does NOT free the next node.
  */
 void		ft_lst_delone(t_list *lst, void (*del)(void *));
+
+/**
+ * @brief
+ * Loop into the list to get the node at the given position.
+ * @return
+ * The pointer of the node
+ * NULL if it does not exist
+ */
+t_list		*ft_lst_get_at(t_list *lst, int position);
 
 /**
  * @brief
@@ -203,6 +236,7 @@ void		ft_lst_swap_content(t_list *a, t_list *b);
 
 /* ****************************************************************************/
 /* *************************************************************** MALLOC *****/
+
 /*
  * @brief
  * The  calloc() function allocates memory for an array of nmemb elements of
@@ -218,7 +252,29 @@ void		ft_lst_swap_content(t_list *a, t_list *b);
 void		*ft_calloc(size_t nmemb, size_t size);
 
 /* ****************************************************************************/
+/* ***************************************************************** MATH *****/
+
+/**
+ * @brief
+ * Return the maximun between a & b
+ */
+int			ft_max(int a, int b);
+
+/**
+ * @brief
+ * Return the minimun between a & b
+ */
+int			ft_min(int a, int b);
+
+/**
+ * @brief
+ * Return the absolute value of a - b
+ */
+int			ft_sub_abs(int a, int b);
+
+/* ****************************************************************************/
 /* ****************************************************************** MEM *****/
+
 /**
  * @brief
  * The  bzero()  function erases the data in the n bytes of the memory starting
@@ -265,24 +321,20 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /**
  * @brief
- * The memcpy function copies n bytes from memory area src to memory area dest.
- * The memory areas must not overlap. Use memmove if the memory areas overlap.
+ * Copies n bytes from memory area src to memory area dest.
+ * It takes care of overlaping
  * @return
- * The memcpy() function returns a pointer to dest.
+ * A pointer to dest.
  */
-void		*ft_memcpy(void *dest, const void *src, size_t n);
+void		*ft_memcpy(void *to, const void *from, size_t len);
 
 /**
  * @brief
- * The memmove function copies n bytes from memory area src to memory area dest.
- * The memory areas may overlap: copying takes place as though the bytes in src
- * are first copied into a temporary array that does not overlap src or dest,
- * and * the bytes are then copied from the temporary array to dest.
- * 
+ * Same as memcpy.
  * @return
- * The memmove() function returns a pointer to dest.
+ * A pointer to dest.
  */
-void		*ft_memmove(void *dest, const void *src, size_t n);
+void		*ft_memmove(void *to, const void *from, size_t len);
 
 /**
  * @brief
@@ -315,6 +367,7 @@ void		ft_swap(void **a, void **b);
 
 /* ****************************************************************************/
 /* *************************************************************** PRINTF *****/
+
 /**
  * @brief
  * Print str in the standard output and manage fields
@@ -361,6 +414,7 @@ int			ft_printf_err(const char *str, ...);
 
 /* ****************************************************************************/
 /* ****************************************************************** PUT *****/
+
 /**
  * @brief
  * Outputs the character ’c’ to the specified file descriptor.
@@ -387,6 +441,7 @@ void		ft_putstr_fd(char *s, int fd);
 
 /* ****************************************************************************/
 /* ****************************************************************** STR *****/
+
 /**
  * @brief
  * Allocates memory (using malloc(3)) and returns an array of strings obtained
@@ -554,6 +609,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 /* ****************************************************************************/
 /* ******************************************************************* TO *****/
+
 /**
  * @brief
  * Converts the initial portion of str to int.

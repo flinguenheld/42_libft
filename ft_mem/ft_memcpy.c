@@ -6,20 +6,15 @@
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 13:33:19 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/03 17:16:55 by flinguen         ###   ########.fr       */
+/*   Updated: 2026/01/29 16:39:10 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *to, const void *from, size_t len)
 {
-	unsigned char	*copied_dest;
-
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	copied_dest = (unsigned char *)dest;
-	while (n--)
-		*copied_dest++ = *(unsigned char *)src++;
-	return (dest);
+	while (len--)
+		*(char *)(to + len) = *(char *)(from + len);
+	return (to);
 }

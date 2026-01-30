@@ -11,10 +11,14 @@ SRC =  \
 		ft_is/ft_isprint.c \
 		ft_is/ft_isspace.c \
 		\
+		ft_get_next_line/get_next_line.c \
+		ft_get_next_line/get_next_line_utils.c \
+		\
 		ft_list/ft_lst_clear.c \
 		ft_list/ft_lst_clone.c \
 		ft_list/ft_lst_contains.c \
 		ft_list/ft_lst_delone.c \
+		ft_list/ft_lst_get_at.c \
 		ft_list/ft_lst_init.c \
 		ft_list/ft_lst_iter.c \
 		ft_list/ft_lst_last.c \
@@ -31,6 +35,10 @@ SRC =  \
 		ft_list/ft_lst_swap_content.c \
 		\
 		ft_malloc/ft_calloc.c \
+		\
+		ft_math/ft_max.c \
+		ft_math/ft_min.c \
+		ft_math/ft_sub_abs.c \
 		\
 		ft_mem/ft_bzero.c \
 		ft_mem/ft_memchr.c \

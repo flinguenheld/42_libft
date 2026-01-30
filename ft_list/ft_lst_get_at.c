@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lst_get_at.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flinguen <florent@linguenheld.net>          +#+  +:+       +#+       */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 15:23:19 by flinguen          #+#    #+#             */
-/*   Updated: 2026/01/29 16:39:11 by flinguen         ###   ########.fr       */
+/*   Created: 2026/01/04 20:59:10 by flinguen          #+#    #+#             */
+/*   Updated: 2026/01/25 18:15:31 by flinguen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memmove(void *to, const void *from, size_t len)
+t_list	*ft_lst_get_at(t_list *lst, int position)
 {
-	return (ft_memcpy(to, from, len));
+	if (lst == NULL || position < 0)
+		return (NULL);
+	if (position == 0)
+		return (lst);
+	return (ft_lst_get_at(lst->next, position - 1));
 }
