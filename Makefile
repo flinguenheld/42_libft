@@ -100,18 +100,12 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 
-test: all
-	@make -C tests/ --no-print-directory
-
 clean:
 	@rm -f $(OBJS)
-	@make -C tests/ --no-print-directory clean
 
 fclean: clean
 	@rm -f $(NAME)
-	@rm -f $(TEST)
-	@make -C tests/ --no-print-directory fclean
 
 re: fclean all
 
-.PHONY: all test clean fclean re
+.PHONY: all clean fclean re
